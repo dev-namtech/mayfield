@@ -22,54 +22,6 @@
             padding-left: 4px;
         }
     }
-    .section-seller{
-        padding: 60px 0;
-        @media screen and (min-width: 1200px){
-            padding: 60px 15px;
-        }
-        .content-block-metricon{
-            background-image: url('../images/metricon.png');
-        }
-        .content-block-wholesale{
-            background-image: url('../images/wholesale.png');
-        }
-        .content-block{
-            height: 750px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: end;
-            -ms-flex-pack: end;
-            justify-content: flex-end;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            .content-text{
-                text-align: center;
-                padding-bottom: 30px;
-    
-            }
-            h2{
-                color: #ffffff;
-                font-size: 53px;
-                font-weight: 600;
-                font-family: "Helvetica-Neue",sans-serif;
-            }
-            a{
-                color: #ffffff;
-                font-family: "CopernicusTrial-BookItalic",sans-serif;
-                font-size: 22px;
-                font-weight: 300;
-                line-height: 50px;
-                text-decoration: underline;
-                display: block
-            }
-        }
-    }
     .section-editer{
         padding: 60px 0;
         .content-text{
