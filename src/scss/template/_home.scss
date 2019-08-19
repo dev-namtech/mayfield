@@ -1,0 +1,326 @@
+.main-home-page{
+    .section-slide-banner{
+        width: 100%;
+        padding-bottom: 60px;
+    }
+    .section-top-seller{
+        overflow-x: hidden;
+        @media screen and (min-width: 1200px){
+            padding: 0 15px 60px;
+        }
+        .title{
+            color: #000000;
+            font-family: "CopernicusTrial-BookItalic",sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        article{
+            padding-right: 4px;
+            padding-left: 4px;
+        }
+    }
+    .section-seller{
+        padding: 60px 0;
+        @media screen and (min-width: 1200px){
+            padding: 60px 15px;
+        }
+        .content-block-metricon{
+            background-image: url('../images/metricon.png');
+        }
+        .content-block-wholesale{
+            background-image: url('../images/wholesale.png');
+        }
+        .content-block{
+            height: 750px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            .content-text{
+                text-align: center;
+                padding-bottom: 30px;
+    
+            }
+            h2{
+                color: #ffffff;
+                font-size: 53px;
+                font-weight: 600;
+                font-family: "Helvetica-Neue",sans-serif;
+            }
+            a{
+                color: #ffffff;
+                font-family: "CopernicusTrial-BookItalic",sans-serif;
+                font-size: 22px;
+                font-weight: 300;
+                line-height: 50px;
+                text-decoration: underline;
+                display: block
+            }
+        }
+    }
+    .section-editer{
+        padding: 60px 0;
+        .content-text{
+            padding: 0 15px;
+            p{
+                color: #000000;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 25px;
+                font-family: "Helvetica-Neue",sans-serif;
+            }
+            a{
+                color: #000000;
+                font-family: "CopernicusTrial-BookItalic",sans-serif;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 50px;
+                text-decoration: underline;
+            }
+        }
+        .content-image{
+            padding: 0 15px;
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .section-arrivals{
+        padding: 0 15px 60px;
+        h2.title{
+            color: #000000;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 24px;
+            font-family: "CopernicusTrial-BookItalic",sans-serif;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .wrapper-thumb:not(.wrapper-thumb-0){
+            width: 100%;
+            height: calc(100% - 7.5px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .wrapper-thumb.wrapper-thumb-0{
+            width: 100%;
+            height: 600px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .col-arrival{
+            flex: 0 0 30%;
+            max-width: 30%;
+            padding-right: 7.5px;
+            padding-left: 7.5px;
+            &:not(:first-child){
+                >article{
+                    height: 50%;
+                    .card-product{
+                        height: 100%;
+                    }
+                }
+                >article:last-child{
+                    .card-product{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        -webkit-box-pack: end;
+                        -ms-flex-pack: end;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .col-arrival-lg{
+            flex: 0 0 40%;
+            max-width: 40%;
+            padding-right: 7.5px;
+            padding-left: 7.5px;
+            >article{
+                height: 50%;
+                .card-product{
+                    height: 100%;
+                }
+            }
+            >article:last-child{
+                .card-product{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    -webkit-box-pack: end;
+                    -ms-flex-pack: end;
+                    justify-content: flex-end;
+                }
+            }
+        }
+        article{
+            width: 100%;
+            .card-product{
+                .card-info{
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, .8);
+                    padding: 15px 0;
+                    visibility: hidden;
+                    .card-title{
+                        margin-top: 0;
+                        a{
+                            font-weight: 700;
+                        }
+                    }
+                    .price{
+                        margin-bottom: 20px;
+                    }
+                    .buying-options{
+                        justify-content: center;
+                        .addtocart{
+                            position: relative;
+                            bottom: inherit;
+                            left: inherit;
+                            transform: inherit;
+                            background-color: #000000;
+                            color: #ffffff;
+                        }
+                    }
+                }
+                &:hover{
+                    .card-info{
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    .section-why-buy-us{
+        padding: 40px 30px;
+        .content-section{
+            background-color: #f1f2f2;
+            padding: 40px 0;
+            .wrapper-content{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+            .title-section{
+                margin: 0;
+            }
+            p{
+                color: #000000;
+                font-family: "CopernicusTrial-BookItalic",sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 22px;
+                margin: 0;
+            }
+            .block-why{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                .block-item{
+                    max-width: 140px;
+                    margin-left: 65px;
+                    text-align: center;
+                    .wrapper-image{
+                        min-height: 60px;
+                    }
+                }
+            }
+        }
+    }
+    .section-instagram{
+        @media screen and (min-width: 1200px){
+            padding: 0 15px;
+        }
+        .sup-title{
+            color: #000000;
+            font-family: "CopernicusTrial-BookItalic",sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            margin: 0;
+            text-align: center;
+        }
+        .title-section{
+            text-align: center;
+        }
+        .wrapper-instagram{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -4px;
+            margin-left: -4px;
+            .col-instagram{
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 16.667%;
+                flex: 0 0 16.667%;
+                max-width: 16.667%;
+                padding: 4px;
+                position: relative;
+                .drop{
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    width: calc(100% - 8px);
+                    height: calc(100% - 8px);
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    background-color: rgba(0, 0, 0, .5);
+                    visibility: hidden;
+                    i{
+                        color: #ffffff;
+                        font-size: 20px;
+                    }
+                }
+                &:hover{
+                    .drop{
+                    visibility: visible;
+                    }
+                }
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

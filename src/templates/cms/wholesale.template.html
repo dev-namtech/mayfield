@@ -1,0 +1,69 @@
+    <div class="wholesale-main-content">
+        <section class="section-header-content">
+                <div class="container">
+                    [%breadcrumb%]
+                        [%param *header%]
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                        <meta itemprop="position" content="0" />
+                                    </li>
+                        [%/param%]
+                        [%param *body%]
+                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                        <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                                    </li>
+                        [%/param%]
+                        [%param *footer%]
+                                </ol>
+                            </nav>
+                        [%/param%]
+                    [%/breadcrumb%]
+                    <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+                </div>
+        </section>
+
+        <section class="wholesale-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 text-about d-flex justify-content-center flex-column">
+                        <p>Over the years, Mayfield has worked tirelessly to create a range of on-trend, fashionable table lamps, floor lamps & lampshades. </p>   
+                        <p>If you would like to partner with Mayfield to become a preferred stockist or to specify our product for your next commercial project, we would love to hear from you! </p>
+                        <p>Once your registration has been approved, Mayfield will provide you with wholesale or trade access.</p>
+                        <p>If you are an existing wholesale customer, please follow the link to login to our online wholesale store, or sign up as a wholesale customer today.</p>
+                        <div class="button-group">
+                            <a href="#" class="button">Become A Stockist</a>
+                            <a href="#" class="button">wholesale signup</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-img"><img class="img-fluid" src="/assets/themes/skeletal/images/wholesale.png" alt="Wholesale"></div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section Wholesale About -->
+        <section class="agents-section">
+            <div class="container">
+                <h2>Wholesale Sales Agents</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12 info-agents">
+                        <p><b>Project/ Commercial</b><br>Mark Felder<br>p 03 9755 7244<br>f 03 9755 7266<br>m 0424 564 004<br>mark@mayfieldlamps.com.au</p>                    
+                        <p><b>NSW/ ACT</b><br>Lesley Macdonald<br>f 03 9755 7266<br>m 0418 285 102<br>lesleytmg@bigpond.com</p>
+                        <p><b>SA/NT/TA</b><br>Jason Palmer<br>f 08 8352 4048<br>m 0418 821 249<br>jason@palmersadelaide.com</p>                  
+                    </div>
+                    <div class="col-lg-4 col-sm-12 info-agents">
+                        <p><b>Project/ Commercial</b><br>Mark Felder<br>p 03 9755 7244<br>f 03 9755 7266<br>m 0424 564 004<br>mark@mayfieldlamps.com.au</p>                    
+                        <p><b>NSW/ ACT</b><br>Lesley Macdonald<br>f 03 9755 7266<br>m 0418 285 102<br>lesleytmg@bigpond.com</p>
+                        <p><b>SA/NT/TA</b><br>Jason Palmer<br>f 08 8352 4048<br>m 0418 821 249<br>jason@palmersadelaide.com</p>                  
+                    </div>
+                    <div class="col-lg-4 col-sm-12 info-agents">
+                        <p><b>Project/ Commercial</b><br>Mark Felder<br>p 03 9755 7244<br>f 03 9755 7266<br>m 0424 564 004<br>mark@mayfieldlamps.com.au</p>                    
+                        <p><b>NSW/ ACT</b><br>Lesley Macdonald<br>f 03 9755 7266<br>m 0418 285 102<br>lesleytmg@bigpond.com</p>
+                        <p><b>SA/NT/TA</b><br>Jason Palmer<br>f 08 8352 4048<br>m 0418 821 249<br>jason@palmersadelaide.com</p>                  
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

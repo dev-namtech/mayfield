@@ -1,0 +1,53 @@
+<div class="container">
+        [%breadcrumb%]
+                [%param *header%]
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                <meta itemprop="position" content="0" />
+                            </li>
+                [%/param%]
+                [%param *body%]
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                            </li>
+                [%/param%]
+                [%param *footer%]
+                        </ol>
+                    </nav>
+                [%/param%]
+            [%/breadcrumb%]
+        <h1 class="title-page">
+            [%url_info name:'page_heading' default:'[@content_name@]'/%]
+        </h1>
+    </div>
+    <div class="main-content-contact">
+        <div class="main-form-contact">
+            <h3>We're here to help!</h3>
+            <p>Contact us today. We'd love to hear your feedback.</p>
+            <hr>
+            <div class="wrapper-form">
+            <form method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
+                    <input type="hidden" name="list_id" value="1">
+                    <input type="hidden" name="opt_in" value="y">
+                    <input type="hidden" name="inp-submit" value="y" />
+                    <input type="hidden" name="inp-opt_in" value="y" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input name="inp-name" class="form-control" type="text" placeholder="Your Name*" required aria-label="Name"/>
+                        </div>
+                        <div class="col-md-6">
+                            <input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Your Email*" required aria-label="Email"/>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea name="inp-mess" class="form-control" placeholder="Your Message*" cols="30" rows="10" required></textarea>
+                        </div>
+                            <div class="col-md-12"><input class="btn btn-outline-secondary" type="submit" value="Send Message" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

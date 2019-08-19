@@ -1,0 +1,72 @@
+article{
+    .card-product{
+        position: relative;
+        .thumbnail-image{
+            img{
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        .card-title{
+            text-align: center;
+            margin: 20px 0 5px;
+            a{
+                color: #000000;
+                font-family: "Helvetica-Neue",sans-serif;
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+        .price{
+            color: #000000;
+            font-family: "Helvetica-Neue",sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0;
+            text-align: center;
+        }
+        .buying-options{
+            .addtocart{
+                font-size: 14px;
+                line-height: 17px;
+                font-weight: 600;
+                font-family: "Helvetica-Neue",sans-serif;
+                padding: 12px 14px;
+                background-color: #FFFFFF;
+                border-radius: 0;
+                visibility: hidden;
+                position: absolute;
+                text-transform: uppercase;
+                bottom: 90px;
+                width: 80%;
+                max-width: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .product-wishlist{
+                visibility: hidden;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                span.heart-icon{
+                    width: 28px;
+                    height: 24px;
+                    display: block;
+                    background-image: url('../images/heart-icon-white.svg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    cursor: pointer;
+                }
+            }
+        }
+        &:hover{
+            .buying-options{
+                .addtocart,
+                .product-wishlist{
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

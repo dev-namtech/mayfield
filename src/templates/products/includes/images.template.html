@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="list-image col-6 col-md-3">
+		[%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]
+			[%param *body%]
+				<div>
+					<a href="[@full_image@]" data-lightbox="product-lightbox" data-title="Product image" rel="product_images">
+						<img src="[@full_image@]" class="img-fluid product-image-small">
+					</a>
+				</div>
+			[%/ param%]
+			[%param *brochure%]
+				<div>
+					<a class="display-4" href="[@file@]" target="_blank" rel="noopener"><i class="far fa-file-pdf"></i></a>
+				</div>
+			[%/ param%]
+		[%/ THUMBNAILS%]
+	</div>
+	<div class="col-6 col-md-9 main-image text-center">
+		<a href="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" data-lightbox="product-lightbox" data-title="Product main image" rel="product_images">
+			<div class="zoom10">
+				<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" class="d-none" aria-hidden="true">
+				<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" rel="itmimg[@SKU@]" alt="Product main image" border="0" id="main-image" itemprop="image">
+				<div class="wrapper-button d-none">
+					<div class="btn-zoom btn-zoom-in" id="zoomProIn"></div>
+					<div class="btn-zoom btn-zoom-out" id="zoomProOut"></div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

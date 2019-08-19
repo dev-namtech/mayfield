@@ -1,0 +1,44 @@
+.custommade-main-content{
+    h2{
+        color: #000000;
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: "Helvetica-Neue",sans-serif;
+    }
+    p{
+        font-size: 16px;
+        font-family: "Helvetica-Neue",sans-serif;
+    }
+    .our-clients{
+        background: url(./images/Rectangle.png);
+        width:100%;
+        min-height: 502px;
+        margin-top: 30px;
+        .clients-name{
+            margin: 80px;
+        }
+    }
+    .our-clients .title,
+    .project-gallery .title{
+        padding-top:10px;
+        width: 100%;
+        font-family: "Helvetica-Neue",sans-serif;
+        color: #000000;
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .products{
+        margin-top:65px;
+        .row{
+            margin-bottom:30px
+        }
+        .description2{
+            color: #000000;
+            font-family: "Helvetica-Neue",sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            padding-right:80px
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.imspiration-main-content{
+    padding-bottom: 80px;
+    .inspiration-gallery{
+        text-align: center;
+        .inspiration-products{
+            position: relative;
+            .layer{
+                width: 100%;
+                height: 135px;
+                opacity: 0.8;
+                background-color: #ffffff;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                padding-top:16px;
+                display: none;
+                &:hover{
+                    display: block
+                }
+                .button{
+                    display: block;
+                    margin:10px auto;
+                }
+            }
+        }
+    }
+    img.img-fluid:hover+.layer{
+        display: block;
+    }
+}

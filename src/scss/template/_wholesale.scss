@@ -1,0 +1,41 @@
+.wholesale-main-content{
+    .text-about{
+        color: #000000;
+        font-family: "Helvetica-Neue",sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        padding:0 69px
+    }
+    .agents-section .row .info-agents{
+        padding-left:69px;
+        font-family: "Helvetica-Neue",sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .button{
+        text-transform: uppercase;
+        border: 1px solid black;
+        color: black;
+        font-family: "Helvetica-Neue",sans-serif;
+        font-size: 14px;
+        width: 200px;
+        text-align: center;
+        margin: 32px 0;
+        font-weight: bold;
+        display: inline-block;
+        cursor: pointer;
+        line-height: normal;
+        padding: 13px 15px;
+        &:hover{
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #000000;
+        }
+    }
+    .agents-section{
+        padding: 30px 0 60px;
+        h2{
+            margin-bottom: 40px;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Copernicus Trial Book';
+    src: url('CopernicusTrial-BookItalic.eot');
+    src: url('CopernicusTrial-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('CopernicusTrial-BookItalic.woff2') format('woff2'),
+        url('CopernicusTrial-BookItalic.woff') format('woff'),
+        url('CopernicusTrial-BookItalic.ttf') format('truetype'),
+        url('CopernicusTrial-BookItalic.svg#CopernicusTrial-BookItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+

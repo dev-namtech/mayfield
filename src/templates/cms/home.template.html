@@ -1,0 +1,196 @@
+
+	<div class="main-home-page">
+		<!-- Slider -->
+		[%if [@config:show_home_ads@]%]
+			[%advert type:'text' template:'carousel' limit:'10' ad_group:''%]
+				[%param *header%]
+					<section id="homepageCarousel" class="carousel slide section-slide-banner" data-ride="carousel" aria-label="Banner images">
+						[%if [@total_showing@] > 1%]
+							<ol class="carousel-indicators">
+								[%site_value id:'counter' type:'load'/%]
+							</ol>
+						[%/if%]
+						<div class="carousel-inner">
+				[%/param%]
+				[%param *footer%]
+						</div>
+						[%if [@total_showing@] > 1%]
+							<a class="carousel-control-prev" href="#homepageCarousel" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#homepageCarousel" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						[%/if%]
+					</section>
+				[%/param%]
+				[%param *ifempty%]
+					<a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
+						Click to add a banner<br/>
+					</a>
+				[%/param%]
+			[%/advert%]
+		[%/if%]
+		<!-- #Slider -->
+
+		<!-- Best Seller -->
+		<section class="section-top-seller main-container">
+			<div class="container-fluid">
+			[%thumb_list type:'products' template:'' filter_category:'106' limit:'10'%]
+				[%param *header%]
+					<h2 class="title">Best Sellers</h2>
+					<div class="row">
+				[%/param%]
+				[%param *footer%]
+					</div>
+				[%/param%]
+				[%param *ifempty%]
+					No Results Found
+				[%/param%]
+			[%/thumb_list%]
+			</div>
+		</section>
+		<!-- #Best Seller -->
+	
+		<!-- Arrivals -->
+		<section class="section-arrivals main-container">
+			<div class="container-fluid">
+				[%new_arrivals template:'arrivals' limit:'5'%]
+					[%param *header%]
+						<h2 class="title">New Arrivals</h2>
+						<div class="row">
+					[%/param%]
+					[%param *footer%]
+						</div>
+					[%/param%]
+					[%param *ifempty%]
+						<p>No new arrivals found, check back soon!</p>
+					[%/param%]
+				[%/new_arrivals%]
+			</div>
+		</section>
+		<!-- #Arrivals -->
+
+		<!-- Ourstory -->
+		<section class="section-editer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="content-text">
+							<h2 class="title-section">Our Story</h2>
+							<p>From humble beginnings in 1945, we've become<br />
+							a renowned supplier of the Australian furniture and lighting industry.</p>
+							<p>The Mayfield Lamps story began amongst the stalls of Melbourne’s Glenferrie Markets.</p>
+							<p>From this humble start over 70 years ago, Mayfield Lamps has become one of Australia’s most well-respected suppliers in furniture and lighting.</p>
+							<p>Today, Mayfield offers more than just lamps – we now design and produce fashionable light fittings, furniture and accessories for both the retail and commercial markets across Australia.</p>
+							<a href="/our_story">Learn More</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="content-image">
+							<img alt="" src="/assets/themes/skeletal/images/our-store.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- #Ourstory -->
+
+		<!-- Seller -->
+		<section class="section-seller main-container">
+			<div class="container-fluid">
+				<dic class="row">
+					<div class="col-lg-6">
+						<div class="content-block content-block-metricon">
+							<div class="content-text">
+								<h2>Commercial</h2>
+								<a href="#">See More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="content-block content-block-wholesale">
+							<div class="content-text">
+								<h2>Wholesale</h2>
+								<a href="#">See More</a>
+							</div>
+						</div>
+					</div>
+				</dic>
+			</div>
+		</section>
+		<!-- #Seller -->
+
+		<!-- Instagram -->
+		<section class="section-instagram main-container">
+			<div class="container-fluid">
+				<p class="sup-title">Follow Us on Instagram</p>
+				<h2 class="title-section">@mayfieldlamps</h2>
+				<div id="instafeed" class="wrapper-instagram"></div>
+				<div class="instagrm-demo">
+					<div class="row">
+						<div class="col-md-2">
+							<img class="img-fluid" src="/assets/themes/skeletal/images/instagram1.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid" src="/assets/themes/skeletal/images/instagram2.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid" src="/assets/themes/skeletal/images/instagram3.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid" src="/assets/themes/skeletal/images/instagram4.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid" src="/assets/themes/skeletal/images/instagram5.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid" src="/assets/themes/skeletal/images/instagram6.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- #Instagram -->
+
+		<!-- WhyBuyUs -->
+		<section class="section-why-buy-us main-container">
+			<div class="content-section">
+				<div class="container">
+					<div class="wrapper-content">
+						<h3 class="title-section">Why buy from us?</h3>
+						<div class="block-why">
+							<div class="block-item">
+								<div class="wrapper-image">
+									<img class="img-fluid" src="/assets/themes/skeletal/images/map-icon.png" alt="">
+								</div>
+								<p>Family-owned<br> Since 1945</p>
+							</div>
+							<div class="block-item">
+								<div class="wrapper-image">
+									<img class="img-fluid" src="/assets/themes/skeletal/images/pen-icon.png" alt="">
+								</div>
+								<p>Designed<br> In Melbourne</p>
+							</div>
+							<div class="block-item">
+								<div class="wrapper-image">
+									<img class="img-fluid" src="/assets/themes/skeletal/images/box-icon.png" alt="">
+								</div>
+								<p> Free metro Shipping<br> over $200</p>
+							</div>
+							<div class="block-item">
+								<div class="wrapper-image">
+									<img class="img-fluid" src="/assets/themes/skeletal/images/lamp-icon.png" alt="">
+								</div>
+								<p>Huge Range </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- #WhyBuyUs -->
+	</div>
+</div>

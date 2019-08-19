@@ -1,0 +1,165 @@
+  <div class="custommade-main-content">
+    <section class="section-header-content">
+      <div class="container">
+          [%breadcrumb%]
+              [%param *header%]
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                              <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                              <meta itemprop="position" content="0" />
+                          </li>
+              [%/param%]
+              [%param *body%]
+                          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                              <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                              <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                          </li>
+              [%/param%]
+              [%param *footer%]
+                      </ol>
+                  </nav>
+              [%/param%]
+          [%/breadcrumb%]
+          <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+          [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+          <div class="description-content-coper">
+            <p>Mayfield design and produce contemporary light fittings for hotels, aged care facilities, serviced apartments, conference centres, restaurants and cafes. </p>  
+            <p>We pride ourselves on our short lead times, competitive pricing, and honest & open communication with all project stakeholders.</p>
+            <a href="#">Customer enquiry</a>
+          </div>
+          [%/if%]
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="item-box">
+          <div class="row">
+            <div class="description col-lg-6 col-xs-12 d-flex flex-column justify-content-center">
+              <h2>Design Development & Prototyping</h2>
+              <p>Mayfield have come a long way from our humble beginnings in the Glenferrie Markets of Melbourne. Originally making lampshades for local retailers, the Mayfield name now encompasses a wide range of high-quality homewares and lighting solutions, and we’re constantly growing. Business trades and secrets being passed down through generations, Mayfield is now illuminating the furniture and lighting industry.   </p>
+            </div>
+            <div class="col-img col-lg-6 col-sm-12">
+              <img class="img-fluid" src="/assets/themes/skeletal/images/history2_4_1.png" alt="">
+            </div>
+          </div>    
+        </div>
+      </div>
+      <div class="item-box">
+        <div class="container">
+          <div class="row flex-row-reverse">
+            <div class="description col-lg-6 col-xs-12 d-flex flex-column justify-content-center">
+              <h2>Production</h2>
+              <p>Mayfield’s experience spans back over 70 years, with our signature high quality design being passed down from generation to generation. We’ve become a well-respected and well-known supplier within Australia and New Zealand through our acclaimed workmanship. </p>
+            </div>
+            <div class="col-img col-lg-6 col-sm-12">
+              <img class="img-fluid" src="/assets/themes/skeletal/images/history2_4_1.png" alt="">
+            </div>
+           </div>  
+          </div>   
+      </div>
+      <div class="container">
+        <div class="item-box">
+            <div class="row">
+              <div class="description col-lg-6 col-xs-12 d-flex flex-column justify-content-center">
+                <h2>Handcrafted</h2>
+                <p>Mayfield have come a long way from our humble beginnings in the Glenferrie Markets of Melbourne. Originally making lampshades for local retailers, the Mayfield name now encompasses a wide range of high-quality homewares and lighting solutions, and we’re constantly growing. Business trades and secrets being passed down through generations, Mayfield is now illuminating the furniture and lighting industry.   </p>
+              </div>
+              <div class="col-img col-lg-6 col-sm-12">
+                <img class="img-fluid" src="/assets/themes/skeletal/images/history2_4_1.png" alt="">
+              </div>
+             </div>     
+        </div>
+      </div>
+    </section> 
+    <!--End Section Content -->  
+    <section class="our-clients">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+            <div class="title text-center">Our Clients</div>
+            <div class="clients-name d-flex justify-content-between">
+              <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+              <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+              <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+              <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+              <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+            </div>
+            <div class="clients-name d-flex justify-content-between">
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+            </div>
+            <div class="clients-name d-flex justify-content-between">
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+                <div class="client"><img class="img-fluid" src="/assets/themes/skeletal/images/client.png" alt="client-name"></div>
+            </div>    
+          </div>
+        </div>                                
+      </div>
+    </section>
+    <!--End Section Our Clients-->
+    <section class="contact-us">
+      <div class="container">
+        <div class="row">
+          <div class="question col-lg-6 col-sm-12">
+              <p class="big-text">Cumtom Made Enquiry</p>
+              <p class="small-text">In need of custom-made light fittings? Contact us today!</p>
+          </div>
+          <div class="form col-lg-6 col-sm-12">
+          <div class="form-name">Project Detail</div>
+          <div class="row">
+              <div class="col-lg-6 col-sm-12 field-devide">
+                  <label>First Name*</label>
+                  <input type="text">
+              </div>
+              <div class="col-lg-6 col-sm-12 field-devide">
+                  <label>First Name*</label>
+                  <input type="text">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-6 col-sm-12 field-devide">
+                  <label>Company Name*</label>
+                  <input type="text">
+                  </div>
+              <div class="col-lg-6 col-sm-12 field-devide">
+                  <label>Email*</label>
+                  <input type="text">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12 field-long">
+              <label>Company Name*</label>
+              <input type="text">
+              </div>      
+          </div>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12 field-long">
+              <label>Website*</label>
+              <input type="text">
+              </div>  
+          </div>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12 field-long">
+              <label>Project Details*</label>
+              <textarea cols="30" rows="4" placeholder="Tell us about your project"></textarea>
+              </div> 
+          </div>
+          <div class="row">
+              <div class="col-lg-12 col-sm-12">
+              <a href="#" class="button button-submit">Submit</a>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

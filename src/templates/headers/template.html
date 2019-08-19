@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head itemscope itemtype="http://schema.org/WebSite">
+	[%load_template file:'headers/includes/head.template.html'/%]
+	<link rel="preload" href="[%ntheme_asset%]css/app.css[%/ntheme_asset%]" as="style">
+	<link rel="preload" href="[%ntheme_asset%]css/custom.css[%/ntheme_asset%]" as="style">
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/font.css[%/ntheme_asset%]" media="all"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/slick.css[%/ntheme_asset%]" media="all"/>
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/slick-theme.css[%/ntheme_asset%]" media="all"/>
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/app.css[%/ntheme_asset%]" media="all"/>
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/sub-custom.css[%/ntheme_asset%]" media="all"/>
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/custom.css[%/ntheme_asset%]" media="all"/>
+</head>
+<body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
+<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+<header class="wrapper-header" aria-label="Header container">
+	<div class="top-header">
+		Flat rate shipping $20 Australian Metro areas | Free shipping for all orders over $200
+	</div>
+	<div class="main-header container-fluid">
+		<div class="menu-mobile">
+			<div class="wrapper-logo">
+				<button class="navbar-toggler" type="button">
+					<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+				</button>
+				<a href="[@config:home_url@]" title="[@config:company_name@]">
+					<img class="logo" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
+				</a>
+			</div>
+			<div class="wrapper-nav-menu navbar-shop">
+				<ul class="navbar-nav" role="navigation">
+					<li class="nav-item dropdown">
+						<a href="[%url page:'account'/%]" role="button" class="nav-link user-link" aria-label="Account dropdown">
+							<span class="icon-in-nav icon-user"></span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link cart-link" href="[%url page:'checkout' type:'cart'/%]" aria-label="Shopping cart">
+							<span class="d-none badge badge-pill badge-secondary" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link search-link" href="[%url page:'checkout' type:'cart'/%]" aria-label="Shopping cart">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="d-flex main-menu-mobile">
+			<div class="wrapper-logo">
+				<a href="[@config:home_url@]" title="[@config:company_name@]">
+					<img class="logo" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
+					<span class="since">since 1945</span>
+				</a>
+			</div>
+			<div class="wrapper-nav-menu">
+				<nav class="navbar">
+					<div class="navbar-menu">
+						<ul class="navbar-nav" role="navigation" aria-label="Main menu">
+							[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
+								[%menu id:'web_header'%]
+									[%param *level_1%]
+										<li class="nav-item [%if [@next_level@]%] dropdown [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]">
+											<a href="[@url@]" class="nav-link [%if [@next_level@]%] dropdown-toggle[%/if%]" [%if [@next_level@]%]role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[%/if%]>[@name@]</a>
+											[%if [@next_level@]%]
+												<ul class="dropdown-menu">
+													[@next_level@]
+												</ul>
+											[%/if%]
+										</li>
+										[%/param%]
+									[%param *level_2%]
+										<li class="[%if [@next_level@]%] dropdown dropdown-hover [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]"> <a href="[@url@]" class="nuhover dropdown-item">[@name@]</a>
+											[%if [@next_level@]%]
+												<ul class="dropdown-menu dropdown-menu-horizontal">
+													[@next_level@]
+												</ul>
+											[%/if%]
+										</li>
+										[%/param%]
+									[%param *level_3%]
+										<li class="[%if [@css_class@]%] [@css_class@][%/if%]">
+											<a class="dropdown-item" href="[@url@]">[@name@]</a>
+										</li>
+									[%/param%]
+								[%/menu%]
+							[%/cache%]
+						</ul>
+					</div>
+					<div class="navbar-shop">
+						<ul class="navbar-nav" role="navigation">
+							<li class="nav-item dropdown">
+								<a href="[%url page:'account'/%]" role="button" class="nav-link user-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Account dropdown">
+									<span class="icon-in-nav icon-user"></span>
+									<span class="d-lggg-block">Account</span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									[%if [@user:username@]%]
+										<li> <a class="dropdown-item" href="[%url page:'account' type:'edit_pwd'/%]"><i class="fa fa-lock"></i> Change My Password</a> </li>
+										<li> <a class="dropdown-item" href="[%url page:'account' type:'logout'/%]"><i class="fa fa-power-off"></i> Log Out</a> </li>
+									[%else%]
+										<li> <a class="dropdown-item" href="[%url page:'account' type:'login'/%]" title="Login">Login</a> </li>
+										<li> <a class="dropdown-item" href="[%url page:'account' type:'register'/%]" title="Register">Register</a> </li>
+									[%/if%]
+									<li><a class="dropdown-item" href="[%url page:'account'/%]#orders">Orders</a></li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link cart-link" href="[%url page:'checkout' type:'cart'/%]" aria-label="Shopping cart">
+									<span class="d-none badge badge-pill badge-secondary" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
+									<span class="d-lggg-block">Cart</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link search-link" href="[%url page:'checkout' type:'cart'/%]" aria-label="Shopping cart">
+									<span class="d-lggg-block">Search</span>
+								</a>
+								<div class="header-search d-none">
+									<span class="icon-in-nav icon-search"></span> <span class="d-lggg-block">Search</span>
+									<form class="d-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
+										<input type="hidden" name="rf" value="kw"/>
+										<div class="input-group">
+											<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
+											<div class="input-group-append">
+												<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="overlay"></div>
+	</div>
+	<div class="d-flex sub-header">
+		<span>Free Shipping over $200*</span>
+		<span>14 day Returns*</span>
+		<span>Designed in Melbourne</span>
+		<span>Family Owned for 73 years</span>
+	</div>
+</header>
+<div id="main-content" role="main" class="main-content-page">

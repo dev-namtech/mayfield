@@ -1,0 +1,35 @@
+
+
+/* Commercial */
+.project-gallery .title{
+    margin-bottom:58px
+}
+.project-gallery .row{
+    width:72%;
+    margin:50px auto
+}
+.project-gallery .row p{
+    color: #000000;
+    font-family: "Helvetica-Neue",sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top:21px
+}
+
+
+/* Outlet */
+.section-banner img{
+    width: 100%;
+    height:264px
+}
+.outlet-details div {
+    height: 33px;
+    width: 33px;
+    display: block;
+    float: left;
+    font-size:35px;
+    text-align: center;
+}
+.outlet-details p{
+    padding-left: 60px;
+}

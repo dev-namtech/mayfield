@@ -1,0 +1,57 @@
+.howtomeasue-main-content{
+    .how-to-measure{
+        .big-text{
+            font-size: 40px;
+            font-weight: 600;
+            width:80%
+        }
+        .small-text{
+            color: #000000;
+            font-size: 16px;
+            line-height: 24px;
+            width:80%
+        }
+        .item-box .row{
+            margin-top: 50px
+        }
+        .content .item-box:nth-child(2),
+        .item-box:nth-child(2),
+        .item-box:nth-child(5){
+            background: #f1f2f2;
+        }
+        .content{
+            .item-box{
+                .description{
+                    padding-left: 60px;
+                }
+                .col-img{
+                    img{
+                        vertical-align: middle;
+                        border-style: none;
+                        width: 100%;
+                        padding: 30px 0px;
+                    }
+                }
+            }
+        }
+    }
+    .button-download{
+        text-transform: uppercase;
+        border: 1px solid black;
+        color: black;
+        font-family: "Helvetica-Neue",sans-serif;
+        font-size: 14px;
+        width: 200px;
+        text-align: center;
+        margin: 32px 0;
+        font-weight: bold;
+        display: inline-block;
+        cursor: pointer;
+        padding: 13px 15px;
+        &:hover{
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #000000;
+        }
+    }
+}

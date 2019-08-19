@@ -1,0 +1,56 @@
+    <div class="container">
+        [%breadcrumb%]
+            [%param *header%]
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                            <meta itemprop="position" content="0" />
+                        </li>
+            [%/param%]
+            [%param *body%]
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                            <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                        </li>
+            [%/param%]
+            [%param *footer%]
+                    </ol>
+                </nav>
+            [%/param%]
+        [%/breadcrumb%]
+        <h1 class="title-page">
+            [%url_info name:'page_heading' default:'[@content_name@]'/%]
+        </h1>
+    </div>
+    <section class="section-banner">
+        <img src="/assets/themes/skeletal/images/banner.png" alt="banner">   
+    </section> 
+    <!-- End Section Banner -->
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-sm-12 d-flex flex-column justify-content-center">
+                    <p class="small-text">To stay informed about future sales, please subscribe to our outlet mailing list. </p>
+                    <p class="text-bold-italic">Subscribe now for updates.</p>
+                </div>
+                <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-center">
+                    <div class="outlet-details">
+                        <div><i class="fa fa-map-marker"></i></div>
+                        <p>Factory Outlet<br>22 Viewtech Place<br>Rowville Victoria</p>
+                    </div>
+                    <div class="outlet-details">
+                        <div><i class="fa fa-clock-o"></i></div>
+                        <p>Factory Outlet<br>22 Viewtech Place<br>Rowville Victoria</p>
+                    </div>                  
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- End Section About -->
+
+    <section class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1230409533796!2d106.64968831418274!3d10.801887261678388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752948105d9a6d%3A0x75df77fc46e6100c!2zMTUwIEPhu5luZyBIw7JhLCBQaMaw4budbmcgMTIsIFTDom4gQsOsbmgsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1565681030005!5m2!1svi!2s" width="100%" height="336" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section>
+</div>
