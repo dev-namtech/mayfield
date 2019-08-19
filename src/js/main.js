@@ -105,4 +105,40 @@ jQuery(document).ready(function() {
           $list.hide()
         })
     });
+
+    $('.slider .img-slider').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 3,
+      prevArrow: $('.prev'),
+      nextArrow: $('.next')
+  });
+  $('.slider .img-slider1').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      prevArrow: $('.prev1'),
+      nextArrow: $('.next1')
+  });
+  $('.slider .img-slider2').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      prevArrow: $('.prev2'),
+      nextArrow: $('.next2')
+  });
+  $('.slider .img-slider3').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      prevArrow: $('.prev3'),
+      nextArrow: $('.next3')
+  });
+  $('.slider .img-slider4').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      prevArrow: $('.prev4'),
+      nextArrow: $('.next4')
+  });
 });
