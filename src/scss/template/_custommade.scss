@@ -11,17 +11,16 @@
         font-family: "Helvetica-Neue",sans-serif;
     }
     .our-clients{
-        background: url(./images/Rectangle.png);
+        background: #f1f2f2;
         width:100%;
         min-height: 502px;
         margin-top: 30px;
         .clients-name{
-            margin: 80px;
+            margin-top: 86px;
         }
     }
-    .our-clients .title,
-    .project-gallery .title{
-        padding-top:10px;
+    .our-clients .title{
+        padding-top:32px;
         width: 100%;
         font-family: "Helvetica-Neue",sans-serif;
         color: #000000;
@@ -49,9 +48,6 @@
     }
 }
 @media (max-width: 1199px){
-    body{
-        text-align: center;   
-    }
     .section-header-content{
         .description-content-coper{
             width: 100%;

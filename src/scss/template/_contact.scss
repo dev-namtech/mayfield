@@ -2,6 +2,9 @@
 
 }
 @media (max-width:991px){
+    
+}
+@media (max-width:767px){
     .main-content-contact{
         .main-form-contact{
             .wrapper-form{
@@ -12,7 +15,15 @@
         }
     }
 }
-@media (max-width:767px){
-    
+@media (max-width:575px){
+    .main-content-contact{
+        .main-form-contact{
+            padding:20px!important;
+            .wrapper-form{           
+                    .btn-outline-secondary{
+                    min-width: 100%!important
+                    }         
+            }          
+        }
+    }
 }
-@media (max-width:575px){}
