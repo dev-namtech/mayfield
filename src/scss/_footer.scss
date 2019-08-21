@@ -177,6 +177,7 @@
 }
 @media screen and (min-width: 1200px){
     .wrapper-footer{
+        text-align: left;
         .wrapper-footer-menu{
             .social-menu{
                 padding-inline-start: 90px;
@@ -187,6 +188,7 @@
 
 @media screen and (min-width: 992px){
     .wrapper-footer{
+        text-align: left;
         .privacy{
             padding: 40px 0;
             .row{
@@ -218,6 +220,7 @@
 
 @media screen and (max-width: 991px){
     .wrapper-footer{
+        text-align: left;
         .newsletter-signup{
             h4{
                 font-size: 32px;

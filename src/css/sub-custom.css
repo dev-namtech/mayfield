@@ -22,14 +22,90 @@
     width: 100%;
     height:264px
 }
-.outlet-details div {
-    height: 33px;
-    width: 33px;
-    display: block;
-    float: left;
-    font-size:35px;
-    text-align: center;
+.about-outlet{
+    margin-top:40px
+}
+.outlet-details{
+    width: 100%;
+    min-height:83px
+}
+.outlet-details .img-location, .outlet-details .img-clock{
+    height: 44px;
+    width: 30px;
+    margin-right: 27px
 }
 .outlet-details p{
-    padding-left: 60px;
+    width: 200px;
+    height: 83px;
+    display: inline-block
+}
+/* Form */
+.contact-us .form{
+    color: #000000;
+    font-family: "HelveticaNeue";
+    font-size: 16px;
+    width: 570px;
+    padding: 0
+}
+.contact-us .form .form-name{
+    color: #000000;
+    font-family: "HelveticaNeue";
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+}
+.field-devide,.field-long,.field-devide-short{
+    margin-top: 32px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.field-long textarea{
+    display: block;
+    border: 1px solid rgb(226, 212, 212);
+}
+.field-devide input,.field-devide-short input,.field-long input{
+    display:block;
+    height: 35px;  
+    padding-top:20px;
+    border: 1px solid rgb(226, 212, 212);
+}
+.field-devide {
+    width:273px;
+    margin-right: 25px
+}
+.field-devide-short{
+    width:262px;
+}
+.field-long{
+    width:570px;
+}
+.field-devide input,.field-devide-short input,.field-long input{
+    width: 100%; 
+}
+.field-long textarea{
+    padding: 9px 0 0 18px;
+}
+.button{
+    text-transform: uppercase;
+    border: 1px solid black;
+    color:black;
+    font-family: "HelveticaNeue";
+    font-size: 14px;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    padding-top: 12px;
+    margin: 32px 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+.button:first-child{
+    margin-right: 15px
+}
+.button:hover{
+    background: black;
+    color: white;
+    text-decoration: none;
 }
