@@ -6,7 +6,7 @@
         line-height: 24px;
         padding:0 69px
     }
-    .agents-section .row .info-agents{
+    .agents-section .info-agents{
         padding-left:69px;
         font-family: "Helvetica-Neue",sans-serif;
         font-size: 16px;
@@ -44,11 +44,28 @@
         .text-about{
             padding:0 15px
         }
+        .wholesale-about{
+            .button-group{
+                margin: 10px 0;
+                .button{
+                    margin: 10px 0;
+                }
+            }
+        }
         .agents-section{
             .info-agents{
-            padding:0
+                padding:0
             }
         }
         
     }
 }
+@media (max-width:991px){
+    .wholesale-about{
+        .button{
+            width: 200px  
+            }
+    }
+}
+@media (max-width:767px){}
+@media (max-width:575px){}
