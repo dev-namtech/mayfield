@@ -7,6 +7,29 @@ article{
                 display: block;
             }
         }
+        .label-pro{
+            position: absolute;
+            top: 12px;
+            left: 0;
+            font-size: 14px;
+            font-weight: 600;
+            min-width: 110px;
+            padding: 5px 0;
+            text-align: center;
+            &.label-best-seller{
+                background-color: #bfb4a3;
+                color: #000000;
+            }
+            &.label-new-arrival{
+                background-color: #ffffff;
+                color: #000000;
+            }
+            &.label-outofstock,
+            &.label-onsalse{
+                color: #FFFFFF;
+                background-color: #d0021b;
+            }
+        }
         .card-title{
             text-align: center;
             margin: 20px 0 5px;
