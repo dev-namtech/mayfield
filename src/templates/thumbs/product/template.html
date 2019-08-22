@@ -28,7 +28,7 @@
 			[%if [@extra@] or [@has_child@] or [@editable_bundle@]%]
 				<a href="[@URL@]" title="View [@model@] Buying Options" class="btn btn-primary btn-block btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">See Options</a>
 			[%elseif [@store_quantity@] > 0 AND [@preorder@] %]
-				<button type="button" title="Pre-Order [@model@] Now!" class="addtocart btn  btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Pre-Order</button>
+				<button type="button" title="Pre-Order [@model@] Now!" class="addtocart btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Pre-Order</button>
 			[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
 				<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Add to Cart</button>
 			[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]

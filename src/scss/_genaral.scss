@@ -519,3 +519,59 @@ button.slick-prev{
         }
     }
 }
+
+.pagination{
+    margin-top: 60px;
+    li{
+        a.page-pag-link{
+            padding: 12px 25px;
+            font-size: 14px;
+            color: #000000;
+            display: inline-block;
+        }
+        &.active{
+            a.page-pag-link{
+                font-weight: 700;
+            }
+        }
+        &.page-next-item,
+        &.page-prev-item{
+            a.page-pag-link{
+                font-weight: 700;
+                width: 150px;
+                text-align: center;
+                border: solid 1px #000000;
+                text-transform: uppercase;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 15px;
+                    height: 13px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+        &.page-next-item{
+            a.page-pag-link{
+                margin-left: 25px;
+                &::after{
+                    right: 15px;
+                    background-image: url('../images/arrow_right.png');
+                }
+            }
+        }
+        &.page-prev-item{
+            a.page-pag-link{
+                margin-right: 25px;
+                &::after{
+                    left: 15px;
+                    background-image: url('../images/arrow_left.png');
+                }
+            }
+        }
+    }
+}

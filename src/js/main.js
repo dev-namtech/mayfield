@@ -27,6 +27,32 @@ jQuery(document).ready(function() {
       slidesToScroll: 1,
       auto: true,
       looop: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
     });
 
     // var userFeed = new Instafeed({
@@ -141,4 +167,81 @@ jQuery(document).ready(function() {
       prevArrow: $('.prev4'),
       nextArrow: $('.next4')
   });
+
+  $("#style").change(function(){
+    if($('#contentID').val() != $(this).val())
+      valCate = [$('#contentID').val(), $(this).val()]
+    else
+      valCate = $(this).val();
+    var dataStyle = {
+      "Filter":{
+        "CategoryID": valCate,
+        "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
+      }
+    };
+    $.ajax({
+      async: true,
+      crossDomain: true,
+      url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+      headers: {
+        'accept': 'application/json',
+        'netoapi_action':'GetItem',
+        'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+        'content-type': 'application/json',
+        'cache-control': 'no-cache'
+      },
+      method: 'POST',
+      dataType: 'json',
+      processData: false,
+      data: JSON.stringify(dataStyle),
+      success: function(response){
+        $('#contentPro').hide();
+        loadThumbProduct(response);
+      }
+    });
+  });
 });
+
+function loadThumbProduct(data) {
+  $('#contentProAjax').empty();
+  if(data.Item.length > 0){
+    data.Item.forEach(element => {
+      var article = document.createElement('article');
+      cardProduct = document.createElement('div');
+      $(cardProduct).addClass('card-product').attr('itemscope', '').attr('itemtype', 'http://schema.org/Product');
+      $(cardProduct).append('<meta itemprop="mpn" content="'+element.SKU+'"/>');
+      imgProduct = document.createElement('a');
+      $(imgProduct).addClass('thumbnail-image').attr('href', '#');
+      if(element.Images[0].URL)
+        imgProSrc = element.Images[0].URL;
+      else
+        imgProSrc = 'https://cdn.neto.com.au/assets/neto-cdn/images/default_product.gif';
+      $(imgProduct).append('<img src="'+imgProSrc+'" itemprop="image" class="product-image img-fluid">');
+      $(imgProduct).appendTo(cardProduct);
+      titleProduct = document.createElement('p');
+      $(titleProduct).addClass('card-title').attr('itemprop', 'name');
+      $(titleProduct).append('<a href="[@URL@]">'+element.Name+'</a>');
+      $(titleProduct).appendTo(cardProduct);
+      priceProduct = document.createElement('p');
+      $(priceProduct).addClass('price');
+      $(priceProduct).append('<span itemprop="price" content="'+element.DefaultPrice+'">'+element.DefaultPrice+'</span>');
+      $(priceProduct).append('<meta itemprop="priceCurrency" content="AUD">');
+      $(priceProduct).appendTo(cardProduct);
+      formBuy = document.createElement('form');
+      $(formBuy).addClass('form-inline buying-options');
+      $(formBuy).append('<input type="hidden" id="sku'+element.SKU+'" name="sku'+element.SKU+'" value="'+element.SKU+'">');
+      $(formBuy).append('<input type="hidden" id="modal'+element.SKU+'" name="modal'+element.SKU+'" value="'+element.Model+'">');
+      $(formBuy).append('<input type="hidden" id="thumb'+element.SKU+'" name="thumb'+element.SKU+'" value="'+imgProduct+'">');
+      $(formBuy).append('<input type="hidden" id="qty'+element.SKU+'" name="qty'+element.SKU+'" value="1" class="input-tiny">');
+      $(formBuy).append('<button type="button" class="addtocart btn btn-block btn-loads" rel="'+element.SKU+'">Add to Cart</button>');
+      $(formBuy).children('button').attr("data-loading-text","<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>");
+      $(formBuy).append('<span class="product-wishlist"><a class="wishlist_toggle" rel="'+element.SKU+'"><span class="add heart-icon" rel="wishlist_text'+element.SKU+'"></span></a></span>');
+      $(formBuy).appendTo(cardProduct);
+  
+      $(article).append(cardProduct);
+      $('#contentProAjax').append(article);
+    });
+  } else {
+    $('#contentProAjax').append('Not found product!');
+  }
+}
