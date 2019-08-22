@@ -68,4 +68,11 @@
     }
 }
 @media (max-width:767px){}
-@media (max-width:575px){}
+@media (max-width:575px){
+    .wholesale-about{
+        .button{
+            width: 170px;
+            padding: 14px 11px
+        }
+    }
+}

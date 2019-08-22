@@ -24,6 +24,7 @@
 @import "./template/faq";
 @import "./template/contact";
 @import "./template/pendant";
+@import "./template/signup";
 
 /* ====================FAQ Page============================ */
 .bg-thumb-faqs{
@@ -215,6 +216,63 @@
                 }
                 .col-md-6:nth-child(3),.col-md-6:nth-child(4){
                     margin-top: 16px
+                }
+                .col-md-12:last-child{
+                    text-align: center;
+                }
+            }
+    }
+}
+/* ====================Contact Page============================ */
+.main-content-signup{
+    background: white;
+    padding: 85px 0;
+    .main-form-signup{
+        margin: 0 auto;
+        padding: 60px;
+        background-color: #ffffff;
+        h3{
+            color: #000000;
+            font-family: "Helvetica-Neue",sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+        }
+        p{
+            font-family: "Helvetica-Neue",sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        hr{
+            margin: 30px 0;
+        }
+        .wrapper-form{
+                .form-control{
+                    border-radius: 0;
+                    padding: 10px 20px;
+                    font-family: "Helvetica-Neue",sans-serif;
+                    font-size: 14px;
+                    line-height: 24px;
+                    height: auto;
+                }
+                textarea.form-control{
+                    margin-top: 20px;
+                }
+                .btn-outline-secondary{
+                    margin-top: 30px;
+                    border-radius: 0;
+                    border: 1px solid #000000;
+                    background-color: #000000;
+                    font-family: "Helvetica-Neue",sans-serif;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: #ffffff;
+                    padding: 10px 20px;
+                    min-width: 201px;
+                    &:hover{
+                        color: #000000;
+                        background-color: #ffffff;
+                    }
                 }
                 .col-md-12:last-child{
                     text-align: center;
