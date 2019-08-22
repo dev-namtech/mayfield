@@ -1,0 +1,19 @@
+@media (max-width:1199px){
+    .main-content-faqs{
+        text-align: left;
+        .card{
+            .card-header{
+                .btn{
+                    padding: 0 15px;
+                }
+            }
+            .card-body{
+                    padding: 20px 15px;
+                }
+            }
+        }
+        
+}
+@media (max-width:991px){}
+@media (max-width:676px){}
+@media (max-width:575px){}

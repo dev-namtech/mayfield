@@ -1,4 +1,7 @@
 .howtomeasue-main-content{
+    .basic-shapes{
+        padding:9px 0
+    }
     .how-to-measure{
         .big-text{
             font-size: 40px;
@@ -9,30 +12,32 @@
             color: #000000;
             font-size: 16px;
             line-height: 24px;
-            width:80%
+            width:100%
         }
-        .item-box .row{
-            margin-top: 50px
-        }
-        .content .item-box:nth-child(2),
-        .item-box:nth-child(2),
-        .item-box:nth-child(5){
-            background: #f1f2f2;
-        }
-        .content{
-            .item-box{
-                .description{
-                    padding-left: 60px;
-                }
-                .col-img{
-                    img{
-                        vertical-align: middle;
-                        border-style: none;
-                        width: 100%;
-                        padding: 30px 0px;
+        .item-box{
+            padding:40px 0;
+            &:nth-child(2),&:nth-child(5){
+                    background: #f1f2f2;
+                    height: 706px;
+                    .description{
+                        padding-left: 108px;
                     }
                 }
+            &:nth-child(3){
+                .col-img{
+                    height: 100%
+                }
             }
+            .col-img{
+                height: 626px;
+                background: white;
+                img{
+                    vertical-align: middle;
+                    border-style: none;
+                    width: 100%;
+                }
+            }
+            
         }
     }
     .button-download{
@@ -55,3 +60,106 @@
         }
     }
 }
+@media (max-width: 1199px){
+    .howtomeasue-main-content{
+        .basic-shapes{
+            margin:0;
+            .content{
+                background: #fff;
+                display: block;
+                width: 100%;
+                height: 78%;
+                padding: 30px;
+            }
+        }
+        .how-to-measure{
+            .item-box{
+                padding: 24px 0;
+                .big-text{
+                    width: 100%;
+                }
+                &:nth-child(5){
+                    height: 100%;
+                    width: 100%;
+                    padding: 1px 0;
+                    margin-top: 60px;
+                    background: white
+                }
+                &:nth-child(2){
+                    height: 100%;
+                    width: 100%;
+                    margin-top: 60px;
+                    background: #f1f2f2;
+                    .description{
+                        background: #f1f2f2
+                    }       
+                }
+                &:last-child{
+                    .button-download{
+                        width: 100%
+                    }
+                }
+                .col-img{
+                    width: 100%;
+                    height: 100%
+                }
+                .download-field{
+                    padding:0
+                }
+            }
+
+        }
+    }
+}
+@media (max-width:991px){
+    .body{
+        padding:0
+    }
+    .howtomeasue-main-content{
+        .basic-shapes{
+            .shapes-list{
+                margin:0;
+                .content{
+                    width: 100%;
+                    height: 78%
+                }
+            }       
+        }
+        .item-box{
+            &:last-child{
+                .button-download{
+                    width: 100%
+                }
+            }
+            .download-field{
+                padding:0
+            }
+        }
+    }
+}
+@media (max-width:767px){
+    .img-fluid{
+        width: 100%;
+        // height: 100%
+    }
+    .howtomeasue-main-content{
+        .basic-shapes{
+            .shapes-list{
+                margin:0;
+                .content{
+                    width: 100%;
+                    height: 78%
+                }
+            }     
+        }
+        .how-to-measure{
+            .item-box{
+                padding:24px 15px;
+                .download-field{
+                    padding:0
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px){}

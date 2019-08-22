@@ -11,17 +11,16 @@
         font-family: "Helvetica-Neue",sans-serif;
     }
     .our-clients{
-        background: url(./images/Rectangle.png);
+        background: #f1f2f2;
         width:100%;
         min-height: 502px;
         margin-top: 30px;
         .clients-name{
-            margin: 80px;
+            margin-top: 86px;
         }
     }
-    .our-clients .title,
-    .project-gallery .title{
-        padding-top:10px;
+    .our-clients .title{
+        padding-top:32px;
         width: 100%;
         font-family: "Helvetica-Neue",sans-serif;
         color: #000000;
@@ -41,4 +40,88 @@
             padding-right:80px
         }
     }
+    .item-box {
+        padding:40px;
+        &:nth-child(2){
+            background: #f1f2f2
+        }
+    }
 }
+@media (max-width: 1199px){
+    .section-header-content{
+        .description-content-coper{
+            width: 100%;
+        }
+    }
+    .content .item-box:nth-child(2){
+        background: white
+    }
+    .description,.col-img{
+        background: white;
+        padding: 0!important;
+        margin: 0
+    }
+   
+    .contact-us .form{
+        text-align: left;
+        margin: 0 15px;
+        .field-devide,.field-long,.field-devide-short{
+            margin-top: 32px;
+            display: inline-block;
+            margin-right: 5px;
+            width: 48%;
+            input{
+                display:block;
+                height: 35px;  
+                padding-top:20px;
+                width:100%
+            }
+            }
+        .field-long textarea{
+            display: block;
+            padding: 9px 0 0 18px;
+            input{
+                width:202%
+            }
+        }
+    }
+}
+@media (max-width: 991px){
+    body{
+        text-align: center;  
+    }
+    .section-header-content{
+        .description-content-coper{
+            width: 100%;
+        }
+    }
+    .description,.col-img{
+        background:white;
+        padding: 0!important;
+        margin: 0
+    }
+    .contact-us .form{
+        text-align: left;
+        margin: 0 15px;
+        .field-devide, .field-long, .field-devide-short {
+            width: 100%;
+            margin:8px 0;
+            input{
+                width: 100%;
+                padding:12px 0 0 15px;
+                margin: 0;
+                 }
+        }
+        .field-long textarea {
+            width: 100%;
+            padding:12px 0 0 15px;
+            margin: 0;
+        }
+        .button{
+            width:100%
+         }
+}
+}
+
+@media (max-width:767px){}
+@media (max-width:575px){}

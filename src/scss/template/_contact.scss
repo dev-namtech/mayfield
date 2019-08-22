@@ -1,0 +1,29 @@
+@media (max-width:1199px){
+
+}
+@media (max-width:991px){
+    
+}
+@media (max-width:767px){
+    .main-content-contact{
+        .main-form-contact{
+            .wrapper-form{
+                div:nth-child(2){
+                    margin-top: 16px
+                }
+            }
+        }
+    }
+}
+@media (max-width:575px){
+    .main-content-contact{
+        .main-form-contact{
+            padding:20px!important;
+            .wrapper-form{           
+                    .btn-outline-secondary{
+                    min-width: 100%!important
+                    }         
+            }          
+        }
+    }
+}
