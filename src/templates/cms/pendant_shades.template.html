@@ -1,0 +1,118 @@
+<div class="commercial-main-content">
+    <section class="section-header-content">
+        <div class="container">
+            [%breadcrumb%]
+                [%param *header%]
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                <meta itemprop="position" content="0" />
+                            </li>
+                [%/param%]
+                [%param *body%]
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                            </li>
+                [%/param%]
+                [%param *footer%]
+                        </ol>
+                    </nav>
+                [%/param%]
+            [%/breadcrumb%]
+            <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+            [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+            <div class="description-content-coper">
+                <p>With the list of 70+ standard lampshade shapes and sizes, available in a range of 45+ stock fabrics, lampshades can be made to your specific size and in almost any supplied fabric.</p>
+                <a href="#">Customer enquiry</a>
+            </div>
+            [%/if%]
+        </div>
+    </section>
+    <section class="bg-thumb-pendant-shades-page" style="margin-bottom: 80px;"></section>
+    <section class="project-gallery">
+        <div class="big-text text-center">Product Range</div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
+            <p class="text-center">Slim Cylinder</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Section Project Gallery -->
+    <section class="contact-us">
+        <div class="container">
+          <div class="row">
+            <div class="question col-xl-6 col-lg-12 col-md-12 col-sm-12">
+              <p class="big-text">Cumtom Made Enquiry</p>
+              <p>In need of custom-made light fittings? Contact us today!</p>
+            </div>
+            <div class="form col-xl-6 col-lg-12 col-md-12 col-sm-12">
+            <div class="form-name">Project Detail</div>             
+              <div class="field-devide">
+                  <label>First Name*</label>
+                  <input type="text">
+              </div>
+              <div class="field-devide-short">
+                  <label>Last Name*</label>
+                  <input type="text">
+              </div>                  
+              <div class="field-devide">
+                  <label>Contact Number*</label>
+                  <input type="text">
+              </div>
+              <div class="field-devide-short">
+                  <label>Email*</label>
+                  <input type="text">
+              </div>
+              <div class="field-long">
+                <label>Company Name*</label>
+                <input type="text">
+              </div>      
+              <div class="field-long">
+                <label>Website*</label>
+                <input type="text">
+              </div>  
+              <div class="field-long">
+                <label>Project Details*</label>
+                <textarea cols="65" rows="4" placeholder="Tell us about your project"></textarea>
+              </div>       
+              <div>
+                <a href="#" class="button">Submit</a>
+              </div>
+            </div>   
+            </div>
+          </div>
+        </div>  
+      </section>
+</div>
+</div>
