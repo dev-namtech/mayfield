@@ -47,3 +47,13 @@
         background-size: cover;
     }
 }
+@media (max-width:991px){
+    .section-collection-product{
+        .products-row{          
+            >article{
+                flex: 0 0 50%!important;
+                max-width: 50%!important;
+            }
+        }
+    }
+}

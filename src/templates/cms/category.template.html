@@ -50,35 +50,40 @@
                 <div class="row-filter">
                     <div class="col-left-filter">
                         <div class="wrapper-filter">
-                            <select class="js" name="Price" id="price">
-                                <option value="">Price</option>
-                            </select>
-                            <select class="js" name="Colour" id="colour">
-                                <option value="">Colour</option>
-                            </select>
-                            [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'114' start_category:'114'%]
-                                [%param *header%]
-                                    <select class="js" name="filter" onchange="window.location.href=this.value">
-                                    <option value="">Style</option>
-                                [%/param%]
-                                [%param *level_1%]
-                                    <option value="[@url@]">[@name@]</option>
-                                    [%if [@next_level@]%][@next_level@][%/if%]
-                                [%/param%]
-                                [%param *level_2%]
-                                    <option value="[@url@]">[@name@]</option>
-                                    [%if [@next_level@]%][@next_level@][%/if%]
-                                [%/param%]
-                                [%param *level_3%]
-                                    <option value="[@url@]">[@name@]</option>
-                                [%/param%]
-                                [%param *footer%]
-                                    </select>
-                                [%/param%]
-                            [%/content_menu%]
-                            <select class="js" name="Size " id="size">
-                                <option value="">Size</option>
-                            </select>
+                            <div class="filter-group">
+                                <select class="js" name="Price" id="price">
+                                    <option value="">Price</option>
+                                </select>
+                                <select class="js" name="Colour" id="colour">
+                                    <option value="">Colour</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                    [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'114' start_category:'114'%]
+                                    [%param *header%]
+                                        <select class="js" name="filter" onchange="window.location.href=this.value">
+                                        <option value="">Style</option>
+                                    [%/param%]
+                                    [%param *level_1%]
+                                        <option value="[@url@]">[@name@]</option>
+                                        [%if [@next_level@]%][@next_level@][%/if%]
+                                    [%/param%]
+                                    [%param *level_2%]
+                                        <option value="[@url@]">[@name@]</option>
+                                        [%if [@next_level@]%][@next_level@][%/if%]
+                                    [%/param%]
+                                    [%param *level_3%]
+                                        <option value="[@url@]">[@name@]</option>
+                                    [%/param%]
+                                    [%param *footer%]
+                                        </select>
+                                    [%/param%]
+                                [%/content_menu%]
+                                <select class="js" name="Size " id="size">
+                                    <option value="">Size</option>
+                                </select>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-right-filter">
@@ -108,7 +113,7 @@
             </section>
             <section class="section-collection-product main-container">
             <div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
-                <div id="contentPro" class="row products-row">
+                <div id="contentPro" class="row products-row">                   
 					[%/param%]
                     [%param *footer%]
 				</div>

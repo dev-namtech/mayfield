@@ -1,6 +1,8 @@
 article{
     .card-product{
         position: relative;
+        width: fit-content;
+        margin: 0 auto;
         .thumbnail-image{
             img{
                 margin: 0 auto;

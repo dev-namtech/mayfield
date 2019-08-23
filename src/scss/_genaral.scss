@@ -267,6 +267,12 @@ button.slick-prev{
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+        .col-left-filter{
+            .filter-group{
+                display: flex;
+                margin-right:15px
+            }
+        }
         .col-right-filter{
             display: -webkit-box;
             display: -ms-flexbox;
@@ -665,5 +671,43 @@ button.slick-prev{
                 font-family: "CopernicusTrial-BookItalic",sans-serif;
             }
         }
+    }
+}
+@media (max-width:1199px){
+    .section-filter{
+        text-align: left;
+        .row-filter{
+            flex-direction: column;
+            .col-right-filter{
+                flex-direction: column;
+                .wrapper-filter{
+                    flex-direction: column;
+                    p{
+                        margin:16px 0
+                    }
+                }            
+            }
+        }
+    }
+}
+@media (max-width:767px){
+    .big-text{
+        font-size:32px!important
+    }
+    .col-left-filter{
+        .wrapper-filter{
+            flex-direction: column;
+            .filter-group:not(:first-child){
+                display: flex;
+                margin-top: 10px
+            }
+        }      
+    }
+}
+@media (max-width:575px){
+    .col-left-filter{
+        .wrapper-filter{
+            // flex-direction: column;
+        }      
     }
 }
