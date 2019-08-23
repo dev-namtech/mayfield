@@ -25,7 +25,8 @@
                 content: url(../images/arrow_down_select.png);
                 position: absolute;
                 right: 18px;
-                top: 7px;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
         a.button{

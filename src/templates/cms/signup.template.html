@@ -36,7 +36,7 @@
                 <input type="hidden" name="inp-submit" value="y" />
                 <input type="hidden" name="inp-opt_in" value="y" />
                 <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-left">
                         <div class="row">
                             
                             <div class="col-sm-12 col-md-6 col-lg-6"><label for="">First Name*</label><input type="text"></div>
@@ -77,11 +77,18 @@
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12">
                                 <label for="">Country*</label>
-                                <input type="text">
+                                <div class="country-select">
+                                    <select name="" id="">
+                                        <option>Australia</option>
+                                        <option>France</option>
+                                        <option>Italy</option>
+                                        <option>Japan</option>
+                                    </select>               
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="col-sm-12 col-md-6 col-lg-6 form-right">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12"><label for="">ABN/ACN</label><input type="text"></div>
                         </div>
@@ -89,14 +96,14 @@
                             <div class="col-sm-12 col-md-12 col-lg-12"><label for="">Website URL</label><input type="text"></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-12 col-md-12 col-lg-12 checkbox-group">
                                 <label for="">Business</label>
-                                <div class="checkbox-group">
+                                <div class="checkbox-combo">
                                     <div class="checkbox-items"><input type="checkbox" name="" id="">Retailer</div>  
                                     <div class="checkbox-items"><input type="checkbox" name="" id="">Online Retailer</div>                                   
                                     <div class="checkbox-items"><input type="checkbox" name="" id="">Lighting Distributor</div>  
                                 </div>
-                                <div class="checkbox-group">
+                                <div class="checkbox-combo">
                                     <div class="checkbox-items"><input type="checkbox" name="" id="">Architect</div>  
                                     <div class="checkbox-items"><input type="checkbox" name="" id="">Interior Designer</div>  
                                     <div class="checkbox-items"><input type="checkbox" name="" id="">Property Staging</div>  
