@@ -20,50 +20,6 @@
 			</section>
 		</div>
 		<div class="row mt-2">
-				[%discount_products id:'[@SKU@]' template:'' show_all:'1' limit:'100'%]
-					[%param header%]
-						<div class="col-12">
-						<div class="alert alert-success">
-							<h3 class="h2">BONUS ITEMS! <small>Buy [@name@] Today &amp; Receive These For FREE!</small></h3>
-								<div class="row products-row">
-						[%/param%]
-						[%param *body%]
-								<div class="col-8 col-sm-6 col-md-3">
-									<div class="card thumbnail card-body">
-											<a href="[%url type:'item ' id:'[@SKU@]'/%]" class="thumbnail-image pb-2"><img src="[@thumb@]" class="product-image img-fluid" alt="[@name@]"></a>
-											<p class="card-title h4"><a href="[%URL type:'item' id:'[@SKU@]'/%]">[%format type:'text' maxlength:'150' rmhtml:'1'%][@name@][%/FORMAT%]</a></p>
-											<div class="text-success"><strong>FREE</strong> With This Item!</div>
-									</div>
-								</div>
-						[%/param%]
-						[%param footer%]
-							</div>
-						</div>
-						</div>
-					[%/param%]
-				[%/discount_products%]
-				[%free_gifts id:'[@SKU@]'%]
-					[%param *header%]
-						<div class="col-12">
-						<div class="alert alert-success">
-							<h3 class="h2">FREEBIES! <small>Buy [@name@] Today &amp; Choose From One Of These FREE Gifts!</small></h3>
-								<div class="row products-row">
-					[%/param%]
-					[%param *body%]
-							<div class="col-8 col-sm-6 col-md-3">
-								<div class="card thumbnail card-body">
-									<a href="[%url type:'item ' id:'[@SKU@]'/%]" class="thumbnail-image pb-2"><img src="[@thumb@]" class="product-image img-fluid" alt="[@name@]"></a>
-										<p class="card-title h4"><a href="[%URL type:'item' id:'[@SKU@]'/%]">[%format type:'text' maxlength:'150' rmhtml:'1'%][@name@][%/FORMAT%]</a></p>
-										<div class="text-success"><strong>FREE</strong> With This Item!</div>
-								</div>
-							</div>
-					[%/param%]
-					[%param *footer%]
-							</div>
-						</div>
-						</div>
-					[%/param%]
-				[%/free_gifts%]
 				<div class="col-12 also-like-product-page">
 					[%crosssell id:'[@SKU@]' limit:'4' template:'' show_all:'1'%]
 						[%param header%]
@@ -74,7 +30,7 @@
 						</div>
 						[%/param%]
 						[%param *ifempty%]
-							[%random_products category:'' template:'' limit:'4'%]
+							[%random_products category:'106' template:'' limit:'4'%]
 								[%param *header%]
 								<h3 class="h2 title-also-like">You May Also Like</h3>
 								<div class="row products-row also-like">

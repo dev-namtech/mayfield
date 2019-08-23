@@ -207,10 +207,13 @@ button.slick-prev{
                 width: fit-content;
                 float: inherit;
                 height: fit-content;
-                img{
-                    width: 104px!important;
-                    height: auto;
-                }
+                // img{
+                //     width: 104px!important;
+                //     height: auto;
+                // }
+            }
+            .description{
+                font-size: 20px;
             }
         }
         .footer{
@@ -586,72 +589,81 @@ button.slick-prev{
     background-image: url('../images/bg-pendant.png');
     background-position: center;
     background-size: cover;
- }
+}
+.noverlay.active{
+    display: block;
+    z-index: 1;
+    width: 100vw;
+    background-color: rgba(216, 216, 216, 0.4);
+}
+
  .image-pendant,
-            .title-pendant{
-                cursor: pointer;
+.title-pendant{
+    cursor: pointer;
+}
+.modal-pendant{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.4);
+    z-index: 99;
+    display: none;
+    &.open{
+        display: block;
+    }
+    .modal-pendant-dialog{
+        position: absolute;
+        width: 90%;
+        height: 90vh;
+        top: 5%;
+        left: 5%;
+        background-color: white;
+        padding: 50px 130px 80px;
+        .close{
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+        .modal-title{
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        .row-new{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        button.slick-next,
+        button.slick-prev{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .content-des{
+            h2{
+                font-size: 22px;
+                line-height: normal;
+                margin-bottom: 20px;
+                font-weight: 600;
             }
-            .modal-pendant{
-              position: fixed;
-              top: 0;
-              left: 0;
-              bottom: 0;
-              right: 0;
-              background-color: rgba(0,0,0,.4);
-              z-index: 99;
-              display: none;
+            p{
+                font-size: 14px;
+                line-height: 1.79;
+                margin-bottom: 20px;
+                margin-top: 0;
+                font-weight: normal;
             }
-            .modal-pendant.open{
-              display: block;
+            a{
+                font-size: 24px;
+                line-height: 2.08;
+                color: #000;
+                text-decoration: underline;
+                display: block;
+                font-family: "CopernicusTrial-BookItalic",sans-serif;
             }
-            .modal-pendant .modal-pendant-dialog{
-              position: absolute;
-              width: 90%;
-              height: 90vh;
-              top: 5%;
-              left: 5%;
-              background-color: white;
-              padding: 50px 130px 80px;
-            }
-            .modal-pendant .modal-pendant-dialog .close{
-              position: absolute;
-              right: 30px;
-              top: 20px;
-            }
-            .modal-pendant .modal-pendant-dialog .modal-title{
-              font-size: 22px;
-              font-weight: 600;
-              margin-bottom: 40px;
-            }
-            .modal-pendant .modal-pendant-dialog .row-new{
-              display: flex;
-              flex-wrap: wrap;
-              margin-right: -15px;
-              margin-left: -15px;
-            }
-            .modal-pendant .modal-pendant-dialog button.slick-next,
-            .modal-pendant .modal-pendant-dialog button.slick-prev:before{
-              top: 50%;
-              transform: translateY(-50%);
-            }
-            .modal-pendant .modal-pendant-dialog .content-des h2{
-              font-size: 22px;
-              line-height: normal;
-              margin-bottom: 20px;
-              font-weight: 600;
-            }
-            .modal-pendant .modal-pendant-dialog .content-des p{
-              font-size: 14px;
-              line-height: 1.79;
-              margin-bottom: 20px;
-              margin-top: 0;
-              font-weight: normal;
-            }
-            .modal-pendant .modal-pendant-dialog .content-des a{
-              font-size: 24px;
-              line-height: 2.08;
-              color: #000;
-              text-decoration: underline;
-              display: block;
-              font-family: "CopernicusTrial-BookItalic",sans-serif;
-            }
+        }
+    }
+}
