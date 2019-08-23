@@ -24,50 +24,73 @@
             <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
             [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
             <div class="description-content-coper">
-                <p>With the list of 70+ standard lampshade shapes and sizes, available in a range of 45+ stock fabrics, lampshades can be made to your specific size and in almost any supplied fabric.</p>
-                <a href="#">Customer enquiry</a>
+              [@content_description1@]
+              [@content_description2@]
+              [@content_description3@]
             </div>
             [%/if%]
         </div>
     </section>
-    <section class="bg-thumb-pendant-shades-page" style="margin-bottom: 80px;"></section>
-    <section class="project-gallery">
-        <div class="big-text text-center">Product Range</div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
+    <section class="bg-thumb-pendant-shades-page [%asset_url type:'content' id:'[@content_id@]' default:'d-none'/%]" style="margin-bottom: 80px; background-image: url([%asset_url type:'content' id:'[@content_id@]' default:''/%])"></section>
+    [%thumb_list type:'products' limit:'10'%]
+        [%param *header%]
+        <section class="project-gallery">
+          <div class="big-text text-center">Product Range</div>
+          <div class="row">
+        [%/param%]
+        [%param *body%]
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <img onclick="openModal('#modal[@SKU@]');" class="image-pendant img-fluid" src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" alt="Product main image">
+            <p class="text-center title-pendant" onclick="openModal('#modal[@SKU@]');">[@model@]</p>
+            <div class="modal-pendant" id="modal[@SKU@]">
+              <div class="modal-pendant-dialog">
+                  <div class="modal-pendant-content">
+                    <div class="modal-pendant-header">
+                      <h4 class="modal-title" id="exampleModalLongTitle">[@model@]</h4>
+                      <button type="button" class="close" onclick="closeModal('#modal[@SKU@]')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-pendant-body">
+                      <div class="row-new">
+                        <div class="col-md-8">
+                          <div class="content-slide-img">
+                            <div class="item-img">
+                              <img class="img-fluid" src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" alt="Product main image">
+                            </div>
+                            [%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]
+                            [%param *body%]
+                            <div class="item-img">
+                              <img src="[@full_image@]" class="img-fluid" alt="Product main image">
+                            </div>
+                            [%/param%]
+                            [%/THUMBNAILS%]
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="content-des">
+                            [%product sku:'[@sku@]'%]
+                              [%param *body%]
+                              [@description@]
+                              [%/param%]
+                            [%/product%]
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <img class="img-fluid" src="/assets/themes/skeletal/images/imcnv.png" alt="KFC_Mascot">
-            <p class="text-center">Slim Cylinder</p>
-            </div>
-        </div>
-    </section>
+          </div>
+        [%/param%]
+        [%param *footer%]
+          </div>
+        </section>
+        [%/param%]
+        [%param *ifempty%]
+            No Results Found
+        [%/param%]
+    [%/thumb_list%]
     <!-- End Section Project Gallery -->
     <section class="contact-us">
         <div class="container">

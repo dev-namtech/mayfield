@@ -38,7 +38,8 @@
         <input type="hidden" id="contentID" value="[@content_id@]"/>
 
 		<!-- Thumbnail -->
-        <section class="bg-thumb-collection-page"></section>
+        <section style="background-image: url([%asset_url type:'content' id:'[@content_id@]' default:''/%])" class="bg-thumb-collection-page [%asset_url type:'content' id:'[@content_id@]' default:'d-none'/%]">
+        </section>
 		
 		[%thumb_list type:'products' limit:'[@config:THUMB_LIMIT@]'%]
             [%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
@@ -55,14 +56,26 @@
                             <select class="js" name="Colour" id="colour">
                                 <option value="">Colour</option>
                             </select>
-                            <select class="js" name="filter " id="style">
-                                <option value="">Style</option>
-                                <option value="115">Contemporary</option>
-                                <option value="116">Mid Century</option>
-                                <option value="117">Country Coastal</option>
-                                <option value="118">Classic</option>
-                                <option value="119">Traditional</option>
-                            </select>
+                            [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'114' start_category:'114'%]
+                                [%param *header%]
+                                    <select class="js" name="filter" onchange="window.location.href=this.value">
+                                    <option value="">Style</option>
+                                [%/param%]
+                                [%param *level_1%]
+                                    <option value="[@url@]">[@name@]</option>
+                                    [%if [@next_level@]%][@next_level@][%/if%]
+                                [%/param%]
+                                [%param *level_2%]
+                                    <option value="[@url@]">[@name@]</option>
+                                    [%if [@next_level@]%][@next_level@][%/if%]
+                                [%/param%]
+                                [%param *level_3%]
+                                    <option value="[@url@]">[@name@]</option>
+                                [%/param%]
+                                [%param *footer%]
+                                    </select>
+                                [%/param%]
+                            [%/content_menu%]
                             <select class="js" name="Size " id="size">
                                 <option value="">Size</option>
                             </select>
@@ -71,14 +84,11 @@
                     <div class="col-right-filter">
                         <div class="wrapper-filter">
 							<p>View: </p>
-							<form method="get" action="[@config:CURRENT_URL@]">
-								<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
-								<select class="js" name="Show" id="show" onChange="return this.form.submit();">
-									<option value="20">Show 20</option>
-									<option value="50">Show 50</option>
-									<option value="100">Show all</option>
-								</select>
-							</form>
+							<select class="js" name="Show" id="show">
+                                <option value="4">Show 20</option>
+                                <option value="8">Show 50</option>
+                                <option value="100">Show all</option>
+                            </select>
                         </div>
                         <div class="wrapper-filter">
 							<p>Sort by: </p>
@@ -107,19 +117,17 @@
             [%IF [@total_results@] > [@config:thumb_limit@]%]
                 <div class="row">
                     <div class="col-12">
-                        <hr aria-hidden="true"/>
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
                                 [%paging limit:'3'%]
-                                    [%param *previous_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go back one page"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>[%/param%]
-                                    [%param *goback_pages%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
-                                    [%param *current_page%]<li class="page-item active"><a class="page-link" href="[@url@]" aria-label="Current page">[@page@]</a></li>[%/param%]
-                                    [%param *gonext_pages%]<li><a href="[@url@]" class="page-link" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
-                                    [%param *next_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go forward one page"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>[%/param%]
+                                    [%param *previous_page%]<li class="page-pag-item page-prev-item"><a class="page-pag-link" href="[@url@]" aria-label="Go back one page">Prev</a></li>[%/param%]
+                                    [%param *goback_pages%]<li class="page-pag-item"><a class="page-pag-link" href="[@url@]" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+                                    [%param *current_page%]<li class="page-pag-item active"><a class="page-pag-link" href="[@url@]" aria-label="Current page">[@page@]</a></li>[%/param%]
+                                    [%param *gonext_pages%]<li><a href="[@url@]" class="page-pag-link" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+                                    [%param *next_page%]<li class="page-pag-item page-next-item"><a class="page-pag-link" href="[@url@]" aria-label="Go forward one page">Next</a></li>[%/param%]
                                 [%/paging%]
                             </ul>
                         </nav>
-                        <hr aria-hidden="true"/>
                     </div>
                 </div>
             [%/IF%]
