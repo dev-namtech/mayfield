@@ -207,10 +207,13 @@ button.slick-prev{
                 width: fit-content;
                 float: inherit;
                 height: fit-content;
-                img{
-                    width: 104px!important;
-                    height: auto;
-                }
+                // img{
+                //     width: 104px!important;
+                //     height: auto;
+                // }
+            }
+            .description{
+                font-size: 20px;
             }
         }
         .footer{
@@ -586,5 +589,10 @@ button.slick-prev{
     background-image: url('../images/bg-pendant.png');
     background-position: center;
     background-size: cover;
- }
- 
+}
+.noverlay.active{
+    display: block;
+    z-index: 1;
+    width: 100vw;
+    background-color: rgba(216, 216, 216, 0.4);
+}

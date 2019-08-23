@@ -178,13 +178,13 @@
 						<div class="col-md-6">
 							<ul class="list-description">
 								<li><strong>Description:</strong> [@description@]</li>
-								<li><strong>Style:</strong> [@misc11@]</li>
+								[%if [@misc11@] %]<li><strong>Style:</strong> [@misc11@]</li>[%/if%]
 								<li><strong>SKU:</strong> [@SKU@]</li>
-								<li><strong>Bulb Type:</strong> [@misc1@]</li>
-								<li><strong>Voltage:</strong> [@misc2@]</li>
-								<li><strong>Dimmeable:</strong> [%if [@misc3@] eq 'y' %]Yes[%else%]No[%/if%]</li>
-								<li><strong>Assembly:</strong> [@misc4@]</li>
-								<li><strong>Commercial Use:</strong> [%if [@misc5@] eq 'y' %]Yes[%else%]No[%/if%]</li>
+								[%if [@misc1@] %]<li><strong>Bulb Type:</strong> [@misc1@]</li>[%/if%]
+								[%if [@misc2@] %]<li><strong>Voltage:</strong> [@misc2@]</li>[%/if%]
+								[%if [@misc3@] %]<li><strong>Dimmeable:</strong> [%if [@misc3@] eq 'y' %]Yes[%else%]No[%/if%]</li>[%/if%]
+								[%if [@misc4@] %]<li><strong>Assembly:</strong> [@misc4@]</li>[%/if%]
+								[%if [@misc5@] %]<li><strong>Commercial Use:</strong> [%if [@misc5@] eq 'y' %]Yes[%else%]No[%/if%]</li>[%/if%]
 							</ul>
 						</div>
 						<div class="col-md-6">
@@ -194,13 +194,12 @@
 										<li><strong>[@itmspec_name@]:</strong> [@itmspecval_value@]</li>
 									[%/param%]
 								[%/item_specifics%]
-								<li><strong>Base Dimensions:</strong> [@SKU@]</li>
-								<li><strong>Globe Included:</strong> [%if [@misc6@] eq 'y' %]Yes[%else%]No[%/if%]</li>
-								<li><strong>Number of lights:</strong> [@misc7@]</li>
-								<li><strong>Switch:</strong> [@misc8@]</li>
-								<li><strong>Certifications:</strong> [@misc9@]</li>
-								<li><strong>Care Instructions:</strong> [@misc10@]</li>
-								<li><strong>Warranty:</strong> [@warranty@]</li>
+								[%if [@misc6@] %]<li><strong>Globe Included:</strong> [%if [@misc6@] eq 'y' %]Yes[%else%]No[%/if%]</li>[%/if%]
+								[%if [@misc7@] %]<li><strong>Number of lights:</strong> [@misc7@]</li>[%/if%]
+								[%if [@misc8@] %]<li><strong>Switch:</strong> [@misc8@]</li>[%/if%]
+								[%if [@misc9@] %]<li><strong>Certifications:</strong> [@misc9@]</li>[%/if%]
+								[%if [@misc10@] %]<li><strong>Care Instructions:</strong> [@misc10@]</li>[%/if%]
+								[%if [@warranty@] %]<li><strong>Warranty:</strong> [@warranty@]</li>[%/if%]
 							</ul>
 						</div>
 					</div>

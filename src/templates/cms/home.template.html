@@ -57,7 +57,7 @@
 		<!-- Arrivals -->
 		<section class="section-arrivals main-container">
 			<div class="container-fluid">
-				[%new_arrivals template:'arrivals' limit:'5'%]
+				[%thumb_list type:'products' template:'arrivals' filter_category:'105' limit:'5'%]
 					[%param *header%]
 						<h2 class="title">New Arrivals</h2>
 						<div class="row">
@@ -68,7 +68,7 @@
 					[%param *ifempty%]
 						<p>No new arrivals found, check back soon!</p>
 					[%/param%]
-				[%/new_arrivals%]
+				[%/thumb_list%]
 			</div>
 		</section>
 		<!-- #Arrivals -->

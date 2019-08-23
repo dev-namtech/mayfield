@@ -132,103 +132,222 @@ jQuery(document).ready(function() {
       })
   });
 
-  // $("#style").change(function(){
-  //   if($('#contentID').val() != $(this).val())
-  //     valCate = [$('#contentID').val(), $(this).val()]
-  //   else
-  //     valCate = $(this).val();
-  //   var dataStyle = {
-  //     "Filter":{
-  //       "CategoryID": valCate,
-  //       "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
-  //     }
-  //   };
-  //   $.ajax({
-  //     async: true,
-  //     crossDomain: true,
-  //     url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
-  //     headers: {
-  //       'accept': 'application/json',
-  //       'netoapi_action':'GetItem',
-  //       'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
-  //       'content-type': 'application/json',
-  //       'cache-control': 'no-cache'
-  //     },
-  //     method: 'POST',
-  //     dataType: 'json',
-  //     processData: false,
-  //     data: JSON.stringify(dataStyle),
-  //     success: function(response){
-  //       $('#contentPro').hide();
-  //       loadThumbProduct(response);
-  //     }
-  //   });
-  // });
+$('.slider .img-slider').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    prevArrow: $('.prev'),
+    nextArrow: $('.next'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+});
 
-  // $("#show").change(function(){
-  //   valCate = $('#contentID').val();
-  //   valCount = $(this).val();
-  //   var dataStyle = {
-  //     "Filter":{
-  //       "CategoryID": valCate,
-  //       "Limit": valCount,
-  //       "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
-  //     }
-  //   };
-  //   $.ajax({
-  //     async: true,
-  //     crossDomain: true,
-  //     url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
-  //     headers: {
-  //       'accept': 'application/json',
-  //       'netoapi_action':'GetItem',
-  //       'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
-  //       'content-type': 'application/json',
-  //       'cache-control': 'no-cache'
-  //     },
-  //     method: 'POST',
-  //     dataType: 'json',
-  //     processData: false,
-  //     data: JSON.stringify(dataStyle),
-  //     success: function(response){
-  //       $('#contentPro').hide();
-  //       loadThumbProduct(response);
-  //     }
-  //   });
-  // });
+$('.slider .img-slider1').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    prevArrow: $('.prev1'),
+    nextArrow: $('.next1'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+});
+
+$('.slider .img-slider2').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    prevArrow: $('.prev2'),
+    nextArrow: $('.next2'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+});
+
+$('.slider .img-slider3').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    prevArrow: $('.prev3'),
+    nextArrow: $('.next3'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+});
+
+$('.slider .img-slider4').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    prevArrow: $('.prev4'),
+    nextArrow: $('.next4'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+});
+changePositionElement();
+
+$(window).resize(function() {
+  changePositionElement();
+})
+
+function changePositionElement() {
+  let productRange = $('.lampshades-main-content .product-range')
+  if (productRange.length && $(window).width() <= 991) {
+    let listItem = productRange.find('.row');
+    for (let i = 0; i < listItem.length; i++) {
+      let item = $(listItem[i]);
+      if(item.find('.col-lg-4.col-sm-12 img').length) {
+        item.find('.info').after(item.find('.col-lg-4.col-sm-12 img'));
+      }
+    }
+  }
+  else if (productRange.length && $(window).width() > 991) {
+    let listItem = productRange.find('.row');
+    for (let i = 0; i < listItem.length; i++) {
+      let item = $(listItem[i]);
+      if(item.find('.col-slider .img-fluid').length) {
+        item.find('.col-lg-4.col-sm-12').appendTo(item.find('.col-slider .img-fluid'));
+      }
+    }
+  }
+}
 
 
-  // jQuery('.modal-pendant').click(function(e) {
-  //   console.log('111');
-  //   var objectEl = jQuery(".modal-pendant .modal-pendant-dialog");
-  //   if (objectEl.length  > 0 ) {
-  //       if (!objectEl.is(e.target) && objectEl.has(e.target).length === 0) {
-  //         jQuery(this).removeClass('open');
-  //       }
-  //   }
-  // });
+// $("#show").change(function(){
+//   valCate = $('#contentID').val();
+//   valCount = $(this).val();
+//   var dataStyle = {
+//     "Filter":{
+//       "CategoryID": valCate,
+//       "Limit": valCount,
+//       "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
+//     }
+//   };
+//   $.ajax({
+//     async: true,
+//     crossDomain: true,
+//     url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+//     headers: {
+//       'accept': 'application/json',
+//       'netoapi_action':'GetItem',
+//       'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+//       'content-type': 'application/json',
+//       'cache-control': 'no-cache'
+//     },
+//     method: 'POST',
+//     dataType: 'json',
+//     processData: false,
+//     data: JSON.stringify(dataStyle),
+//     success: function(response){
+//       $('#contentPro').hide();
+//       loadThumbProduct(response);
+//     }
+//   });
+// });
+
+  $('.new-style-popup .npopup-body').bind("DOMSubtreeModified",function(){
+    if($('.new-style-popup .successaddmessageclear').length){
+      $('.noverlay').addClass('active');
+    } else {
+      $('.noverlay').removeClass('active');
+    }
+  });
 
 });
 
 function openModal(id){
-  if(!jQuery(id).hasClass('open')){
-    jQuery(id).addClass('open');
-    jQuery('.modal-pendant.open .content-slide-img').slick({
-      dots: false,
-      arrows: true,
-      loop: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      auto: false,
-    });
-  }
+if(!jQuery(id).hasClass('open')){
+  jQuery(id).addClass('open');
+  jQuery('.modal-pendant.open .content-slide-img').slick({
+    dots: false,
+    arrows: true,
+    loop: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    auto: false,
+  });
+}
 }
 function closeModal(id){
-  if(jQuery(id).hasClass('open')){
-    jQuery(id).removeClass('open');
-  }
+if(jQuery(id).hasClass('open')){
+  jQuery(id).removeClass('open');
+  // jQuery('.modal-pendant.open .content-slide-img').slick({
+  //   dots: false,
+  //   arrows: true,
+  //   loop: false,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   auto: false,
+  // });
 }
-
+}
 function loadThumbProduct(data) {
 $('#contentProAjax').empty();
 if(data.Item.length > 0){
