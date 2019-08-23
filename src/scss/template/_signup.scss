@@ -1,21 +1,35 @@
 @media (max-width:1199px){
     .wrapper-form{
-        .col-sm-12{
+        .form-left{
             margin-top:0px!important;
             input[type=text]{
                 margin-bottom:16px
-            }
+            }         
+        }   
+        .form-right{
+            margin-top:35px!important;
+            input[type=text]{
+                margin-bottom:16px
+            }  
             .checkbox-group{
                 margin: 0!important;
+                label{
+                    display: block
+                }
                 .checkbox-items{
                     width: 100%!important;
                     text-align: left
-                }          
+                }   
+                .checkbox-combo{
+                    display: inline-block;
+                    width: 48%;
+                }       
             }   
             .btn-outline-secondary{
                 margin-top:24px
             }
-    }     
+            
+        }  
     }
 }
 @media(max-width:767px){
