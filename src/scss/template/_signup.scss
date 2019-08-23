@@ -1,0 +1,35 @@
+@media (max-width:1199px){
+    .wrapper-form{
+        .col-sm-12{
+            margin-top:0px!important;
+            input[type=text]{
+                margin-bottom:16px
+            }
+            .checkbox-group{
+                margin: 0!important;
+                .checkbox-items{
+                    width: 100%!important;
+                    text-align: left
+                }          
+            }   
+            .btn-outline-secondary{
+                margin-top:24px
+            }
+    }     
+    }
+}
+@media(max-width:767px){
+    .wrapper-form{
+        .checkbox-group{
+            margin: 0!important;
+            .checkbox-items{
+                width: 100%!important;
+                text-align: left
+            }
+        }
+        .btn-outline-secondary{
+            width: 100%
+        }
+        
+    }
+}
