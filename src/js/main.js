@@ -168,39 +168,102 @@ jQuery(document).ready(function() {
       nextArrow: $('.next4')
   });
 
-  $("#style").change(function(){
-    if($('#contentID').val() != $(this).val())
-      valCate = [$('#contentID').val(), $(this).val()]
-    else
-      valCate = $(this).val();
-    var dataStyle = {
-      "Filter":{
-        "CategoryID": valCate,
-        "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
-      }
-    };
-    $.ajax({
-      async: true,
-      crossDomain: true,
-      url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
-      headers: {
-        'accept': 'application/json',
-        'netoapi_action':'GetItem',
-        'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
-        'content-type': 'application/json',
-        'cache-control': 'no-cache'
-      },
-      method: 'POST',
-      dataType: 'json',
-      processData: false,
-      data: JSON.stringify(dataStyle),
-      success: function(response){
-        $('#contentPro').hide();
-        loadThumbProduct(response);
-      }
-    });
-  });
+  // $("#style").change(function(){
+  //   if($('#contentID').val() != $(this).val())
+  //     valCate = [$('#contentID').val(), $(this).val()]
+  //   else
+  //     valCate = $(this).val();
+  //   var dataStyle = {
+  //     "Filter":{
+  //       "CategoryID": valCate,
+  //       "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
+  //     }
+  //   };
+  //   $.ajax({
+  //     async: true,
+  //     crossDomain: true,
+  //     url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+  //     headers: {
+  //       'accept': 'application/json',
+  //       'netoapi_action':'GetItem',
+  //       'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+  //       'content-type': 'application/json',
+  //       'cache-control': 'no-cache'
+  //     },
+  //     method: 'POST',
+  //     dataType: 'json',
+  //     processData: false,
+  //     data: JSON.stringify(dataStyle),
+  //     success: function(response){
+  //       $('#contentPro').hide();
+  //       loadThumbProduct(response);
+  //     }
+  //   });
+  // });
+
+  // $("#show").change(function(){
+  //   valCate = $('#contentID').val();
+  //   valCount = $(this).val();
+  //   var dataStyle = {
+  //     "Filter":{
+  //       "CategoryID": valCate,
+  //       "Limit": valCount,
+  //       "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
+  //     }
+  //   };
+  //   $.ajax({
+  //     async: true,
+  //     crossDomain: true,
+  //     url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+  //     headers: {
+  //       'accept': 'application/json',
+  //       'netoapi_action':'GetItem',
+  //       'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+  //       'content-type': 'application/json',
+  //       'cache-control': 'no-cache'
+  //     },
+  //     method: 'POST',
+  //     dataType: 'json',
+  //     processData: false,
+  //     data: JSON.stringify(dataStyle),
+  //     success: function(response){
+  //       $('#contentPro').hide();
+  //       loadThumbProduct(response);
+  //     }
+  //   });
+  // });
+
+
+  // jQuery('.modal-pendant').click(function(e) {
+  //   console.log('111');
+  //   var objectEl = jQuery(".modal-pendant .modal-pendant-dialog");
+  //   if (objectEl.length  > 0 ) {
+  //       if (!objectEl.is(e.target) && objectEl.has(e.target).length === 0) {
+  //         jQuery(this).removeClass('open');
+  //       }
+  //   }
+  // });
+
 });
+
+function openModal(id){
+  if(!jQuery(id).hasClass('open')){
+    jQuery(id).addClass('open');
+    jQuery('.modal-pendant.open .content-slide-img').slick({
+      dots: false,
+      arrows: true,
+      loop: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      auto: false,
+    });
+  }
+}
+function closeModal(id){
+  if(jQuery(id).hasClass('open')){
+    jQuery(id).removeClass('open');
+  }
+}
 
 function loadThumbProduct(data) {
   $('#contentProAjax').empty();

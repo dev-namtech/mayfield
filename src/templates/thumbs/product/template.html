@@ -50,18 +50,22 @@
 			[%/if%]
 		</form>
 		<!-- /Purchase Logic -->
-		<div class="savings-container d-none">
-			[%if [@inpromo@]%]
-				<span class="badge badge-danger">On Sale</span>
-			[%/if%]
-			[%if [@save@] > 0 AND ![@has_child@] %]
-				<span class="badge badge-warning">
-				[%format type:'percent'%][@save@][%/format%] OFF</span>
-			[%/if%]
-			[%if [@save@] > 0%]
-				<span class="badge badge-secondary">RRP [%format type:'currency'%][@retail@][%/format%]</span>
-			[%/if%]
-		</div>
+		[%if [@inpromo@]%]
+			<span class="label-pro label-onsalse">On Sale</span>
+		[%/if%]
+		[%if [@instock@] like 0 %]
+			<span class="label-pro label-outofstock">Out of Stock</span>
+		[%else%]
+			[%content_path id:'[@inventory_id@]' type:'category' limit:'1' %]
+				[%param *body%]
+				[%if [@content_id@] eq '105' %]
+				<span class="label-pro label-new-arrival">New Arrival</span>
+				[%elseif [@content_id@] eq '106' %]
+				<span class="label-pro label-best-seller">Best Seller</span>
+				[%/if%]
+				[%/param%]
+			[%/content_path%]
+		[%/if%]
 	</div>
 </article>
 [%/cache%]

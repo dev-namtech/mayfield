@@ -1,45 +1,50 @@
-    <div class="container main-content-article">
-        [%breadcrumb%]
-                [%param *header%]
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
-                                <meta itemprop="position" content="0" />
-                            </li>
-                [%/param%]
-                [%param *body%]
-                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
-                                <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
-                            </li>
-                [%/param%]
-                [%param *footer%]
-                        </ol>
-                    </nav>
-                [%/param%]
-            [%/breadcrumb%]
-        <h1 class="title-page">
-            [%url_info name:'page_heading' default:'[@content_name@]'/%]
-        </h1>
+    <div class="main-content-article">
+        <div class="container">
+            [%breadcrumb%]
+                    [%param *header%]
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                    <meta itemprop="position" content="0" />
+                                </li>
+                    [%/param%]
+                    [%param *body%]
+                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                    <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                                </li>
+                    [%/param%]
+                    [%param *footer%]
+                            </ol>
+                        </nav>
+                    [%/param%]
+                [%/breadcrumb%]
+            <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+        </div>
+        <div class="thumb-post d-none" style="margin-bottom: 80px;">
+            [%if [%asset_url type:'content' id:'[@content_id@]'/%] ne '' %]
+            <img class="img-fluid" src="[%asset_url type:'content' id:'[@content_id@]'/%]">
+            [%/if%]
+            [%if [%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]'/%] ne '' %]
+            <img class="img-fluid" src="[%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]'/%]">
+            [%/if%]
+            <img class="img-fluid" src="[%asset_url type:'content' id:'[@content_id@]'/%]">
+            <img class="img-fluid" src="[%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]'/%]">
+        </div>
+        <div class="container">
         [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-            <section class="n-responsive-content short-description" aria-label="Short description">
-                [@content_short_description1@]
-                [@content_short_description2@]
-                [@content_short_description3@]
-            </section>
             <section class="n-responsive-content" aria-label="Description">
                 [%parse%]
                     [@content_description1@]
                     [@content_description2@]
                     [@content_description3@]
-                    [@content_wufoo_form@]
                 [%/parse%]
             </section>
         [%/if%]
-        
         <p class="text-footer">
-            <strong>[%if [@date_posted@] != 0000-00-00 00:00:00%][%FORMAT type:'date' format:'#D.#M.#Y'%][@date_posted@][%/FORMAT%]&nbsp;[%/if%] | </strong>
+            <strong>[%if [@date_posted@] != 0000-00-00 00:00:00%][%FORMAT type:'date' format:'#D.#M.#Y'%][@date_posted@][%/FORMAT%]&nbsp;[%/if%]</strong>
+            <span style="margin: 0 15px;">|</span>
             <a href="">Share this article</a>
         </p>
         <div class="dropdown d-none">
@@ -56,6 +61,7 @@
                 <li><a class="dropdown-item js-social-share" href="//www.pinterest.com/pin/create/button/?url=[%url_encode%][@url@][%/url_encode%]&amp;description=[%url_encode%][@content_name@][%/url_encode%]"><i class="fab fa-pinterest text-pinterest" aria-hidden="true"></i> Pinterest</a></li>
                 <li><a class="dropdown-item js-social-share" href="//plus.google.com/share?url=[%url_encode%][@url@][%/url_encode%]"><i class="fab fa-google-plus-g text-google-plus" aria-hidden="true"></i> Google+</a></li>
             </ul>
+        </div>
         </div>
     </div>
     [%thumb_list type:'content' content_type:'blog' limit:'3' sortby:'random'%]
