@@ -591,13 +591,13 @@ button.slick-prev{
     background-size: cover;
 }
 .noverlay.active{
-    display: block;
-    z-index: 1;
-    width: 100vw;
-    background-color: rgba(216, 216, 216, 0.4);
+    display: block!important;
+    z-index: 1!important;
+    width: 100%!important;
+    background-color: rgba(216, 216, 216, 0.4)!important;
 }
 
- .image-pendant,
+.image-pendant,
 .title-pendant{
     cursor: pointer;
 }
