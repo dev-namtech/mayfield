@@ -1,0 +1,79 @@
+.main-content-fabric{
+    .modal-fabric{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+        z-index: 3;
+        &.open{
+          display: block;
+        }
+        .modal-fabric-dialog{
+            position: absolute;
+            width: 90%;
+            height: auto;
+            max-width: 820px;
+            background-color: white;
+            padding: 60px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .modal-fabric-header .close{
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+            .modal-fabric-body{
+                .col-md-6 {
+                &:first-child{
+                    padding-right: 30px;
+                }
+                &:last-child{
+                    padding-left: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                }
+                .slick-slider{
+                    .slick-list, .slick-track{
+                        transform: inherit;
+                    }
+                }
+                .content-description p{
+                margin-bottom: 3px;
+                }
+                .col-description{
+                    position: relative;
+                    a{
+                        font-size: 24px;
+                        color: #000;
+                        text-decoration: underline;
+                        display: block;
+                        margin-top: 50px;
+                        font-family: "CopernicusTrial-BookItalic",sans-serif;
+                        position: absolute;
+                        bottom: 0;
+                        left: 60px;
+                    }
+                }
+                button{
+                    &.slick-prev, &.slick-next{
+                        top: 50%;
+                    }
+                    &.slick-prev{
+                        left: -40px;
+                        background-image: url('../images/prev.png');
+                    }
+                    &.slick-next{
+                        right: -28px;
+                        background-image: url('../images/next.png');
+                    }
+                }
+            }
+        }
+    }
+}

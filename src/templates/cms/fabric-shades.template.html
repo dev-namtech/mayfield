@@ -144,108 +144,12 @@
         <div class="modal-fabric-dialog">
             <div class="modal-fabric-content">
                 <div class="modal-fabric-header">
-                    <button type="button" class="close" onclick="closeModal('#modal[@SKU@]')">
+                    <button type="button" class="close" onclick="closeModalFabric()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-fabric-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="image-slide-fabric">
-                                [%thumb_list type:'products' limit:'99'%]
-                                [%param *body%]
-                                <div class="wrapper-thumb">
-                                    <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" class="img-fluid" alt="">
-                                </div>
-                                [%/param%]
-                                [%/thumb_list%]
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="description-slide-fabric">
-                                [%thumb_list type:'products' limit:'99'%]
-                                [%param *body%]
-                                [%product sku:'[@sku@]'%]
-                                [%param *body%]
-                                    <div class="desciption">
-                                        [@description@]
-                                    </div>
-                                [%/param%]
-                                [%/product%]
-                                [%/param%]
-                                [%/thumb_list%]
-                            </div>
-                            <a href="#">Enquire</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="modal-fabric-body"></div>
             </div>
         </div>
     </div>
-    <style>
-        .modal-fabric{
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(0,0,0,.4);
-            display: none;
-        }
-        .modal-fabric.open{
-            display: block;
-        }
-        .modal-fabric .modal-fabric-dialog{
-            position: absolute;
-            width: 60%;
-            height: auto;
-            background-color: white;
-            padding: 60px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-header .close{
-            position: absolute;
-            right: 20px;
-            top: 10px;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body .col-md-6:first-child{
-            padding-right: 30px;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body .col-md-6:last-child{
-            padding-left: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body .col-md-6:last-child p{
-            margin-bottom: 3px;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body .col-md-6:last-child a{
-            font-size: 24px;
-            color: #000;
-            text-decoration: underline;
-            display: block;
-            margin-top: 50px;
-            font-family: "CopernicusTrial-BookItalic",sans-serif;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body button.slick-prev,
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body button.slick-next{
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body button.slick-prev{
-            left: -60px;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body button.slick-next{
-            right: -60px;
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body button.slick-prev:before{
-            background-image: url(../images/prev.png);
-        }
-        .modal-fabric .modal-fabric-dialog .modal-fabric-body button.slick-next:before{
-            background-image: url(../images/next.png);
-        }
-    </style>
 </div>

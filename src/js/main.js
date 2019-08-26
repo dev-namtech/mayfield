@@ -285,7 +285,8 @@ jQuery(document).ready(function() {
     $(window).resize(function() {
         changePositionElement();
     })
-
+        
+    
     function changePositionElement() {
         let productRange = $('.lampshades-main-content .product-range')
         if (productRange.length && $(window).width() <= 991) {
@@ -414,25 +415,38 @@ function loadThumbProduct(data) {
     }
 }
 
-function openModalFabric(sku) {
-    // $('#modalFabric').addClass('open');
-    // $('#modalFabric .image-slide-fabric').slick({
-    //     dots: false,
-    //     arrows: true,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     auto: false,
-    //     loop: true,
-    //     asNavFor: '#modalFabric .description-slide-fabric'
-    // });
-    // $('#modalFabric .description-slide-fabric').slick({
-    //     dots: false,
-    //     arrows: false,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     auto: false,
-    //     loop: true,
-    //     asNavFor: '#modalFabric .image-slide-fabric'
-    // });
-    
+function openModalFabric(id) {
+    $('#modalFabric .modal-fabric-body').html('<div class="row"><div class="col-md-6 col-img"></div><div class="col-md-6 col-description"><div class="container-description"></div></div></div></div>');
+    // $('#modalFabric .modal-fabric-body .content-image').append('<img class="img-fluid" src="'+$(id).data('thumb')+'">');
+    // $('#modalFabric .modal-fabric-body .content-image').append('<button class="btn-fabric fabric-prev"></button><button class="btn-fabric fabric-next"></button>');
+    $('#contentPro article').each(function(index) {
+        // console.log( index + ": " + $( this ).text() );
+        $('#modalFabric .modal-fabric-body .col-img').append('<div class="content-image"><img class="img-fluid" width="264px" src="'+$(this).children().data('thumb')+'"></div>');
+        $('#modalFabric .modal-fabric-body .container-description').append('<div class="content-description">'+$(this).children().data('description')+'</div>');
+    });
+    $('#modalFabric').addClass('open');
+    var mainSlide = $(id).parent('article').data('stt');
+    $('#modalFabric .modal-fabric-body .col-img').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        fade: true,
+        initialSlide: mainSlide,
+        asNavFor: '#modalFabric .modal-fabric-body .container-description'
+    });
+    $('#modalFabric .modal-fabric-body .container-description').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        fade: true,
+        asNavFor: '#modalFabric .modal-fabric-body .col-img'
+    });
+    $('#modalFabric .modal-fabric-body .col-description').append('<a href="#">Enquire</a>');
+}
+
+function closeModalFabric(){
+    $('#modalFabric').removeClass('open');
+    $('#modalFabric .modal-fabric-body').html('');
 }
