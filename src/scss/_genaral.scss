@@ -298,7 +298,8 @@ button.slick-prev{
     }
 }
 .products-row{
-    padding: 0 48px
+    padding: 0 32px;
+    margin: 0
 }
 .not-found-product{
     margin-top: 50px;
@@ -678,7 +679,7 @@ button.slick-prev{
 }
 @media (max-width:1199px){
     .products-row{
-        padding: 0 23px
+        padding: 0 7px
     }
     .section-filter{
         text-align: left;
@@ -711,6 +712,7 @@ button.slick-prev{
                         width: 100%;
                         .select{
                             width: 100%;
+                            padding-right: 29px;
                             .select-styled{
                                 width: 50%
                             }
@@ -718,6 +720,7 @@ button.slick-prev{
                     }
                     .select{
                         width: 100%;
+                        padding-right: 29px;
                         .select-styled{
                             width: 50%
                         }
@@ -743,10 +746,12 @@ button.slick-prev{
         }     
     }
     .col-right-filter{
-        .select-styled{
-            width: 100%!important
-        }
-    }
-    
+        .select{
+            padding-right: 0!important;
+            .select-styled{
+                width: 100%!important
+            }
+        }      
+    } 
 }
 @media (max-width:575px){}
