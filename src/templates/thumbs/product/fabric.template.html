@@ -1,10 +1,10 @@
 [%cache type:'gallery' id:'[@inventory_id@]'%]
-<article role="article" aria-label="Product thumbnail">
-	<div class="card-product" id="cardProduct[@SKU@]" itemscope itemtype="http://schema.org/Product" onclick="openModalFabric('[@count@]');">
-		<div class="thumbnail-image" data-thumb="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]">
+<article role="article" aria-label="Product thumbnail" data-stt="[@count@]">
+	<div class="card-product" id="cardProduct[@SKU@]" itemscope itemtype="http://schema.org/Product" onclick="openModalFabric('#cardProduct[@SKU@]');" data-description='[%product sku:"[@sku@]"%][%param *body%][@description@][%/param%][%/product%]' data-thumb="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]">
+		<div class="thumbnail-image">
 			<img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" itemprop="image" class="product-image img-fluid" alt="[@model@]" rel="itmimg[@SKU@]">
         </div>
-		<p class="card-title" itemprop="name" onclick="openModalFabric('[@SKU@]');"><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></p>
+		<p class="card-title" itemprop="name" onclick="openModalFabric('#cardProduct[@SKU@]');"><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></p>
 		[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'Thumbnails' /%][%/if%]
 	</div>
 </article>
