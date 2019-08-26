@@ -16,17 +16,17 @@
 		[%/ THUMBNAILS%]
 	</div>
 	<div class="col-6 col-md-9 main-image text-center">
-		<a href="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" data-lightbox="product-lightbox" data-title="Product main image" rel="product_images">
-			<div class="zoom10">
-				<div>
+		<div class="zoom10">
+			<div>
+				<a href="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" data-lightbox="product-lightbox" data-title="Product main image" rel="product_images">			
 					<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" class="d-none" aria-hidden="true">
 					<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%END asset_url%]" rel="itmimg[@SKU@]" alt="Product main image" border="0" id="main-image" itemprop="image">					
-				</div>					
+				</a>
+				<div class="wrapper-button">
+					<button class="btn-zoom btn-zoom-in" id="zoomProIn">+</button>
+					<button class="btn-zoom btn-zoom-out" id="zoomProOut">-</button>
+				</div>
 			</div>
-		</a>
-		<div class="wrapper-button d-none">
-			<button class="btn-zoom btn-zoom-in" id="zoomProIn">+</button>
-			<button class="btn-zoom btn-zoom-out" id="zoomProOut">-</button>
-		</div>
+		</div>					
 	</div>
 </div>
