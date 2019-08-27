@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+    new WOW().init();
     jQuery('.wrapper-logo button.navbar-toggler').click(function() {
         jQuery('.main-menu-mobile').addClass('show');
         jQuery('.overlay').addClass('show');
@@ -387,7 +388,43 @@ jQuery(document).ready(function() {
             }
         ]
     });
+
+    if($('.list-fabric-main').length) {
+        $('.list-fabric-main .fabric-item').each(function(index) {
+            callApiLampShades($(this).data('sku'));
+        });
+    }
+
 });
+
+function callApiLampShades(sku){
+    var data = {
+        "Filter":{
+          "SKU": sku,
+          "OutputSelector": ["Name","Description"]
+        }
+    };
+    $.ajax({
+        async: true,
+        crossDomain: true,
+        url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+        headers: {
+          'accept': 'application/json',
+          'netoapi_action':'GetItem',
+          'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+          'content-type': 'application/json',
+          'cache-control': 'no-cache'
+        },
+        method: 'POST',
+        dataType: 'json',
+        processData: false,
+        data: JSON.stringify(data),
+        success: function(response){
+            console.log(response);
+            $('#fabric' + sku + ' .content-des').append(response.Item[0].Description);
+        }
+    });
+}
 
 function openModal(id) {
     if (!jQuery(id).hasClass('open')) {
@@ -491,7 +528,6 @@ function closeModalFabric(){
 
 var zoom = 0;
 function zoomProIn_click(){
-    console.log('zoom-in');
     if(zoom == 0){
         $('#main-image').css('transform','scale(1.2)');
         zoom ++;
@@ -510,8 +546,6 @@ function zoomProIn_click(){
 }
 
 function zoomProOut_click(){
-
-    console.log('zoom-out');
     if(zoom == 3){
         $('#main-image').css('transform','scale(1.4)');
         zoom --;
@@ -539,7 +573,6 @@ function move_image(){
         x = event.pageX;
         y = event.pageY;
         click = true;       
-        console.log('down');  
     });
 
     $('#main-image').mousemove(function(event){
@@ -556,12 +589,6 @@ function move_image(){
         $('#main-image').css('top',ty);
         $('#main-image').css('left',tx);
         //$('#main-image').css('transform','translate(0px, 0px)');
-        console.log('up');  
         click=false;
     });
-
-}
-
-function callApiLampshades(){
-    
 }

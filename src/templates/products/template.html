@@ -20,7 +20,29 @@
 			</section>
 		</div>
 		<div class="row mt-2">
-				<div class="col-12 also-like-product-page">
+			<div class="col-12 also-like-product-page">
+				[%if [@misc12@] eq 'y' %]
+					[%crosssell id:'[@SKU@]' limit:'4' template:'' show_all:'1'%]
+						[%param header%]
+						<h3 class="h2 title-also-like">You May Also Like</h3>
+						<div class="row products-row also-like">
+						[%/param%]
+						[%param footer%]
+						</div>
+						[%/param%]
+						[%param *ifempty%]
+							[%random_products category:'111' template:'lampshades' limit:'4'%]
+								[%param *header%]
+								<h3 class="h2 title-also-like">You May Also Like</h3>
+								<div class="row products-row also-like">
+								[%/param%]
+								[%param *footer%]
+								</div>
+								[%/param%]
+							[%/random_products%]
+						[%/param%]
+					[%/crosssell%]
+				[%else%]
 					[%crosssell id:'[@SKU@]' limit:'4' template:'' show_all:'1'%]
 						[%param header%]
 						<h3 class="h2 title-also-like">You May Also Like</h3>
@@ -41,6 +63,7 @@
 							[%/random_products%]
 						[%/param%]
 					[%/crosssell%]
+				[%/if%]
 				[%/cache%]
 			</div><!--/.col-12-->
 		</div><!--/.row-->

@@ -4,49 +4,52 @@
 	<div class="wrapper-product-title col-sm-12">
 		<h1 itemprop="name" aria-label="Product Name">[%url_info type:'product' id:'[@inventory_id@]' name:'page_heading' default:'[@name@]'/%]</h1>
 		<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
-		<div class="d-none" onload="callApiLampshades('[@SKU@]');"></div>
-		[%if ![@inpromo@]%]
-			<div class="h1" itemprop="price" content="[@store_price@]" aria-label="Store Price">
-				[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
-			</div>
-			[%if [@save@] > 0%]
-				<div class="productrrp text-muted small" aria-label="RRP Price">
-					<s>RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]</s>
+		[%if [@misc12@] ne 'y' %]
+			<div class="wrapper-price">
+			[%if ![@inpromo@]%]
+				<div class="h1" itemprop="price" content="[@store_price@]" aria-label="Store Price">
+					[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
 				</div>
-				<div class="productsave small" aria-label="Save Price">
-					SAVE [%format type:'currency'%][@save_price@][%/format%] ([%format type:'percent'%][@save@][%/format%])
+				[%if [@save@] > 0%]
+					<div class="productrrp text-muted small" aria-label="RRP Price">
+						<s>RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]</s>
+					</div>
+					<div class="productsave small" aria-label="Save Price">
+						SAVE [%format type:'currency'%][@save_price@][%/format%] ([%format type:'percent'%][@save@][%/format%])
+					</div>
+				[%/if%]
+			[%else%]
+				<div class="productwasprice h3" aria-label="Was price">
+					WAS [%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
+				</div>
+				[%if [@save@] > 0%]
+					<div class="productrrp text-muted small" aria-label="RRP Price">
+						<s>RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]</s>
+					</div>
+				[%/if%]
+				<div class="productpromo h1" itemprop="price" content="[@promo_price@]" aria-label="Promo Price">
+					NOW [%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]
+				</div>
+				[%if [@save@] > 0%]
+					<div class="productsave small" aria-label="Save Price">
+						SAVE [%format type:'percent'%][@save@][%/format%]!
+					</div>
+				[%/if%]
+				<div class="productsavetext text-danger font-weight-bold">
+					Sale Ends in <span id="sale-end" class="time"></span>
+				</div>
+				<div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
+					[%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
 				</div>
 			[%/if%]
-		[%else%]
-			<div class="productwasprice h3" aria-label="Was price">
-				WAS [%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
 			</div>
-			[%if [@save@] > 0%]
-				<div class="productrrp text-muted small" aria-label="RRP Price">
-					<s>RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]</s>
-				</div>
+			[%if [@form:disable_scripts@] ne 'true'%]
+			[%tracking_code type:'BuyingOptions' /%]
 			[%/if%]
-			<div class="productpromo h1" itemprop="price" content="[@promo_price@]" aria-label="Promo Price">
-				NOW [%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]
-			</div>
-			[%if [@save@] > 0%]
-				<div class="productsave small" aria-label="Save Price">
-					SAVE [%format type:'percent'%][@save@][%/format%]!
-				</div>
-			[%/if%]
-			<div class="productsavetext text-danger font-weight-bold">
-				Sale Ends in <span id="sale-end" class="time"></span>
-			</div>
-			<div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
-				[%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
-			</div>
-		[%/if%]
-		[%if [@form:disable_scripts@] ne 'true'%]
-		[%tracking_code type:'BuyingOptions' /%]
-		[%/if%]
 
-		[%if [@subtitle@]%]
-			<h3 class="text-muted d-none" role="heading" aria-label="Product Subtitle">[@subtitle@]</h3>
+			[%if [@subtitle@]%]
+				<h3 class="text-muted d-none" role="heading" aria-label="Product Subtitle">[@subtitle@]</h3>
+			[%/if%]
 		[%/if%]
 
 		[%set [@review_sku@]%][%if [@parent_sku@]%][@parent_sku@][%else%][@sku@][%/if%][%/set%]
