@@ -29,8 +29,9 @@
                 }
             }
             .col-img{
-                height: 626px;
-                background: white;
+                max-height: 626px;
+                background: #fff;
+                height: 100%;
                 img{
                     vertical-align: middle;
                     border-style: none;
