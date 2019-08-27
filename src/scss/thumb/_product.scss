@@ -55,10 +55,9 @@ article{
         .buying-options{
             .addtocart{
                 font-size: 14px;
-                line-height: 17px;
                 font-weight: 600;
                 font-family: "Helvetica-Neue",sans-serif;
-                padding: 12px 14px;
+                padding: 14px 14px;
                 background-color: #FFFFFF;
                 border-radius: 0;
                 visibility: hidden;
@@ -69,6 +68,7 @@ article{
                 max-width: 200px;
                 left: 50%;
                 transform: translateX(-50%);
+                height: 45px
             }
             .product-wishlist{
                 visibility: hidden;

@@ -23,7 +23,7 @@
                 [%/breadcrumb%]
                 <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
                 [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-                <div class="description-content-coper">
+                <div class="description-content-coper wow fadeInLeft">
                   [@content_description1@]
                   [@content_description2@]
                   [@content_description3@]
@@ -32,8 +32,8 @@
             </div>
         </section>
         <section class="project-gallery">
-            <div class="big-text text-center">Project Gallery</div>
-            <div class="row">
+            <div class="big-text text-center wow fadeInUp" data-wow-delay="0.5s">Project Gallery</div>
+            <div class="row wow fadeInUp" data-wow-delay="0.8s">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                 <img class="img-fluid" src="/assets/themes/skeletal/images/KFC.png" alt="KFC_Mascot">
                 <p class="text-center">Art Series – The Chen</p>
@@ -53,7 +53,7 @@
             </div>
         </section>
         <!-- End Section Project Gallery -->
-        <section class="contact-us">
+        <section class="contact-us wow fadeInUp">
           <div class="container">
             <div class="row">
                 <div class="question col-xl-6 col-lg-12 col-md-12 col-sm-12">
