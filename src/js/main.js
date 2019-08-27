@@ -347,8 +347,46 @@ jQuery(document).ready(function() {
         }
     });
 
+    $('#zoomProIn').click(zoomProIn_click);
+    $('#zoomProOut').click(zoomProOut_click);
+    move_image();
     
-
+    $('.lampshades-main-content .slider163 .img-slider').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: $('.pro-range2-prev'),
+        nextArrow: $('.pro-range2-next'),
+        responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
 });
 
 function openModal(id) {
@@ -449,4 +487,81 @@ function openModalFabric(id) {
 function closeModalFabric(){
     $('#modalFabric').removeClass('open');
     $('#modalFabric .modal-fabric-body').html('');
+}
+
+var zoom = 0;
+function zoomProIn_click(){
+    console.log('zoom-in');
+    if(zoom == 0){
+        $('#main-image').css('transform','scale(1.2)');
+        zoom ++;
+        return;
+    }
+    if(zoom == 1){
+        $('#main-image').css('transform','scale(1.4)');
+        zoom ++;
+        return;
+    }
+    if(zoom == 2){
+        $('#main-image').css('transform','scale(1.6)');
+        zoom ++;
+        return;
+    }
+}
+
+function zoomProOut_click(){
+
+    console.log('zoom-out');
+    if(zoom == 3){
+        $('#main-image').css('transform','scale(1.4)');
+        zoom --;
+        return;
+    }
+    if(zoom == 2){
+        $('#main-image').css('transform','scale(1.2)');
+        zoom --;
+        return;
+    }
+    if(zoom == 1){
+        $('#main-image').css('transform','scale(1.0)');
+        zoom --;
+        return;
+    }
+}
+
+function move_image(){
+    var x=0;
+    var y=0;
+    var tx=0;
+    var ty=0;
+    var click=false;
+    $('#main-image').mousedown(function(event){
+        x = event.pageX;
+        y = event.pageY;
+        click = true;       
+        console.log('down');  
+    });
+
+    $('#main-image').mousemove(function(event){
+    if(click == false) return;
+        let cy = event.pageY,cx = event.pageX;
+        $('#main-image').css('top',(cy-y+ty));
+        $('#main-image').css('left',(cx-x+tx));
+    });
+
+    $('#main-image').mouseup(function(event){
+        let cy = event.pageY,cx = event.pageX;
+        tx += cx-x;
+        ty +=cy-y;
+        $('#main-image').css('top',ty);
+        $('#main-image').css('left',tx);
+        //$('#main-image').css('transform','translate(0px, 0px)');
+        console.log('up');  
+        click=false;
+    });
+
+}
+
+function callApiLampshades(){
+    
 }
