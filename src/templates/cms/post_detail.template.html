@@ -22,15 +22,9 @@
                 [%/breadcrumb%]
             <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
         </div>
-        <div class="thumb-post d-none" style="margin-bottom: 80px;">
-            [%if [%asset_url type:'content' id:'[@content_id@]'/%] ne '' %]
-            <img class="img-fluid" src="[%asset_url type:'content' id:'[@content_id@]'/%]">
-            [%/if%]
-            [%if [%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]'/%] ne '' %]
-            <img class="img-fluid" src="[%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]'/%]">
-            [%/if%]
-            <img class="img-fluid" src="[%asset_url type:'content' id:'[@content_id@]'/%]">
-            <img class="img-fluid" src="[%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]'/%]">
+        <div class="section-banner-post">
+            <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
+            <img src="[%asset_url type:'content' thumb:'alt_1' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
         </div>
         <div class="container">
         [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]

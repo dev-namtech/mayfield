@@ -32,8 +32,11 @@
                 </div>
         </section>
 
-        <section class="section-banner">
+        <!-- <section class="section-banner">
             <img src="/assets/themes/skeletal/images/lampshades_banner.png" alt="banner">   
+        </section> -->
+
+        <section style="background-image: url([%asset_url type:'content' id:'[@content_id@]' default:''/%])" class="section-banner [%asset_url type:'content' id:'[@content_id@]' default:'d-none'/%]">
         </section>
 
         [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'[@content_id@]' start_category:'[@content_id@]'%]

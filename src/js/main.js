@@ -351,42 +351,44 @@ jQuery(document).ready(function() {
     $('#zoomProIn').click(zoomProIn_click);
     $('#zoomProOut').click(zoomProOut_click);
     move_image();
-    
-    $('.lampshades-main-content .slider163 .img-slider').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        prevArrow: $('.pro-range2-prev'),
-        nextArrow: $('.pro-range2-next'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
+
+    $('.lampshades-main-content .product-range > .container > .row').each(function(index) {
+        $(this).find('.img-slider').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            prevArrow: $('.pro-range2-prev'),
+            nextArrow: $('.pro-range2-next'),
+            responsive: [{
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
                 }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
+            ]
+        });
     });
 
     if($('.list-fabric-main').length) {
@@ -492,10 +494,7 @@ function loadThumbProduct(data) {
 
 function openModalFabric(id) {
     $('#modalFabric .modal-fabric-body').html('<div class="row"><div class="col-md-6 col-img"></div><div class="col-md-6 col-description"><div class="container-description"></div></div></div></div>');
-    // $('#modalFabric .modal-fabric-body .content-image').append('<img class="img-fluid" src="'+$(id).data('thumb')+'">');
-    // $('#modalFabric .modal-fabric-body .content-image').append('<button class="btn-fabric fabric-prev"></button><button class="btn-fabric fabric-next"></button>');
     $('#contentPro article').each(function(index) {
-        // console.log( index + ": " + $( this ).text() );
         $('#modalFabric .modal-fabric-body .col-img').append('<div class="content-image"><img class="img-fluid" width="264px" src="'+$(this).children().data('thumb')+'"></div>');
         $('#modalFabric .modal-fabric-body .container-description').append('<div class="content-description">'+$(this).children().data('description')+'</div>');
     });
