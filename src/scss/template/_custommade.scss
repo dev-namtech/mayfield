@@ -137,7 +137,11 @@
         .custom-col-2{
             flex: 0 0 50%!important;
             max-width: 50%!important;
-            padding: 0
+            padding: 8px!important;
+            img{
+                background-color: #d8d8d8;
+                padding: 11px 13px 16px
+            }
         }
     }
 }
