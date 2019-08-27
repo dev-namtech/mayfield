@@ -606,7 +606,13 @@ button.slick-prev{
     width: 100%!important;
     background-color: rgba(216, 216, 216, 0.4)!important;
 }
-
+.section-banner{
+    width: 100%;
+    height: 264px;
+    background-image: url('../images/image-collections-page.png');
+    background-position: center;
+    background-size: cover;
+}
 .image-pendant,
 .title-pendant{
     cursor: pointer;
