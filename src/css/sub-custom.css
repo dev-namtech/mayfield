@@ -5,7 +5,6 @@
     margin-bottom:58px
 }
 .project-gallery .row{
-    width:72%;
     margin:50px auto
 }
 .project-gallery .row p{
@@ -201,6 +200,10 @@
     .product-range .slider {
         margin-top: 24px;
     }
+    .also-like .img-box{
+        flex:0 0 50%;
+        max-width:50%!important
+    }
 }
 
 @media screen and (max-width: 766px) {
@@ -282,17 +285,18 @@
     }
 
     /*inspiration*/
-    .inspiration-gallery .row1>div{
-        max-width: 433px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .inspiration-gallery .row2>div{
+    .inspiration-gallery .row_2>div{
         justify-content: center;
     }
 
-    .inspiration-gallery .row3>div{
+    .inspiration-gallery .row_2 img,
+    .inspiration-gallery .row_2 .inspiration-products,
+    .inspiration-gallery .row_3 img,
+    .inspiration-gallery .row_3 .inspiration-products{
+        width: 100%; 
+    }
+
+    .inspiration-gallery .row_3>div{
         justify-content: space-evenly;
     }
 
@@ -302,6 +306,10 @@
 
     .inspiration-gallery >.row{
         padding: 0!important;
+    }
+    .also-like .img-box{
+        flex:0 0 100%;
+        max-width:100%!important
     }
 }
 
@@ -421,13 +429,217 @@
     .description-content-coper p {
         font-size: 18px !important;
     }
+
+    .modal-pendant .modal-pendant-dialog{
+        padding: 25px 15px!important;
+    }
 }
 
 
 @media screen and (min-width: 1440px){
-    .inspiration-gallery{
+    .inspiration-gallery,
+    .project-gallery .row{
         max-width: 1363px;
         margin-left: auto;
         margin-right: auto;
     }
+    
+}
+
+.modal-pendant.open{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.modal-pendant .modal-pendant-dialog{
+    height: initial!important;
+    margin-bottom: 5%;
+}
+
+.wrapper-button{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 999;
+    display: none;
+}
+
+.wrapper-button:hover{
+    display: block;
+}
+
+.wrapper-button>button{
+    background-image: url(../images/heart-icon-black.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    width: 49px;
+    height: 49px;
+    border: none;
+}
+
+.wrapper-button>button:first-child{
+    background-image: url(../images/plus.svg);
+    margin-bottom: 10px;
+}
+
+.wrapper-button>button:last-child{
+    background-image: url(../images/minus.svg);
+}
+
+.wrapper-button>*:focus{
+    outline: none;
+}
+
+.wrapper-button .btn-zoom-out{
+    margin-bottom:0;
+}
+
+.zoom10>div{
+    overflow: hidden;
+    background-color: gray;
+}
+
+.zoom10>div>div:hover + div{
+    display: block;
+}
+
+.zoom10>div{
+    display: inline-block;
+    position: relative;
+}
+
+#main-image{
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+#main-image:hover{
+    cursor: pointer;
+}
+
+.img-box{
+    display: inline-block;
+    position: relative;
+    padding: 0 6px;
+}
+.also-like .img-box{
+    max-width:25%;
+    width:100%;
+    height:auto
+}
+
+.img-box .thumbnail-image{
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    margin-left: -55px;
+    width: 112px;
+    height: 23px;
+    border: solid 0.5px #000000;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    display: none;
+    line-height: 0;
+}
+
+.img-box:hover .thumbnail-image{
+    display: flex;
+}
+
+.input-group-append{
+    width: 100%;
+    max-width: 200px;
+}
+
+.input-group-append input{
+    height: 41px;
+    padding: 5px 0 0 0!important;
+    width: 100%;
+    line-height: 0;
+}
+
+.input-group-append{
+    width: 100%;
+    max-width: 200px;
+}
+
+.wrapper-footer .newsletter-signup .input-group .form-control{
+    line-height: 0;
+    padding-top: 10px;
+}
+
+.img-box .text-center a{
+    font-size: 14px;
+    font-weight: 500;
+    color: #212529;
+}
+
+.img-box form{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: none;
+}
+
+.img-box:hover form{
+    display: block;
+}
+
+.img-box-part{
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #cccccc;
+    margin-bottom: 9px;
+    overflow: hidden;
+}
+
+.img-box-part img{
+    height: auto;
+}
+
+.img-box .heart-icon{
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-image: url(../images/heart-icon-black.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer
+}
+
+.lampshades-main-content .slider163{
+    position: relative;
+    padding-top: 15px;
+}
+
+.pro-range2-prev{
+    background: url(../images/prev.png) 50% no-repeat;
+    left: -50px;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: -25px;
+}
+
+.pro-range2-next{
+    background: url(../images/next.png) 50% no-repeat;
+    right: -50px;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: -25px;
+}
+#collapseFabric.collapse:not(.show){
+    display:block
+}
+.main-content-pro  .collapse.show{
+    display:block!important
 }
