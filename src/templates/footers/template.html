@@ -90,6 +90,11 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		jQuery('.nav-link.search-link').click(function(event) {
+			event.preventDefault();
+		});
+	</script>
 </footer>
 <!-- Required Neto Scripts - DO NOT REMOVE -->
 [%load_template file:'footers/includes/scripts.template.html'/%]

@@ -34,7 +34,7 @@
         </section>
 
         <section class="inspiration-gallery">
-            <div class="row row_1 m-auto py-3">
+            <div class="row">
                 <div class="col-md-4 inspiration-products wow fadeInUp">
                     <img src="/assets/themes/skeletal/images/00.png" alt="square-img" class="img-fluid">
                     <div class="layer">             
@@ -60,8 +60,6 @@
                         <div class="button">Shop now</div>
                     </div>
                 </div>
-            </div>
-            <div class="row row_2 m-auto py-3">
                 <div class="col-md-4 d-flex align-content-between flex-wrap">
                     <div class="inspiration-products wow fadeInLeft" data-wow-delay="0.8s">
                         <img src="/assets/themes/skeletal/images/02.png" alt="small-rectangle-img" class="img-fluid">
@@ -90,8 +88,6 @@
                         <div class="button">Shop now</div>
                     </div>
                 </div>
-            </div>
-            <div class="row row_3 m-auto py-3">
                 <div class="col-md-9 inspiration-products wow fadeInLeft"><img src="/assets/themes/skeletal/images/03.png" alt="big-square-img" class="img-fluid">
                     <div class="layer">             
                         <span><b>Stevie Table Lamp</b></span>
@@ -129,8 +125,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row row_4 m-auto py-3 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="col-md-4 inspiration-products"><img src="/assets/themes/skeletal/images/05.png" alt="square-img" class="img-fluid">
                     <div class="layer">             
                         <span><b>Stevie Table Lamp</b></span>
@@ -157,34 +151,21 @@
                 </div>
             </div>
         </section>
-        [%thumb_list type:'products' filter_category:'[@id@]' limit:'[@config:THUMB_LIMIT@]'%]
+
+        [%thumb_list type:'products' filter_category:'[@id@]' limit:'13'%]
             [%param *header%]
-            
+            <section class="inspiration-gallery">
+                <div class="row">
             [%/param%]
 
             [%param *body%]
-            [%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]
-			[%param *body%]
-				<div class="d-none">
-					<a href="[@full_image@]" data-lightbox="product-lightbox" data-title="Product image" rel="product_images">
-						<img src="[@full_image@]" class="img-fluid product-image-small">
-					</a>
-				</div>
-			[%/ param%]
-			[%param *brochure%]
-				<div class="d-none">
-					<a class="display-4" href="[@file@]" target="_blank" rel="noopener"><i class="far fa-file-pdf"></i></a>
-				</div>
-			[%/ param%]
-        [%/ THUMBNAILS%]
-        [%/ param%]
+            [%/param%]
 
             [%param *footer%]
-            
-
+                </div>
+            </section>
             [%/param%]
             [%param *ifempty%]
-                
             [%/param%]
         [%/thumb_list%]
     </div>

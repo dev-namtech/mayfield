@@ -20,32 +20,34 @@
                     </nav>
                 [%/param%]
             [%/breadcrumb%]
-            <h1 class="title-page">Our Story</h1>
+            <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
         </div>
         <section id="ourstoryContent" class="ourstory-content n-responsive-content" aria-label="Main description">
             [@page_content@]
         </section>
-        <section class="section-seller">
-            <div class="container-fluid">
-                <dic class="row">
-                    <div class="col-lg-6">
-                        <div class="content-block content-block-metricon">
-                            <div class="content-text">
-                                <h2>Commercial</h2>
-                                <a href="#">See More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="content-block content-block-wholesale">
-                            <div class="content-text">
-                                <h2>Commercial</h2>
-                                <a href="#">See More</a>
-                            </div>
-                        </div>
-                    </div>
-                </dic>
-            </div>
-        </section>
+        <!-- Seller -->
+		<section class="section-seller main-container">
+			<div class="container-fluid">
+				<dic class="row wow fadeInUp" data-wow-delay="0.3s">
+					<div class="col-lg-6">
+						<div class="content-block content-block-metricon">
+							<div class="content-text">
+								<h2>Commercial</h2>
+								<a href="#">See More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="content-block content-block-wholesale">
+							<div class="content-text">
+								<h2>Wholesale</h2>
+								<a href="#">See More</a>
+							</div>
+						</div>
+					</div>
+				</dic>
+			</div>
+		</section>
+		<!-- #Seller -->
     </div>
 </div>
