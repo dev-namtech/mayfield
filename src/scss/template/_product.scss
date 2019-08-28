@@ -289,6 +289,19 @@
             }
         }
     }
+    .list-fabric-main{
+        .fabric-item{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            >div{
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    }
 }
 .also-like-product-page{
     padding: 0 15px 50px;

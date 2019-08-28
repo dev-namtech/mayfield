@@ -643,3 +643,9 @@
 .main-content-pro  .collapse.show{
     display:block!important
 }
+
+.section-banner-post img{
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+  }

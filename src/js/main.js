@@ -143,7 +143,7 @@ jQuery(document).ready(function() {
     });
     $('.list-img-fabric').slick({
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 11,
         slidesToScroll: 1, 
     });
     $('.slider .img-slider').slick({
@@ -437,7 +437,7 @@ function callApiLampShades(sku){
         data: JSON.stringify(data),
         success: function(response){
             console.log(response);
-            $('#fabric' + sku + ' .content-des').append(response.Item[0].Description);
+            $('.list-fabric-main #fabric' + sku + ' .content-des').append(response.Item[0].Description);
         }
     });
 }
