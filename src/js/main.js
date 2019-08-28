@@ -141,11 +141,57 @@ jQuery(document).ready(function() {
         dots:false,
         arrows: true,
     });
-    $('.list-img-fabric').slick({
-        infinite: true,
-        slidesToShow: 11,
-        slidesToScroll: 1, 
-    });
+    $('.list-fabric-main').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.list-img-fabric'
+    })
+    function selectSlick(){
+        var countElements = $(".list-img-fabric .fabric-item").length;
+        if (countElements > 10)
+        {
+            $('.list-img-fabric').slick({
+            slidesToShow: countElements-1,
+            slidesToScroll: 1, 
+            asNavFor: '.list-fabric-main',
+            centerMode:false,
+            focusOnSelect: true,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: countElements-3,
+                    slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: countElements-5,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: countElements-8,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+        } else {
+            $('.list-img-fabric').slick({
+                slidesToShow: countElements,
+                slidesToScroll: 1, 
+                asNavFor: '.list-fabric-main',
+                centerMode:false,
+                focusOnSelect: true
+                });
+        }
+    };
+    selectSlick();
     $('.slider .img-slider').slick({
         infinite: true,
         slidesToShow: 4,

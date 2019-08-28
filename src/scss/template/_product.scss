@@ -293,12 +293,13 @@
         .fabric-item{
             display: -webkit-box;
             display: -ms-flexbox;
-            display: flex;
+            display: flex!important;
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-            >div{
-                flex: 0 0 50%;
-                max-width: 50%;
+            margin-bottom:16px;
+            .content-des{
+                margin-top:50px;
+                margin-left:33px
             }
         }
     }
@@ -329,5 +330,24 @@
 @media screen and (min-width: 1200px){
     .main-container.main-content-pro{
         padding: 0 40px;
+    }
+}
+@media (max-width:1199px){
+    .act-lampshades{
+        .button:first-child{
+            margin:0
+        }
+    }
+    #accordion{
+        text-align: left;
+        .content-img{
+            flex: 0 0 100%;
+            max-width: 100%
+        }
+        .content-des{
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-left: 0!important
+        }
     }
 }
