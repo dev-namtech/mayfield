@@ -46,6 +46,17 @@
 						</a>
 					</li>
 				</ul>
+				<div class="header-search-mb d-none">
+					<span class="icon-in-nav icon-search"></span> <span class="d-lggg-block">Search</span>
+					<form name="productsearch" method="get" action="/" role="search" aria-label="Product search">
+						<input type="hidden" name="rf" value="kw"/>
+						<div class="input-group">
+							<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
+							<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</div>
+					</form>
+					<span class="close-search">X</span>
+				</div>
 			</div>
 		</div>
 		<div class="d-flex main-menu-mobile">
@@ -119,15 +130,14 @@
 								</a>
 								<div class="header-search d-none">
 									<span class="icon-in-nav icon-search"></span> <span class="d-lggg-block">Search</span>
-									<form class="d-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
+									<form name="productsearch" method="get" action="/" role="search" aria-label="Product search">
 										<input type="hidden" name="rf" value="kw"/>
 										<div class="input-group">
 											<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
-											<div class="input-group-append">
-												<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
-											</div>
+											<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
 										</div>
 									</form>
+									<span class="close-search">X</span>
 								</div>
 							</li>
 						</ul>

@@ -25,6 +25,37 @@ jQuery(document).ready(function() {
         });
     }
 
+    // Search link
+    if ($(window).width() > 992) {
+        $('.nav-link.search-link').click(function(e){
+            e.preventDefault();
+            if($('.header-search').hasClass('d-none')){
+                $('.header-search').removeClass('d-none');
+            }
+        });
+        $('.close-search').click(function(e){
+            if(!$('.header-search').hasClass('d-none')){
+                $('.header-search').addClass('d-none');
+            }
+        });
+    }
+    if ($(window).width() < 992) {
+        $('.menu-mobile .nav-link.search-link').click(function(e){
+            e.preventDefault();
+            if($('.header-search-mb').hasClass('d-none')){
+                $('.header-search-mb').removeClass('d-none');
+            }
+        });
+        $('.close-search').click(function(e){
+            if(!$('.header-search-mb').hasClass('d-none')){
+                $('.header-search-mb').addClass('d-none');
+            }
+        });
+        $('.main-menu-mobile .nav-link.search-link').click(function(e){
+            e.preventDefault();
+        });
+    }
+
     jQuery('.section-top-seller .row').slick({
         dots: false,
         arrows: true,
@@ -148,50 +179,6 @@ jQuery(document).ready(function() {
         fade: true,
         asNavFor: '.list-img-fabric'
     })
-    function selectSlick(){
-        var countElements = $(".list-img-fabric .fabric-item").length;
-        if (countElements > 10)
-        {
-            $('.list-img-fabric').slick({
-            slidesToShow: countElements-1,
-            slidesToScroll: 1, 
-            asNavFor: '.list-fabric-main',
-            centerMode:false,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: countElements-3,
-                    slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: countElements-5,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: countElements-8,
-                        slidesToScroll: 1,
-                    }
-                }
-            ]
-        });
-        } else {
-            $('.list-img-fabric').slick({
-                slidesToShow: countElements,
-                slidesToScroll: 1, 
-                asNavFor: '.list-fabric-main',
-                centerMode:false,
-                focusOnSelect: true
-                });
-        }
-    };
-    selectSlick();
     $('.slider .img-slider').slick({
         infinite: true,
         slidesToShow: 4,
@@ -455,7 +442,15 @@ jQuery(document).ready(function() {
         $('.list-fabric-main .fabric-item').each(function(index) {
             callApiLampShades($(this).data('sku'));
         });
+        selectSlick();
     }
+
+    // $('#headingFabric').click(function() {
+    //     console.log(11);
+    //     if($('#collapseFabric').hasClass('show')){
+    //         selectSlick();
+    //     }
+    // });
 
 });
 
@@ -651,3 +646,47 @@ function move_image(){
         click=false;
     });
 }
+
+function selectSlick(){
+    var countElements = $(".list-img-fabric .fabric-item").length;
+    if (countElements > 10)
+    {
+        $('.list-img-fabric').slick({
+        slidesToShow: countElements-1,
+        slidesToScroll: 1, 
+        asNavFor: '.list-fabric-main',
+        centerMode:false,
+        focusOnSelect: true,
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: countElements-3,
+                slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: countElements-5,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: countElements-8,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    } else {
+        $('.list-img-fabric').slick({
+            slidesToShow: countElements,
+            slidesToScroll: 1, 
+            asNavFor: '.list-fabric-main',
+            centerMode:false,
+            focusOnSelect: true
+            });
+    }
+};

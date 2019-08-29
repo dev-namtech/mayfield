@@ -496,7 +496,7 @@
 
 .zoom10>div{
     overflow: hidden;
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 .zoom10>div>div:hover + div{

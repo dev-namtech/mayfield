@@ -1,4 +1,4 @@
-    <div class="imspiration-main-content">
+    <div class="inspiration-main-content">
         <section class="section-header-content">
             <div class="container">
                 [%breadcrumb%]
@@ -33,7 +33,7 @@
             </div>
         </section>
 
-        <section class="inspiration-gallery">
+        <section class="inspiration-gallery d-none">
             <div class="row">
                 <div class="col-md-4 inspiration-products wow fadeInUp">
                     <img src="/assets/themes/skeletal/images/00.png" alt="square-img" class="img-fluid">
@@ -152,15 +152,11 @@
             </div>
         </section>
 
-        [%thumb_list type:'products' filter_category:'[@id@]' limit:'13'%]
+        [%thumb_list type:'products' template:'inspiration' filter_category:'[@id@]' limit:'13'%]
             [%param *header%]
             <section class="inspiration-gallery">
                 <div class="row">
             [%/param%]
-
-            [%param *body%]
-            [%/param%]
-
             [%param *footer%]
                 </div>
             </section>
@@ -170,4 +166,3 @@
         [%/thumb_list%]
     </div>
 </div>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>

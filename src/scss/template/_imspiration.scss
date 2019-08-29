@@ -1,9 +1,12 @@
-.imspiration-main-content{
+.inspiration-main-content{
     padding-bottom: 80px;
     .inspiration-gallery{
         text-align: center;
+        padding: 0 15px;
         .inspiration-products{
             position: relative;
+            width: 100%;
+            margin-bottom: 30px;
             .layer{
                 width: 100%;
                 height: 135px;
@@ -23,9 +26,14 @@
                     margin:10px auto;
                 }
             }
+            img{
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+            img:hover+.layer{
+                display: block;
+            }
         }
-    }
-    img.img-fluid:hover+.layer{
-        display: block;
     }
 }

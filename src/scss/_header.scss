@@ -144,6 +144,32 @@
             }
         }
     }
+    .header-search,
+    .header-search-mb{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        padding: 50px;
+        min-height: 200px;
+        z-index: 99;
+        border-bottom: 2px solid;
+        .d-lggg-block{
+            font-size: 25px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .btn-outline-secondary{
+            color: #000000;
+        }
+        .close-search{
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+        }
+    }
 }
 @media screen and (min-width: 1200px){
     .wrapper-header{
