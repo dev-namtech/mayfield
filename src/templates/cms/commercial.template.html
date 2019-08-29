@@ -31,27 +31,34 @@
                 [%/if%]
             </div>
         </section>
-        <section class="project-gallery">
-            <div class="big-text text-center wow fadeInUp" data-wow-delay="0.5s">Project Gallery</div>
-            <div class="row wow fadeInUp" data-wow-delay="0.8s">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                <img class="img-fluid" src="/assets/themes/skeletal/images/KFC.png" alt="KFC_Mascot">
-                <p class="text-center">Art Series – The Chen</p>
+        [%thumb_list type:'products' limit:'99'%]
+            [%param *header%]
+            <section class="project-gallery">
+                <div class="big-text text-center wow fadeInUp" data-wow-delay="0.5s">Project Gallery</div>
+                    <div class="row wow fadeInUp" data-wow-delay="0.8s">
+            [%/param%]
+            [%param *body%]
+                <div class="col-lg-3 col-md-6 col-sm-6 project-gallery-item" data-sku="[@SKU@]">
+                    <img class="img-fluid" src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="KFC_Mascot">
+                    <p class="text-center">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</p>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                <img class="img-fluid" src="/assets/themes/skeletal/images/KFC.png" alt="KFC_Mascot">
-                <p class="text-center">Art Series – The Chen</p>
+            [%/param%]
+            [%param *footer%]
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                <img class="img-fluid" src="/assets/themes/skeletal/images/KFC.png" alt="KFC_Mascot">
-                <p class="text-center">Art Series – The Chen</p>
+                <div id="modalMF" class="modal-mf">
+                    <div class="modal-mf-dialog">
+                        <div class="modal-mf-content">
+                            <div class="modal-mf-header">
+                                <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-mf-body"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                <img class="img-fluid" src="/assets/themes/skeletal/images/KFC.png" alt="KFC_Mascot">
-                <p class="text-center">Art Series – The Chen</p>
-                </div>
-            </div>
-        </section>
+            </section>
+            [%/param%]
+        [%/thumb_list%]
         <!-- End Section Project Gallery -->
         <section class="contact-us wow fadeInUp">
           <div class="container">

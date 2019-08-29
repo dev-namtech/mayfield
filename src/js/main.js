@@ -178,161 +178,13 @@ jQuery(document).ready(function() {
         arrows: false,
         fade: true,
         asNavFor: '.list-img-fabric'
-    })
-    $('.slider .img-slider').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        prevArrow: $('.prev'),
-        nextArrow: $('.next'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
     });
 
-    $('.slider .img-slider1').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: $('.prev1'),
-        nextArrow: $('.next1'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
-
-    $('.slider .img-slider2').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: $('.prev2'),
-        nextArrow: $('.next2'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
-
-    $('.slider .img-slider3').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: $('.prev3'),
-        nextArrow: $('.next3'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
-
-    $('.slider .img-slider4').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: $('.prev4'),
-        nextArrow: $('.next4'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
     changePositionElement();
 
     $(window).resize(function() {
         changePositionElement();
-    })
+    });
         
     
     function changePositionElement() {
@@ -445,14 +297,61 @@ jQuery(document).ready(function() {
         selectSlick();
     }
 
-    // $('#headingFabric').click(function() {
-    //     console.log(11);
-    //     if($('#collapseFabric').hasClass('show')){
-    //         selectSlick();
-    //     }
-    // });
+    $('.project-gallery-item img').click(function() {
+        getPjGallery($(this).parent('div').data('sku'));
+    });
 
+    $('#modalMF .close').click(function() {
+        $('#modalMF').removeClass('open');
+        $('#modalMF .modal-mf-content .modal-mf-body').html('');
+        $('#modalMF .modal-mf-content .modal-mf-header h4').remove();
+    });
 });
+
+function getPjGallery(sku){
+    $('.nactivity').addClass('open');
+    var data = {
+        "Filter":{
+          "SKU": sku,
+          "OutputSelector": ["Name","Images","Description"]
+        }
+    };
+    $.ajax({
+        async: true,
+        crossDomain: true,
+        url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+        headers: {
+          'accept': 'application/json',
+          'netoapi_action':'GetItem',
+          'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+          'content-type': 'application/json',
+          'cache-control': 'no-cache'
+        },
+        method: 'POST',
+        dataType: 'json',
+        processData: false,
+        data: JSON.stringify(data),
+        success: function(response){
+            $('#modalMF .modal-mf-content .modal-mf-header').append('<h4 class="modal-title">'+response.Item[0].Name+'</h4>')
+            $('#modalMF .modal-mf-content .modal-mf-body').append('<div class="row"><div class="col-xl-8 col-lg-12 col-md-12 col-sm-12"><div class="content-slide-img"></div></div><div class="col-xl-4 col-lg-12 col-md-12 col-sm-12"><div class="content-des"></div></div></div>');
+            response.Item[0].Images.forEach(item => {
+                $('#modalMF .modal-mf-content .content-slide-img').append('<img class="img-fluid" src="'+item.URL+'"/>');
+            });
+            $('#modalMF .modal-mf-content .content-des').append(response.Item[0].Description);
+            $('#modalMF .modal-mf-content .content-des').append('<a href="#">Enquire</a>');
+            $('.nactivity').removeClass('open');
+            $('#modalMF').addClass('open');
+            $('#modalMF .modal-mf-content .content-slide-img').slick({
+                dots: false,
+                arrows: true,
+                loop: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                auto: false,
+            });
+        }
+    });
+}
 
 function callApiLampShades(sku){
     var data = {
@@ -477,7 +376,6 @@ function callApiLampShades(sku){
         processData: false,
         data: JSON.stringify(data),
         success: function(response){
-            console.log(response);
             $('.list-fabric-main #fabric' + sku + ' .content-des').append(response.Item[0].Description);
         }
     });

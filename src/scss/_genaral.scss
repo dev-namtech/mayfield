@@ -530,12 +530,16 @@ button.slick-prev{
         }
     }
 }
-
 .project-gallery{
     .big-text{
         font-size: 40px;
         font-weight: 600; 
         margin-bottom: 32px
+    }
+    .project-gallery-item{
+        img{
+            cursor: pointer;
+        }
     }
 }
 .pagination{
@@ -685,6 +689,74 @@ button.slick-prev{
 }
 .not-found-search{
     padding: 30px 15px;
+}
+.modal-mf{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.4);
+    z-index: 99;
+    display: none;
+    &.open{
+        display: block;
+    }
+    .modal-mf-dialog{
+        position: absolute;
+        width: 90%;
+        height: auto;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        background-color: white;
+        padding: 50px 130px 80px;
+        .close{
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+        .modal-title{
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        button.slick-next,
+        button.slick-prev{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .content-des{
+            h2{
+                font-size: 22px;
+                line-height: normal;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+            p{
+                font-size: 14px;
+                line-height: 1.79;
+                margin-bottom: 20px;
+                margin-top: 0;
+                font-weight: normal;
+            }
+            a{
+                font-size: 24px;
+                line-height: 2.08;
+                color: #000;
+                text-decoration: underline;
+                display: block;
+                font-family: "CopernicusTrial-BookItalic",sans-serif;
+            }
+        }
+    }
+}
+.nactivity.open{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 @media (max-width:1199px){
     .products-row{

@@ -11,7 +11,7 @@
 					<input type="hidden" name="inp-submit" value="y" />
 					<input type="hidden" name="inp-opt_in" value="y" />
 					<div class="input-group">
-						<input name="inp-name" class="form-control" type="text" placeholder="Name" required aria-label="Name"/>
+						<input name="inp-name" class="form-control" type="text" value="[%nohtml%][@inp-name@][%/nohtml%]" placeholder="Name" required aria-label="Name"/>
 						<input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email" required aria-label="Email"/>
 						<input name="inp-interests" class="form-control" type="text" placeholder="Interests In" required aria-label="Interests In"/>
 						<div class="input-group-append"><input class="btn btn-outline-secondary" type="submit" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
@@ -49,10 +49,10 @@
 						<div class="col-menu-footer">
 							<ul class="list-logo-payment">
 								<li>Shop Securely With:</li>
-								<li><img src="/assets/themes/mayfield/images/visa-logo.png" alt=""></li>
-								<li><img src="/assets/themes/mayfield/images/master-logo.png" alt=""></li>
-								<li><img src="/assets/themes/mayfield/images/paypal-logo.png" alt=""></li>
-								<li><img src="/assets/themes/mayfield/images/afterpay-logo.png" alt=""></li>
+								<li><img src="/assets/themes/skeletal/images/visa-logo.png" alt=""></li>
+								<li><img src="/assets/themes/skeletal/images/master-logo.png" alt=""></li>
+								<li><img src="/assets/themes/skeletal/images/paypal-logo.png" alt=""></li>
+								<li><img src="/assets/themes/skeletal/images/afterpay-logo.png" alt=""></li>
 							</ul>
 						</div>
 					</nav>
@@ -90,11 +90,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		jQuery('.nav-link.search-link').click(function(event) {
-			event.preventDefault();
-		});
-	</script>
 </footer>
 <!-- Required Neto Scripts - DO NOT REMOVE -->
 [%load_template file:'footers/includes/scripts.template.html'/%]
