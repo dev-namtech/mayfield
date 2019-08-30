@@ -1,41 +1,42 @@
 <div class="lampshades-main-content">
     <section class="section-header-content">
-            <div class="container">
-                [%breadcrumb%]
-                    [%param *header%]
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
-                                    <meta itemprop="position" content="0" />
-                                </li>
-                    [%/param%]
-                    [%param *body%]
-                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
-                                    <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
-                                </li>
-                    [%/param%]
-                    [%param *footer%]
-                            </ol>
-                        </nav>
-                    [%/param%]
-                [%/breadcrumb%]
-                <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
-                [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-                <div class="description-content-coper">
-                    <p>With the list of 70+ standard lampshade shapes and sizes, available in a range of 45+ stock fabrics, lampshades can be made to your specific size and in almost any supplied fabric.</p>
-                    <a href="#">Customer enquiry</a>
-                </div>
-                [%/if%]
+        <div class="container">
+            [%breadcrumb%]
+                [%param *header%]
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                <meta itemprop="position" content="0" />
+                            </li>
+                [%/param%]
+                [%param *body%]
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                            </li>
+                [%/param%]
+                [%param *footer%]
+                        </ol>
+                    </nav>
+                [%/param%]
+            [%/breadcrumb%]
+            <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+            [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+            <div class="description-content-coper">
+                <p>With the list of 70+ standard lampshade shapes and sizes, available in a range of 45+ stock fabrics, lampshades can be made to your specific size and in almost any supplied fabric.</p>
+                <a href="#">Customer enquiry</a>
             </div>
+            [%/if%]
+        </div>
     </section>
 
     <section class="section-banner">
-            <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
+        <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
     </section>
 
-    <section style="background-image: url([%asset_url type:'content' id:'[@content_id@]' default:''/%])" class="section-banner [%asset_url type:'content' id:'[@content_id@]' default:'d-none'/%]">
+    <section class="section-banner wow zoomIn">
+        <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
     </section>
 
     [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'[@content_id@]' start_category:'[@content_id@]'%]

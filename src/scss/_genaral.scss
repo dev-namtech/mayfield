@@ -480,6 +480,8 @@ button.slick-prev{
     height: 264px;
     img{
         object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 }
 .section-seller{
@@ -750,6 +752,9 @@ button.slick-prev{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.main-content-404{
+    padding: 50px 0;
 }
 @media (max-width:1199px){
     .products-row{
