@@ -1,63 +1,62 @@
-    <div class="stockists-main-content">
-        <section class="section-header-content">
-            <div class="container">
-                [%breadcrumb%]
-                    [%param *header%]
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
-                                    <meta itemprop="position" content="0" />
-                                </li>
-                    [%/param%]
-                    [%param *body%]
-                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
-                                    <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
-                                </li>
-                    [%/param%]
-                    [%param *footer%]
-                            </ol>
-                        </nav>
-                    [%/param%]
-                [%/breadcrumb%]
-                <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
-                [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-                <div class="description-content">
-                    [%parse%]
-                        [@content_description1@]
-                        [@content_description2@]
-                        [@content_description3@]
-                        [@content_wufoo_form@]
-                    [%/parse%]
-                </div>
-                [%/if%]
+<div class="stockists-main-content">
+    <section class="section-header-content">
+        <div class="container">
+            [%breadcrumb%]
+                [%param *header%]
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                <meta itemprop="position" content="0" />
+                            </li>
+                [%/param%]
+                [%param *body%]
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                            </li>
+                [%/param%]
+                [%param *footer%]
+                        </ol>
+                    </nav>
+                [%/param%]
+            [%/breadcrumb%]
+            <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+            [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+            <div class="description-content">
+                [%parse%]
+                    [@content_description1@]
+                    [@content_description2@]
+                    [@content_description3@]
+                    [@content_wufoo_form@]
+                [%/parse%]
             </div>
-        </section>
-        <section class="stockists-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12 stockists-left wow zoomIn">
-                        <div class="">Your Postcode or City</div>
-                        <input type="text" placeholder="Enter your postcode or city">
-                        <div class="">Show Stores Within</div>
-                        <div class="kilometer-select">
-                            <select name="" id="">
-                                <option>25 KM</option>
-                                <option>35 KM</option>
-                                <option>45 KM</option>
-                                <option>55 KM</option>
-                            </select>               
-                        </div>   
-                        <a href="#" class="button">Find Stores</a>      
-                        <p class="founded-location">3 results found</p>  
-                        <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
-                        <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
-                        <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="0.5s"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402586.8470552734!2d144.77295705638534!3d-37.97223423277165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne+Victoria%2C+%C3%9Ac!5e0!3m2!1svi!2s!4v1566463554215!5m2!1svi!2s" width="100%" height="527px" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+            [%/if%]
+        </div>
+    </section>
+    <section class="stockists-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 stockists-left wow zoomIn">
+                    <div class="">Your Postcode or City</div>
+                    <input type="text" placeholder="Enter your postcode or city">
+                    <div class="">Show Stores Within</div>
+                    <div class="kilometer-select">
+                        <select name="" id="">
+                            <option>25 KM</option>
+                            <option>35 KM</option>
+                            <option>45 KM</option>
+                            <option>55 KM</option>
+                        </select>               
+                    </div>   
+                    <a href="#" class="button">Find Stores</a>      
+                    <p class="founded-location">3 results found</p>  
+                    <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
+                    <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
+                    <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
                 </div>
-            </div> 
-        </section>
-    </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="0.5s"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402586.8470552734!2d144.77295705638534!3d-37.97223423277165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne+Victoria%2C+%C3%9Ac!5e0!3m2!1svi!2s!4v1566463554215!5m2!1svi!2s" width="100%" height="527px" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+            </div>
+        </div> 
+    </section>
 </div>

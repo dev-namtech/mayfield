@@ -1,65 +1,64 @@
-    <div class="catalogue-main-content">
-        <section class="section-header-content">
-                <div class="container">
-                    [%breadcrumb%]
-                        [%param *header%]
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                        <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
-                                        <meta itemprop="position" content="0" />
-                                    </li>
-                        [%/param%]
-                        [%param *body%]
-                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                        <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
-                                        <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
-                                    </li>
-                        [%/param%]
-                        [%param *footer%]
-                                </ol>
-                            </nav>
-                        [%/param%]
-                    [%/breadcrumb%]
-                    <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
-                    [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-                    <div class="description-content">
-                        [%parse%]
-                            [@content_description1@]
-                            [@content_description2@]
-                            [@content_description3@]
-                            [@content_wufoo_form@]
-                        [%/parse%]
-                    </div>
-                    [%/if%]
+<div class="catalogue-main-content">
+    <section class="section-header-content">
+            <div class="container">
+                [%breadcrumb%]
+                    [%param *header%]
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                    <meta itemprop="position" content="0" />
+                                </li>
+                    [%/param%]
+                    [%param *body%]
+                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                    <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                                </li>
+                    [%/param%]
+                    [%param *footer%]
+                            </ol>
+                        </nav>
+                    [%/param%]
+                [%/breadcrumb%]
+                <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+                [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+                <div class="description-content">
+                    [%parse%]
+                        [@content_description1@]
+                        [@content_description2@]
+                        [@content_description3@]
+                        [@content_wufoo_form@]
+                    [%/parse%]
                 </div>
-        </section>
+                [%/if%]
+            </div>
+    </section>
 
-        <div class="main-content-catalogue">
-            <div class="main-form-catalogue">
-                <h3>We're here to help!</h3>
-                <p>Contact us today. We'd love to hear your feedback.</p>
-                <hr>
-                <div class="wrapper-form">
-                <form method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
-                        <input type="hidden" name="list_id" value="1">
-                        <input type="hidden" name="opt_in" value="y">
-                        <input type="hidden" name="inp-submit" value="y" />
-                        <input type="hidden" name="inp-opt_in" value="y" />
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <input name="inp-fname" class="form-control" type="text" placeholder="First Name*" required aria-label="FirstName"/>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <input name="inp-lname" class="form-control" type="text" placeholder="Last Name*" required aria-label="LastName"/>                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <input name="inp-email" class="form-control" type="email" placeholder="Email*" required aria-label="Email"/>                            </div>
-                            <div class="col-md-6 col-lg-6 col-sm-12">
-                                <input name="inp-company" class="form-control" type="text" placeholder="Company*" required aria-label="Company"/>                            </div>
-                                <div class="col-md-12 col-lg-12 col-sm-12"><input class="btn btn-outline-secondary" type="submit" value="Download" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
-                            </div>
-                    </form>
-                </div>
+    <div class="main-content-catalogue">
+        <div class="main-form-catalogue">
+            <h3>We're here to help!</h3>
+            <p>Contact us today. We'd love to hear your feedback.</p>
+            <hr>
+            <div class="wrapper-form">
+            <form method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
+                    <input type="hidden" name="list_id" value="1">
+                    <input type="hidden" name="opt_in" value="y">
+                    <input type="hidden" name="inp-submit" value="y" />
+                    <input type="hidden" name="inp-opt_in" value="y" />
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-12">
+                            <input name="inp-fname" class="form-control" type="text" placeholder="First Name*" required aria-label="FirstName"/>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-12">
+                            <input name="inp-lname" class="form-control" type="text" placeholder="Last Name*" required aria-label="LastName"/>                            </div>
+                        <div class="col-md-6 col-lg-6 col-sm-12">
+                            <input name="inp-email" class="form-control" type="email" placeholder="Email*" required aria-label="Email"/>                            </div>
+                        <div class="col-md-6 col-lg-6 col-sm-12">
+                            <input name="inp-company" class="form-control" type="text" placeholder="Company*" required aria-label="Company"/>                            </div>
+                            <div class="col-md-12 col-lg-12 col-sm-12"><input class="btn btn-outline-secondary" type="submit" value="Download" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
+                        </div>
+                </form>
             </div>
         </div>
     </div>

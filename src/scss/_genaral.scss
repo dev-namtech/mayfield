@@ -471,17 +471,17 @@ button.slick-prev{
         display: block;
     }
 }
-
 .row2{
     width: 1440px;
     height: 706px;
     background-color: #f1f2f2;
 }
-
-.section-banner img{
-    width: 100%;
+.section-banner{
+    height: 264px;
+    img{
+        object-fit: cover;
+    }
 }
-
 .section-seller{
     padding: 60px 0;
     @media screen and (min-width: 1200px){
@@ -609,13 +609,6 @@ button.slick-prev{
     z-index: 1!important;
     width: 100%!important;
     background-color: rgba(216, 216, 216, 0.4)!important;
-}
-.section-banner{
-    width: 100%;
-    height: 264px;
-    background-image: url('../images/image-collections-page.png');
-    background-position: center;
-    background-size: cover;
 }
 .image-pendant,
 .title-pendant{
@@ -815,6 +808,19 @@ button.slick-prev{
     }
 }
 @media (max-width:767px){
+    .modal-mf{
+        overflow-y: auto;
+        padding: 30px 15px;
+        .modal-mf-dialog{
+            padding: 30px 15px 30px;
+            .modal-title{
+                margin-bottom: 20px;
+            }
+            .content-des{
+                margin-top: 20px;
+            }
+        }
+    }
     .big-text{
         font-size:32px!important
     }

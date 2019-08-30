@@ -1,63 +1,62 @@
-	<div class="main-content-collection">
-		<!-- Content header -->
-        <section class="section-header-content">
-			<div class="container">
-				[%breadcrumb%]
-					[%param *header%]
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-								<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-									<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
-									<meta itemprop="position" content="0" />
-								</li>
-					[%/param%]
-					[%param *body%]
-								<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-									<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
-									<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
-								</li>
-					[%/param%]
-					[%param *footer%]
-							</ol>
-						</nav>
-					[%/param%]
-				[%/breadcrumb%]
-				<h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
-				[%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-				<div class="description-content">
-					[%parse%]
-						[@content_description1@]
-						[@content_description2@]
-						[@content_description3@]
-						[@content_wufoo_form@]
-					[%/parse%]
-				</div>
-				[%/if%]
+<div class="main-content-collection">
+	<!-- Content header -->
+	<section class="section-header-content">
+		<div class="container">
+			[%breadcrumb%]
+				[%param *header%]
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+								<meta itemprop="position" content="0" />
+							</li>
+				[%/param%]
+				[%param *body%]
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+								<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+							</li>
+				[%/param%]
+				[%param *footer%]
+						</ol>
+					</nav>
+				[%/param%]
+			[%/breadcrumb%]
+			<h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+			[%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+			<div class="description-content">
+				[%parse%]
+					[@content_description1@]
+					[@content_description2@]
+					[@content_description3@]
+					[@content_wufoo_form@]
+				[%/parse%]
 			</div>
-		</section>
+			[%/if%]
+		</div>
+	</section>
 
-		<!-- Main content -->
-		[%content_menu content_type:'category' sortby:'sortorder,name' show_empty:'1' limit:''%]
-			[%param header%]
-				<section aria-label="Categories">
-				<div class="container">
-				<div class="row">
-			[%/ param%]
-			[%param *level_1%]
-				[%if [@content_id@] != 110 and [@content_id@] != 165 %]
-				<div class="col-6 col-sm-4 category-thumbnail" role="article" aria-label="[@name@] category">
-					<p class="h2"><a href="[@url@]">[@name@]</a></p>
-					<a href="[@url@]">
-						<img src="[%asset_url type:'category' id:'[@id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]" class="img-fluid" alt="[@name@]" />
-					</a>
-				</div>
-				[%/if%]
-			[%/ param%]
-			[%param footer%]
-				</div>
-				</div>
-				</section>
-			[%/ param%]
-		[%/ content_menu%]
-	</div>
+	<!-- Main content -->
+	[%content_menu content_type:'category' sortby:'sortorder,name' show_empty:'1' limit:''%]
+		[%param header%]
+			<section aria-label="Categories">
+			<div class="container">
+			<div class="row">
+		[%/ param%]
+		[%param *level_1%]
+			[%if [@content_id@] != 110 and [@content_id@] != 165 %]
+			<div class="col-6 col-sm-4 category-thumbnail" role="article" aria-label="[@name@] category">
+				<p class="h2"><a href="[@url@]">[@name@]</a></p>
+				<a href="[@url@]">
+					<img src="[%asset_url type:'category' id:'[@id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]" class="img-fluid" alt="[@name@]" />
+				</a>
+			</div>
+			[%/if%]
+		[%/ param%]
+		[%param footer%]
+			</div>
+			</div>
+			</section>
+		[%/ param%]
+	[%/ content_menu%]
 </div>
