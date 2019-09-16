@@ -51,7 +51,7 @@
 [%if [@count@] == 7 %]
 <div class="col-md-3 d-flex align-content-between flex-wrap">
 [%/if%]
-[%if [@count@] > 7 and [@count@] <= 9 %]
+[%if [@count@] > 7 and [@count@] <= 10 %]
 <div class="inspiration-products wow fadeInRight">
     <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="big-square-img">
     <div class="layer">             
@@ -62,16 +62,16 @@
     </div>
 </div>
 [%/if%]
-[%if [@count@] == 9 %]
+[%if [@count@] == 10 %]
 </div>
 [%/if%]
-[%if [@count@] > 9 %]
-<div class="col-md-4 inspiration-products"><img src="/assets/themes/skeletal/images/05.png" alt="square-img">
+[%if [@count@] > 10 %]
+<div class="col-md-4 inspiration-products"><img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="square-img">
     <div class="layer">             
-        <span><b>Stevie Table Lamp</b></span>
+        <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
-        <span>$129.00</span>
-        <div class="button">Shop now</div>
+        <span>[%format type:'currency'%][@store_price@][%/format%]</span>
+        <a href="[@URL@]" class="button">Shop now</a>
     </div>
 </div>
 [%/if%]

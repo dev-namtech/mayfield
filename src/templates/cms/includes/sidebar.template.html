@@ -1,4 +1,4 @@
-<aside class="col-12 col-md-3" id="left-sidebar">
+<aside class="col-12 d-none" id="left-sidebar">
 	[%IF [@page_type@] eq 'category' and [@config:show_filters@]%]
 		<div class="card mb-2">
 			<div class="card-header border-bottom">
@@ -146,7 +146,7 @@
 	[%cache type:'cmenu' id:'sidebar-category' ttl:'86400'%]
 	[%CATEGORYMENU sortby:'sortorder,selected,name' show_empty:'1'%]
 		[%param header%]
-			<div class="card d-none d-md-block mb-2">
+			<div class="card d-md-block mb-2">
 				<div class="card-header"><h3 class="h4 mb-0">Categories</h3></div>
 				<div class="list-group list-group-flush" role="navigation" aria-label="Category menu">
 		[%/param%]
@@ -178,7 +178,7 @@
 	[%CONFIG id:'phistory_limit' if:'ne' value:'0'%]
 		[%PRODUCT_HISTORY limit:'[@config:phistory_limit@]' template:'box'%]
 			[%param header%]
-				<section class="card d-none d-md-block my-2" role="contentinfo" aria-label="Browsing history">
+				<section class="card d-md-block my-2" role="contentinfo" aria-label="Browsing history">
 					<div class="card-header"><h3 class="h4 mb-0">Browsing History</h3></div>
 					<ul class="nav list-group">
 			[%/param%]
@@ -191,7 +191,7 @@
 	[%cache type:'menu' id:'sidebar-info' ttl:'86400'%]
 	[%MENU id:'web_information'%]
 		[%param header%]
-			<div class="card d-none d-md-block my-2">
+			<div class="card d-md-block my-2">
 				<div class="card-header"><h3 class="h4 mb-0">Information</h3></div>
 				<div class="list-group list-group-flush" role="navigation" aria-label="Information menu">
 		[%/param%]
@@ -221,4 +221,3 @@
 	[%/MENU%]
 	[%/cache%]
 </aside>
-<div class="col-12 col-md-9">

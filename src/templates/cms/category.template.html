@@ -1,3 +1,5 @@
+[%SET [@page_type@]='category'/%]
+[%load_template file:'cms/includes/sidebar.template.html'/%]
 <div class="main-content-collection">
     <!-- Content header -->
     <section class="section-header-content">
@@ -121,7 +123,7 @@
             <div id="contentProAjax" class="row products-row"></div>
         </div>
         [%IF [@total_results@] > [@config:thumb_limit@]%]
-            <div class="row">
+            <div>
                 <div class="col-12">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">

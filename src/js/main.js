@@ -206,6 +206,75 @@ jQuery(document).ready(function() {
         }
     }
 
+    $('.modal-reg-wholesale .btn-close').click(function(){
+        $('.modal-reg-wholesale').removeClass('show');
+    });
+
+    // Submit
+    $('#wholesaleSignUp').submit(function(e){
+        e.preventDefault();
+        $('.nactivity').addClass('open');
+        var form = $('#wholesaleSignUp');
+        var business = form.find('input[type="checkbox"]');
+        var dataBusiness = '';
+        business.each(function(index){
+            if($(this).is(':checked') == true){
+                dataBusiness += $(this).val() + ';';
+            }
+        });
+        var customer= {
+            "Customer": [
+                {
+                    "EmailAddress":form.find('input[name="reg_email"]').val(),
+                    "Password":"123456",
+                    "UserGroup":"Wholesale",
+                    "ABN":form.find('input[name="reg_email"]').val(),
+                    "WebsiteURL":form.find('input[name="reg_email"]').val(),
+                    "UserCustom1":dataBusiness,
+                    "UserCustom2":form.find('input[name="reg_mobile_phone"]').val(),
+                    "BillingAddress": {
+                        "BillFirstName":form.find('input[name="reg_first_name"]').val(),
+                        "BillLastName":form.find('input[name="reg_last_name"]').val(),
+                        "BillCompany":form.find('input[name="reg_company"]').val(),
+                        "BillStreetLine1":form.find('input[name="reg_address1"]').val(),
+                        "BillStreetLine2":form.find('input[name="reg_address2"]').val(),
+                        "BillCity":form.find('input[name="reg_suburb"]').val(),
+                        "BillState":form.find('input[name="reg_state"]').val(),
+                        "BillPostCode":form.find('input[name="reg_postcode"]').val(),
+                        "BillCountry":form.find('select[name="reg_bill_country"]').val(),
+                        "BillPhone":form.find('input[name="reg_phone_number"]').val()
+                    }
+                }
+            ]
+        };
+        $.ajax({
+            async: true,
+            crossDomain: true,
+            url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+            headers: {
+                'accept': 'application/json',
+                'netoapi_action':'AddCustomer',
+                'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+                'content-type': 'application/json',
+                'cache-control': 'no-cache'
+            },
+            method: 'POST',
+            dataType: 'json',
+            processData: false,
+            data: JSON.stringify(customer),
+            success: function(response){
+                $('.nactivity').removeClass('open');        
+                if(response.Ack != 'Error'){
+                    $('.p-status').html('');
+                    $('.modal-reg-wholesale .content-modal').append('<h3>Thank you.</h3><p>We&#39;ll be in touch shortly to confirm your registration.</p><button class="btn btn-close">Done</button>');
+                    $('.modal-reg-wholesale').addClass('show');
+                } else {
+                    $('.p-status').html('<p>'+response.Messages.Error.Message+'</p>');
+                }
+            }
+        });
+    });
+
 
     // $("#show").change(function(){
     //   valCate = $('#contentID').val();
