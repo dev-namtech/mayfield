@@ -1,5 +1,5 @@
+<div class="container main-content-collection">
 [%SET [@page_type@]='category'/%]
-[%load_template file:'cms/includes/sidebar.template.html'/%]
 	[%breadcrumb%]
 		[%param *header%]
 			<nav aria-label="breadcrumb">
@@ -42,12 +42,12 @@
 			[%/if%]
 		</h1>
 	[%/filter%]
+	<section class="section-collection-product main-container wow fadeInUp">
 	[%filter ID:'keywords' if:'ne' value:' '%]
 		[%thumb_list type:'products' limit:'[@config:THUMB_LIMIT@]'%]
 			[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
 				[%param *header%]
-					<hr aria-hidden="true"/>
-					<div class="row sort_container">
+					<div class="row sort_container d-none">
 						<div class="col-4 col-md-7 col-lg-4">
 							<script language="javascript" type="text/javascript">
 								function viewtype(view) {
@@ -117,7 +117,7 @@
 				[%/param%]
 				[%param *ifempty%]
 					<div class="row">
-						<div class="col-12">
+						<div class="col-12 not-found-search">
 							[%filter ID:'keywords' if:'ne' value:''%]
 								<p>Search was unable to find any product results for '[%NOHTML%][%filter ID:'keywords'/%][%/NOHTML%]' you may have typed your word incorrectly, or are being too specific. Try using a broader search phrase.</p>
 							[%/filter%]
@@ -131,4 +131,5 @@
 			[%/thumb_list%]
 		</div>
 	[%/filter%]
+	</section>
 </div>

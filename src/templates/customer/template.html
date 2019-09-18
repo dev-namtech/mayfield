@@ -1,4 +1,4 @@
-<div class="col-12">
+<div class="container main-content-customer">
 	<nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -23,7 +23,7 @@
 		[%/if%]
 	</div>
 </div>
-<section class="col-12" aria-label="Account Options">
+<section class="container" aria-label="Account Options">
 	<h2 class="sr-only">Account Options</h2>
 	<div class="row">
 		[%if ![@user:email@]%]
@@ -162,7 +162,7 @@
 		</div>
 	[%/param%]
 [%/active_vouchers%]
-<section class="col-12" aria-label="My Orders">
+<section class="container" aria-label="My Orders">
 	<hr />
 	<h2 id="orders">My Orders</h2>
 	[%thumb_list type:'orders' limit:'9'%]
@@ -263,7 +263,7 @@
 		[%/param%]
 	[%/thumb_list%]
 </section>
-<section class="col-12" aria-label="My Quotes">
+<section class="container" aria-label="My Quotes">
 	<hr />
 	<h2 id="quotes">My Quotes</h2>
 	[%thumb_list limit:'10' type:'quotes'%]
@@ -334,7 +334,7 @@
 	[%/thumb_list%]
 </section>
 [%if [@config:show_wishlist@]%]
-	<section class="col-12" aria-label="My Wishlists">
+	<section class="container" aria-label="My Wishlists">
 		<hr />
 		<h2>My Wishlists</h2>
 		[%thumb_list limit:'10' type:'list_wishlists'%]

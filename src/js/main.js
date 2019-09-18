@@ -25,6 +25,37 @@ jQuery(document).ready(function() {
         });
     }
 
+    // Search link
+    if ($(window).width() > 992) {
+        $('.nav-link.search-link').click(function(e){
+            e.preventDefault();
+            if($('.header-search').hasClass('d-none')){
+                $('.header-search').removeClass('d-none');
+            }
+        });
+        $('.close-search').click(function(e){
+            if(!$('.header-search').hasClass('d-none')){
+                $('.header-search').addClass('d-none');
+            }
+        });
+    }
+    if ($(window).width() < 992) {
+        $('.menu-mobile .nav-link.search-link').click(function(e){
+            e.preventDefault();
+            if($('.header-search-mb').hasClass('d-none')){
+                $('.header-search-mb').removeClass('d-none');
+            }
+        });
+        $('.close-search').click(function(e){
+            if(!$('.header-search-mb').hasClass('d-none')){
+                $('.header-search-mb').addClass('d-none');
+            }
+        });
+        $('.main-menu-mobile .nav-link.search-link').click(function(e){
+            e.preventDefault();
+        });
+    }
+
     jQuery('.section-top-seller .row').slick({
         dots: false,
         arrows: true,
@@ -282,70 +313,11 @@ jQuery(document).ready(function() {
         ]
     });
 
-    $('.slider .img-slider3').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: $('.prev3'),
-        nextArrow: $('.next3'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
-
-    $('.slider .img-slider4').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: $('.prev4'),
-        nextArrow: $('.next4'),
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
     changePositionElement();
 
     $(window).resize(function() {
         changePositionElement();
-    })
+    });
         
     
     function changePositionElement() {
@@ -366,6 +338,75 @@ jQuery(document).ready(function() {
             })
         }
     }
+
+    $('.modal-reg-wholesale .btn-close').click(function(){
+        $('.modal-reg-wholesale').removeClass('show');
+    });
+
+    // Submit
+    $('#wholesaleSignUp').submit(function(e){
+        e.preventDefault();
+        $('.nactivity').addClass('open');
+        var form = $('#wholesaleSignUp');
+        var business = form.find('input[type="checkbox"]');
+        var dataBusiness = '';
+        business.each(function(index){
+            if($(this).is(':checked') == true){
+                dataBusiness += $(this).val() + ';';
+            }
+        });
+        var customer= {
+            "Customer": [
+                {
+                    "EmailAddress":form.find('input[name="reg_email"]').val(),
+                    "Password":"123456",
+                    "UserGroup":"Wholesale",
+                    "ABN":form.find('input[name="reg_email"]').val(),
+                    "WebsiteURL":form.find('input[name="reg_email"]').val(),
+                    "UserCustom1":dataBusiness,
+                    "UserCustom2":form.find('input[name="reg_mobile_phone"]').val(),
+                    "BillingAddress": {
+                        "BillFirstName":form.find('input[name="reg_first_name"]').val(),
+                        "BillLastName":form.find('input[name="reg_last_name"]').val(),
+                        "BillCompany":form.find('input[name="reg_company"]').val(),
+                        "BillStreetLine1":form.find('input[name="reg_address1"]').val(),
+                        "BillStreetLine2":form.find('input[name="reg_address2"]').val(),
+                        "BillCity":form.find('input[name="reg_suburb"]').val(),
+                        "BillState":form.find('input[name="reg_state"]').val(),
+                        "BillPostCode":form.find('input[name="reg_postcode"]').val(),
+                        "BillCountry":form.find('select[name="reg_bill_country"]').val(),
+                        "BillPhone":form.find('input[name="reg_phone_number"]').val()
+                    }
+                }
+            ]
+        };
+        $.ajax({
+            async: true,
+            crossDomain: true,
+            url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+            headers: {
+                'accept': 'application/json',
+                'netoapi_action':'AddCustomer',
+                'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+                'content-type': 'application/json',
+                'cache-control': 'no-cache'
+            },
+            method: 'POST',
+            dataType: 'json',
+            processData: false,
+            data: JSON.stringify(customer),
+            success: function(response){
+                $('.nactivity').removeClass('open');        
+                if(response.Ack != 'Error'){
+                    $('.p-status').html('');
+                    $('.modal-reg-wholesale .content-modal').append('<h3>Thank you.</h3><p>We&#39;ll be in touch shortly to confirm your registration.</p><button class="btn btn-close">Done</button>');
+                    $('.modal-reg-wholesale').addClass('show');
+                } else {
+                    $('.p-status').html('<p>'+response.Messages.Error.Message+'</p>');
+                }
+            }
+        });
+    });
 
 
     // $("#show").change(function(){
@@ -455,9 +496,64 @@ jQuery(document).ready(function() {
         $('.list-fabric-main .fabric-item').each(function(index) {
             callApiLampShades($(this).data('sku'));
         });
+        selectSlick();
     }
 
+    $('.project-gallery-item img').click(function() {
+        getPjGallery($(this).parent('div').data('sku'));
+    });
+
+    $('#modalMF .close').click(function() {
+        $('#modalMF').removeClass('open');
+        $('#modalMF .modal-mf-content .modal-mf-body').html('');
+        $('#modalMF .modal-mf-content .modal-mf-header h4').remove();
+    });
 });
+
+function getPjGallery(sku){
+    $('.nactivity').addClass('open');
+    var data = {
+        "Filter":{
+          "SKU": sku,
+          "OutputSelector": ["Name","Images","Description"]
+        }
+    };
+    $.ajax({
+        async: true,
+        crossDomain: true,
+        url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+        headers: {
+          'accept': 'application/json',
+          'netoapi_action':'GetItem',
+          'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+          'content-type': 'application/json',
+          'cache-control': 'no-cache'
+        },
+        method: 'POST',
+        dataType: 'json',
+        processData: false,
+        data: JSON.stringify(data),
+        success: function(response){
+            $('#modalMF .modal-mf-content .modal-mf-header').append('<h4 class="modal-title">'+response.Item[0].Name+'</h4>')
+            $('#modalMF .modal-mf-content .modal-mf-body').append('<div class="row"><div class="col-xl-8 col-lg-12 col-md-12 col-sm-12"><div class="content-slide-img"></div></div><div class="col-xl-4 col-lg-12 col-md-12 col-sm-12"><div class="content-des"></div></div></div>');
+            response.Item[0].Images.forEach(item => {
+                $('#modalMF .modal-mf-content .content-slide-img').append('<img class="img-fluid" src="'+item.URL+'"/>');
+            });
+            $('#modalMF .modal-mf-content .content-des').append(response.Item[0].Description);
+            $('#modalMF .modal-mf-content .content-des').append('<a href="#">Enquire</a>');
+            $('.nactivity').removeClass('open');
+            $('#modalMF').addClass('open');
+            $('#modalMF .modal-mf-content .content-slide-img').slick({
+                dots: false,
+                arrows: true,
+                loop: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                auto: false,
+            });
+        }
+    });
+}
 
 function callApiLampShades(sku){
     var data = {
@@ -482,7 +578,6 @@ function callApiLampShades(sku){
         processData: false,
         data: JSON.stringify(data),
         success: function(response){
-            console.log(response);
             $('.list-fabric-main #fabric' + sku + ' .content-des').append(response.Item[0].Description);
         }
     });
@@ -651,3 +746,47 @@ function move_image(){
         click=false;
     });
 }
+
+function selectSlick(){
+    var countElements = $(".list-img-fabric .fabric-item").length;
+    if (countElements > 10)
+    {
+        $('.list-img-fabric').slick({
+        slidesToShow: countElements-1,
+        slidesToScroll: 1, 
+        asNavFor: '.list-fabric-main',
+        centerMode:false,
+        focusOnSelect: true,
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: countElements-3,
+                slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: countElements-5,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: countElements-8,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    } else {
+        $('.list-img-fabric').slick({
+            slidesToShow: countElements,
+            slidesToScroll: 1, 
+            asNavFor: '.list-fabric-main',
+            centerMode:false,
+            focusOnSelect: true
+            });
+    }
+};

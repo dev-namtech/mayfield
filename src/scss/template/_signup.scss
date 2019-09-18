@@ -1,3 +1,51 @@
+.modal-reg-wholesale{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(216, 216, 216, 0.6);
+    display: none;
+    z-index: 2;
+    &.show{
+        display: none;
+    }
+    .content-modal{
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        background-color: #ffffff;
+        padding: 170px 20px 40px;
+        width: 80%;
+        max-width: 821px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h3{
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        p{
+            margin-bottom: 80px;
+        }
+        button.btn{
+            border-radius: 0;
+            border: 1px solid #000;
+            background-color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 10px 20px;
+            min-width: 201px;
+        }
+    }
+}
+.p-status{
+    p{
+        color: red;
+    }
+}
 @media (max-width:1199px){
     .wrapper-form{
         .form-left{
@@ -19,11 +67,12 @@
                 .checkbox-items{
                     width: 100%!important;
                     text-align: left
-                }   
+                }
                 .checkbox-combo{
-                    display: inline-block;
+                    display: inline-block!important;
                     width: 48%;
-                }       
+                    margin: 0;
+                }
             }   
             .btn-outline-secondary{
                 margin-top:24px

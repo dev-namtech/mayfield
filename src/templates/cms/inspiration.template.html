@@ -1,0 +1,167 @@
+<div class="inspiration-main-content">
+    <section class="section-header-content">
+        <div class="container">
+            [%breadcrumb%]
+                [%param *header%]
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+                                <meta itemprop="position" content="0" />
+                            </li>
+                [%/param%]
+                [%param *body%]
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+                                <meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+                            </li>
+                [%/param%]
+                [%param *footer%]
+                        </ol>
+                    </nav>
+                [%/param%]
+            [%/breadcrumb%]
+            <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+            <div class="description-content-coper">
+                [%parse%]
+                    [@content_description1@]
+                    [@content_description2@]
+                    [@content_description3@]
+                    [@content_wufoo_form@]
+                [%/parse%]
+            </div>
+        </div>
+    </section>
+
+    <section class="inspiration-gallery d-none">
+        <div class="row">
+            <div class="col-md-4 inspiration-products wow fadeInUp">
+                <img src="/assets/themes/skeletal/images/00.png" alt="square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.3s"><img src="/assets/themes/skeletal/images/00.png" alt="square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.6s"><img src="/assets/themes/skeletal/images/00.png" alt="square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-content-between flex-wrap">
+                <div class="inspiration-products wow fadeInLeft" data-wow-delay="0.8s">
+                    <img src="/assets/themes/skeletal/images/02.png" alt="small-rectangle-img" class="img-fluid">
+                    <div class="layer">             
+                        <span><b>Stevie Table Lamp</b></span>
+                        <br>
+                        <span>$129.00</span>
+                        <div class="button">Shop now</div>
+                    </div>
+                </div>
+                <div class="inspiration-products wow fadeInLeft" data-wow-delay="0.3s">
+                    <img src="/assets/themes/skeletal/images/02.png" alt="small-rectangle-img" class="img-fluid">
+                    <div class="layer">             
+                        <span><b>Stevie Table Lamp</b></span>
+                        <br>
+                        <span>$129.00</span>
+                        <div class="button">Shop now</div>
+                    </div>
+                </div>                  
+            </div>
+            <div class="col-md-8 inspiration-products wow fadeInRight" data-wow-delay="0.8s"><img src="/assets/themes/skeletal/images/01.png" alt="big-rectangle-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-9 inspiration-products wow fadeInLeft"><img src="/assets/themes/skeletal/images/03.png" alt="big-square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-content-between flex-wrap">
+                <div class="inspiration-products wow fadeInRight">
+                    <img src="/assets/themes/skeletal/images/04.png" alt="big-square-img" class="img-fluid">
+                    <div class="layer">             
+                        <span><b>Stevie Table Lamp</b></span>
+                        <br>
+                        <span>$129.00</span>
+                        <div class="button">Shop now</div>
+                    </div>
+                </div>
+                <div class="inspiration-products wow fadeInRight" data-wow-delay="0.3s">
+                    <img src="/assets/themes/skeletal/images/04.png" alt="big-square-img" class="img-fluid">
+                    <div class="layer">             
+                        <span><b>Stevie Table Lamp</b></span>
+                        <br>
+                        <span>$129.00</span>
+                        <div class="button">Shop now</div>
+                    </div>
+                </div>
+                <div class="inspiration-products wow fadeInRight" data-wow-delay="0.5s">
+                    <img src="/assets/themes/skeletal/images/04.png" alt="big-square-img" class="img-fluid">
+                    <div class="layer">             
+                        <span><b>Stevie Table Lamp</b></span>
+                        <br>
+                        <span>$129.00</span>
+                        <div class="button">Shop now</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 inspiration-products"><img src="/assets/themes/skeletal/images/05.png" alt="square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-4 inspiration-products"><img src="/assets/themes/skeletal/images/05.png" alt="square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+            <div class="col-md-4 inspiration-products"><img src="/assets/themes/skeletal/images/05.png" alt="square-img" class="img-fluid">
+                <div class="layer">             
+                    <span><b>Stevie Table Lamp</b></span>
+                    <br>
+                    <span>$129.00</span>
+                    <div class="button">Shop now</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    [%thumb_list type:'products' template:'inspiration' filter_category:'[@id@]' limit:'14'%]
+        [%param *header%]
+        <section class="inspiration-gallery">
+            <div class="row">
+        [%/param%]
+        [%param *footer%]
+            </div>
+        </section>
+        [%/param%]
+        [%param *ifempty%]
+        [%/param%]
+    [%/thumb_list%]
+</div>
