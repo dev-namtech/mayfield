@@ -637,12 +637,12 @@
     position: absolute;
     margin-top: -25px;
 }
-#collapseFabric.collapse:not(.show){
-    display:block
+/* #collapseFabric.collapse:not(.show){
+    display: block
  }
- .main-content-pro  .collapse.show{
+ .card-fabric .collapse.show{
     display:block!important
- }
+ } */
 .section-banner-post img{
     width: 100%;
     margin-bottom: 20px;

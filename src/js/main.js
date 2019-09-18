@@ -11,9 +11,9 @@ jQuery(document).ready(function() {
         jQuery('body').removeClass('show-menu');
     });
 
-    setTimeout(function(){
-        $('.collapse:not(.show)').css('display', 'none');
-    },500); 
+    // setTimeout(function(){
+    //     $('#collapseFabric.collapse:not(.show)').css('display', 'none');
+    // },500); 
 
     if ($(window).width() < 992) {
         jQuery('.sub-header').slick({
@@ -187,7 +187,7 @@ jQuery(document).ready(function() {
                 slidesToScroll: 1, 
                 asNavFor: '.list-fabric-main',
                 centerMode:false,
-                focusOnSelect: true
+                focusOnSelect: true,
                 });
         }
     };
