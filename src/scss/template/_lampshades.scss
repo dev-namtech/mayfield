@@ -28,7 +28,10 @@
             font-size: 40px;
         }
         .row{
-            margin-top: 48px
+            margin-top: 48px;
+            &:nth-child(2n){
+                flex-direction: row-reverse
+            }
         }
         .slider{
             .img-slider1 {

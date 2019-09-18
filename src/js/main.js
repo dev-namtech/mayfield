@@ -1,5 +1,14 @@
 jQuery(document).ready(function() {
-    new WOW().init();
+    wow = new WOW(
+        {
+            boxClass:     'wow',     
+            animateClass: 'animated', 
+            offset:       0,         
+            mobile:       false,     
+            live:         true        
+        }
+    )
+    wow.init();
     jQuery('.wrapper-logo button.navbar-toggler').click(function() {
         jQuery('.main-menu-mobile').addClass('show');
         jQuery('.overlay').addClass('show');

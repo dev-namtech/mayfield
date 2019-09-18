@@ -1,11 +1,11 @@
 </div>
 <footer class="wrapper-footer">
-	<div class="newsletter-signup bg-black wow fadeInUp" data-wow-delay="0.5s">
+	<div class="newsletter-signup bg-black">
 		<div class="container">
-			<h4>Newsletter Signup</h4>
+			<h4 class="wow fadeIn" data-wow-delay="0.2s">Newsletter Signup</h4>
 			[%if [@config:show_newsletter_subscribe@]%]
-				<p>Enter your email and we'll keep you posted with news and updates!</p>
-				<form method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
+				<p class="wow fadeIn" data-wow-delay="0.4s">Enter your email and we'll keep you posted with news and updates!</p>
+				<form class="wow fadeIn" data-wow-delay="0.6s" method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
 					<input type="hidden" name="list_id" value="1">
 					<input type="hidden" name="opt_in" value="y">
 					<input type="hidden" name="inp-submit" value="y" />

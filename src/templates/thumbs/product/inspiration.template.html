@@ -1,5 +1,5 @@
 [%if [@count@] <= 2 %]
-<div class="col-md-4 inspiration-products wow fadeInUp">
+<div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.2s">
     <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="square-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
@@ -10,10 +10,10 @@
 </div>
 [%/if%]
 [%if [@count@] == 3 %]
-<div class="col-md-4 d-flex align-content-between flex-wrap">
+<div class="col-md-4 d-flex align-content-between flex-wrap" data-wow-delay="0.3s">
 [%/if%]
 [%if [@count@] > 2 and [@count@] <= 4 %]
-<div class="inspiration-products wow fadeInLeft" data-wow-delay="0.8s">
+<div class="inspiration-products wow fadeInUp" data-wow-delay="0.2s">
     <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="small-rectangle-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
@@ -27,7 +27,7 @@
 </div>
 [%/if%]
 [%if [@count@] == 5 %]
-<div class="col-md-8 inspiration-products wow fadeInRight" data-wow-delay="0.8s">
+<div class="col-md-8 inspiration-products wow fadeInUp" data-wow-delay="0.3s">
     <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="small-rectangle-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
@@ -38,7 +38,7 @@
 </div>
 [%/if%]
 [%if [@count@] == 6 %]
-<div class="col-md-9 inspiration-products wow fadeInLeft">
+<div class="col-md-9 inspiration-products wow fadeInUp" data-wow-delay="0.2s">
     <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="big-square-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
@@ -52,7 +52,7 @@
 <div class="col-md-3 d-flex align-content-between flex-wrap">
 [%/if%]
 [%if [@count@] > 7 and [@count@] <= 10 %]
-<div class="inspiration-products wow fadeInRight">
+<div class="inspiration-products wow fadeInUp" data-wow-delay="0.2s">
     <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="big-square-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
@@ -66,7 +66,7 @@
 </div>
 [%/if%]
 [%if [@count@] > 10 %]
-<div class="col-md-4 inspiration-products"><img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="square-img">
+<div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.2s"><img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="square-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
