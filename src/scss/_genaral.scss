@@ -248,6 +248,9 @@ button.slick-prev{
 }
 .section-filter{
     padding: 30px 40px;
+    select{
+        display: none;
+    }
     &.collection-filter{
         padding-top: 40px;
     }
@@ -541,6 +544,9 @@ button.slick-prev{
     .project-gallery-item{
         img{
             cursor: pointer;
+            height: 185px;
+            width: 100%;
+            object-fit: cover;
         }
     }
 }
@@ -742,6 +748,11 @@ button.slick-prev{
                 text-decoration: underline;
                 display: block;
                 font-family: "CopernicusTrial-BookItalic",sans-serif;
+            }
+        }
+        .slick-slide{
+            img{
+                object-fit: cover;
             }
         }
     }

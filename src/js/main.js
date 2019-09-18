@@ -275,39 +275,6 @@ jQuery(document).ready(function() {
         });
     });
 
-
-    // $("#show").change(function(){
-    //   valCate = $('#contentID').val();
-    //   valCount = $(this).val();
-    //   var dataStyle = {
-    //     "Filter":{
-    //       "CategoryID": valCate,
-    //       "Limit": valCount,
-    //       "OutputSelector": ["Name","ItemURL","Model","Images","PriceGroups","PromotionPrice","CostPrice","DefaultPrice","AvailableSellQuantity"]
-    //     }
-    //   };
-    //   $.ajax({
-    //     async: true,
-    //     crossDomain: true,
-    //     url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
-    //     headers: {
-    //       'accept': 'application/json',
-    //       'netoapi_action':'GetItem',
-    //       'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
-    //       'content-type': 'application/json',
-    //       'cache-control': 'no-cache'
-    //     },
-    //     method: 'POST',
-    //     dataType: 'json',
-    //     processData: false,
-    //     data: JSON.stringify(dataStyle),
-    //     success: function(response){
-    //       $('#contentPro').hide();
-    //       loadThumbProduct(response);
-    //     }
-    //   });
-    // });
-
     $('.new-style-popup .npopup-body').bind("DOMSubtreeModified", function() {
         if ($('.new-style-popup .successaddmessageclear').length) {
             $('.noverlay').addClass('active');
@@ -320,13 +287,12 @@ jQuery(document).ready(function() {
     $('#zoomProOut').click(zoomProOut_click);
     move_image();
 
-    $('.lampshades-main-content .product-range > .container > .row').each(function(index) {
+    $('.lampshades-main-content .product-range .list-row-lampshades > .row').each(function(index) {
         $(this).find('.img-slider').slick({
             infinite: true,
             slidesToShow: 4,
             slidesToScroll: 1,
-            prevArrow: $('.pro-range2-prev'),
-            nextArrow: $('.pro-range2-next'),
+            arrows: true,
             responsive: [{
                     breakpoint: 1200,
                     settings: {

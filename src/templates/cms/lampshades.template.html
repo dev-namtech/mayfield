@@ -40,12 +40,13 @@
         <section class="product-range">
             <div class="container">
                 <h3 class="title">Product Range</h3>
+                <div class="list-row-lampshades">
         [%/param%]
         [%param *level_1%]
             [%thumb_list type:'products' template:'lampshades' filter_category:'[@id@]' limit:'[@config:THUMB_LIMIT@]'%]
                 [%param *header%]
-                <div class="row">
-                    <div class="col-lg-4 col-sm-12">
+                <div class="row" data-id="[@content_id@]">
+                    <div class="col-lg-4 col-sm-12 col-thub-cate">
                         <img src="[%asset_url type:'content' id:'[@content_id@]' default:''/%]" alt="product" class="img-fluid">
                     </div>
                     <div class="col-lg-8 col-sm-12 col-slider">
@@ -62,21 +63,17 @@
                 [%/param%]
                 [%param *footer%]
                             </div>
-                            <div class="pro-range2-prev"></div>
-                        <div class="pro-range2-next"></div>
                         </div>
                     </div>
                 </div>
                 [%/param%]
                 [%param *ifempty%]
-                    <div class="container">
-                        <p class="not-found-product">This category is empty! Please try another category or use our search function to find what you are looking for. If you require further assistance please contact us.</p>
-                    </div>
                 [%/param%]
             [%/thumb_list%]
             [%if [@next_level@]%][@next_level@][%/if%]
         [%/param%]
         [%param *footer%]
+            </div>
             </div>
         </section>
         [%/param%]
