@@ -52,9 +52,6 @@
         }
         .row{
             margin-top: 48px;
-            &:nth-child(2n){
-                flex-direction: row-reverse
-            }
         }
         .slider{
             .img-slider1 {
@@ -93,6 +90,15 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%)
+        }
+    }
+}
+@media (max-width:991px){
+    .list-row-lampshades{
+        .col-slider{
+            div:last-child{
+                padding-top:4px
+            }
         }
     }
 }
