@@ -765,3 +765,61 @@ function selectSlick(){
             });
     }
 };
+
+function findStockists() {
+    var postCode = $('#postcode').val();
+    var kmSelected = Number($('#kilometerSelect').val());
+    var countResult = 0;
+    if(postCode) {
+        $('.list-result').html('');
+        geocoder.geocode( { 'address': postCode, region: 'AU'}, function(results, status) {
+            if (status == 'OK') {
+                try
+                {
+                    // marker.setMap(null);
+                    map.setCenter(results[0].geometry.location);
+                    // let marker = new google.maps.Marker({
+                    //     map: map,
+                    //     position: results[0].geometry.location
+                    // });
+
+                    var locationPostCode = results[0].geometry.location;
+                    glatlngPostCode = new google.maps.LatLng({lat: locationPostCode.lat(), lng: locationPostCode.lng()});
+
+                    $('#listStloc>li').each(function(index) {
+                        $(this).removeClass('result');
+                        let latItem = parseFloat($(this).data('lat'));
+                        let lngItem = parseFloat($(this).data('lng'));
+                        let glatlngItem = new google.maps.LatLng({lat: latItem, lng: lngItem});
+                        let kmdistance = (google.maps.geometry.spherical.computeDistanceBetween(glatlngPostCode, glatlngItem)*0.001).toFixed(3);
+                        console.log(kmdistance);
+                        if (kmdistance <= kmSelected){
+                            $(this).addClass('result');
+                            $(this).data('km', kmdistance);
+                            let marker = new google.maps.Marker({
+                                position: glatlngItem,
+                                map: map
+                            });
+                            countResult++;
+                        }
+                    });
+
+                    $('.found-location-status').text(countResult + ' results found');
+
+                    $('#listStloc>li').each(function(index) {
+                        if($(this).hasClass('result')) {
+                            $('.list-result').append('<p class="location-details"><b>'+$(this).data('name')+' ('+$(this).data('km')+'km from location)</b><br>'+$(this).data('address')+'<br>'+$(this).data('phone')+'</p>');
+                        }
+                    });
+                }
+                catch (error)
+                {
+                    $('.found-location-status').text('Error: ' + error);
+                }
+            } else {
+                $('.found-location-status').text('Not found your location!');
+                console.log(status);
+            }
+        });
+    }
+}
