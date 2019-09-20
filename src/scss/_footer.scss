@@ -92,7 +92,7 @@
                         position: absolute;
                         width: 10px;
                         height: 10px;
-                        top: 6px;
+                        top: 1px;
                         right: 0;
                         background-image: url('../images/arrow-next.png');
                         background-repeat: no-repeat;
@@ -138,10 +138,10 @@
                     color: #000000;
                     font-size: 12px;
                     font-weight: 600;
-                    padding-top: 8px;
+                    padding-top: 5px;
                 }
                 &:not(:last-child){
-                    margin-bottom: 22px;
+                    margin-bottom: 14px;
                 }
             }
         }
@@ -166,10 +166,10 @@
                     background-size: contain;
                     display: inline-block;
                     &.icon-fb{
-                        background-image: url('../images/fb.png');
+                        background-image: url('../images/FB.svg');
                     }
                     &.icon-ig{
-                        background-image: url('../images/ig.png');
+                        background-image: url('../images/IG.svg');
                     }
                 }
             }
