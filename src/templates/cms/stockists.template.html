@@ -38,9 +38,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 stockists-left wow zoomIn">
-                    <div class="">Your Postcode or City</div>
-                    <input id="postcode" maxlength="99999" type="number" placeholder="Enter your postcode or city">
-                    <div class="">Show Stores Within</div>
+                    <div class=""><strong>Your Postcode or City</strong></div>
+                    <input id="postcode" maxlength="50" type="text" placeholder="Enter your postcode or city">
+                    <div class=""><strong>Show Stores Within</strong></div>
                     <div class="kilometer-select">
                         <select name="kilometer" id="kilometerSelect">
                             <option value="25">25 KM</option>
@@ -48,8 +48,11 @@
                             <option value="100">100 KM</option>
                             <option value="200">200 KM</option>
                         </select>               
-                    </div>   
-                    <input type="button" value="Find Stores" class="button" onclick="findStockists()">
+                    </div>
+                    <div class="wrapper-submit-find">
+                        <input type="button" value="Find Stores" class="button" onclick="findStockists()">
+                        <div class="load-ajax"><i class="fa fa-spinner fa-spin fa-inverse fa-3x fa-fw"></i></div>
+                    </div>
                     <p class="found-location-status"></p>
                     <div class="list-result">
                     </div>
@@ -64,7 +67,7 @@
                         geocoder = new google.maps.Geocoder();
                         map = new google.maps.Map(document.getElementById('map'), {
                         center: {lat: -34.397, lng: 150.644},
-                        zoom: 16
+                        zoom: 8
                         });
                     }
                     </script>
@@ -74,7 +77,7 @@
                     <ul id="listStloc" class="d-none">
                         [%thumb_list type:'storelocation' limit:'200' filter_asc:'1'%]
                             [%param *body%]
-                                <li data-name="[@stloc_name@]" data-address="[@stloc_street1@] [@stloc_street2@]<br>[@stloc_city@][%if [@stloc_state@] or [@stloc_zip@]%], [@stloc_state@] [@stloc_zip@][%/if%]<br>[%if [@stloc_country@] like 'AU'%]Australia[%/if%][%if [@stloc_country@] like 'NZ'%]New Zealand[%/if%]" data-phone="[%if [@stloc_phone@]%][@stloc_phone@][%/if%]" data-lat="[@stloc_lat@]" data-lng="[@stloc_lng@]" data-km="0"></li>
+                                <li data-name="[@stloc_name@]" data-address="[@stloc_street1@][%if [@stloc_street2@] %]<br>[@stloc_street2@][%/if%]<br>[@stloc_city@][%if [@stloc_state@] or [@stloc_zip@]%], [@stloc_state@] [@stloc_zip@][%/if%]<br>[%if [@stloc_country@] like 'AU'%]Australia[%/if%][%if [@stloc_country@] like 'NZ'%]New Zealand[%/if%]" data-phone="[%if [@stloc_phone@]%][@stloc_phone@][%/if%]" data-lat="[@stloc_lat@]" data-lng="[@stloc_lng@]" data-km="0"></li>
                             [%/param%]
                         [%/thumb_list%]
                     </ul>

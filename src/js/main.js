@@ -772,6 +772,8 @@ function findStockists() {
     var countResult = 0;
     if(postCode) {
         $('.list-result').html('');
+        $('.found-location-status').removeClass('active');
+        $('.wrapper-submit-find .load-ajax').addClass('load');
         geocoder.geocode( { 'address': postCode, region: 'AU'}, function(results, status) {
             if (status == 'OK') {
                 try
@@ -803,20 +805,31 @@ function findStockists() {
                             countResult++;
                         }
                     });
+                    if(countResult > 0) {
+                        $('.found-location-status').addClass('active');
+                        $('.found-location-status').text(countResult + ' results found');
+                        $('.wrapper-submit-find .load-ajax').removeClass('load');
 
-                    $('.found-location-status').text(countResult + ' results found');
-
-                    $('#listStloc>li').each(function(index) {
-                        if($(this).hasClass('result')) {
-                            $('.list-result').append('<p class="location-details"><b>'+$(this).data('name')+' ('+$(this).data('km')+'km from location)</b><br>'+$(this).data('address')+'<br>'+$(this).data('phone')+'</p>');
-                        }
-                    });
+                        $('#listStloc>li').each(function(index) {
+                            if($(this).hasClass('result')) {
+                                $('.list-result').append('<p class="location-details"><b>'+$(this).data('name')+' ('+$(this).data('km')+'km from location)</b><br>'+$(this).data('address')+'<br>'+$(this).data('phone')+'</p>');
+                            }
+                        });
+                    } else {
+                        $('.wrapper-submit-find .load-ajax').removeClass('load');
+                        $('.found-location-status').addClass('active');
+                        $('.found-location-status').text('Not found!');
+                    }
                 }
                 catch (error)
                 {
+                    $('.wrapper-submit-find .load-ajax').removeClass('load');
+                    $('.found-location-status').addClass('active');
                     $('.found-location-status').text('Error: ' + error);
                 }
             } else {
+                $('.wrapper-submit-find .load-ajax').removeClass('load');
+                $('.found-location-status').addClass('active');
                 $('.found-location-status').text('Not found your location!');
             }
         });
