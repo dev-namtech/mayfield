@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25"><g><g transform="rotate(90 13 12.5)"><path d="M12 0h2v25h-2z"/></g><g><path d="M12 0h2v25h-2z"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>+</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="30" font-weight="400">
+        <g id="Product-Page" transform="translate(-1359.000000, -1055.000000)" fill="#000000">
+            <g id="Group-6" transform="translate(731.000000, 1031.000000)">
+                <text id="+">
+                    <tspan x="627" y="40">+</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
