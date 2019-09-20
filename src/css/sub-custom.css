@@ -1,5 +1,7 @@
 
-
+.logo{
+    width: 155px;
+}
 /* Commercial */
 .project-gallery .title{
     margin-bottom:58px
@@ -50,8 +52,11 @@
     border-bottom: 1px solid black;
     padding-bottom: 15px;
 }
+.contact-us .form .button{
+    margin-top: 30px
+}
 .field-devide,.field-long,.field-devide-short{
-    margin-top: 32px;
+    margin-top: 10px;
     display: inline-block;
     margin-right: 5px;
 }
@@ -649,4 +654,18 @@
     width:170px;
     max-height: 170px;
     height: 100%;
+}
+.main-content-customer .btn-success{
+    background: black;
+    border: 1px solid black
+}
+.main-content-customer .btn-success:hover{
+    opacity: 0.8
+}
+.empty-cart-page .btn-success{
+    background:black;
+    border: 1px solid black
+}
+.empty-cart-page .btn-success:hover{
+    opacity: 0.8
 }
