@@ -776,7 +776,8 @@ function findStockists() {
             if (status == 'OK') {
                 try
                 {
-                    // marker.setMap(null);
+                    let marker0 = new google.maps.Marker();
+                    marker0.setMap(null);
                     map.setCenter(results[0].geometry.location);
                     // let marker = new google.maps.Marker({
                     //     map: map,
@@ -792,7 +793,6 @@ function findStockists() {
                         let lngItem = parseFloat($(this).data('lng'));
                         let glatlngItem = new google.maps.LatLng({lat: latItem, lng: lngItem});
                         let kmdistance = (google.maps.geometry.spherical.computeDistanceBetween(glatlngPostCode, glatlngItem)*0.001).toFixed(3);
-                        console.log(kmdistance);
                         if (kmdistance <= kmSelected){
                             $(this).addClass('result');
                             $(this).data('km', kmdistance);
@@ -818,7 +818,6 @@ function findStockists() {
                 }
             } else {
                 $('.found-location-status').text('Not found your location!');
-                console.log(status);
             }
         });
     }

@@ -51,10 +51,6 @@
                     </div>   
                     <input type="button" value="Find Stores" class="button" onclick="findStockists()">
                     <p class="found-location-status"></p>
-                    <!-- <p class="found-location-status">3 results found</p> -->
-                    <!-- <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
-                    <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p>
-                    <p class="location-details"><b>Snooze (2km from location)</b><br>20 Convention Centre Place<br>Homemakers Hub<br>South Wharf, VIC 3006<br>Australia<br>03 9682 0751</p> -->
                     <div class="list-result">
                     </div>
                 </div>
@@ -68,7 +64,7 @@
                         geocoder = new google.maps.Geocoder();
                         map = new google.maps.Map(document.getElementById('map'), {
                         center: {lat: -34.397, lng: 150.644},
-                        zoom: 8
+                        zoom: 16
                         });
                     }
                     </script>
@@ -78,7 +74,7 @@
                     <ul id="listStloc" class="d-none">
                         [%thumb_list type:'storelocation' limit:'200' filter_asc:'1'%]
                             [%param *body%]
-                                <li data-name="[@stloc_name@]" data-address="[@stloc_street1@] [@stloc_street2@]<br>[@stloc_city@][%if [@stloc_state@] or [@stloc_zip@]%], [@stloc_state@] [@stloc_zip@][%/if%] [%if [@stloc_country@]%][@stloc_country@][%/if%]" data-phone="[%if [@stloc_phone@]%][@stloc_phone@][%/if%]" data-lat="[@stloc_lat@]" data-lng="[@stloc_lng@]" data-km="0"></li>
+                                <li data-name="[@stloc_name@]" data-address="[@stloc_street1@] [@stloc_street2@]<br>[@stloc_city@][%if [@stloc_state@] or [@stloc_zip@]%], [@stloc_state@] [@stloc_zip@][%/if%]<br>[%if [@stloc_country@] like 'AU'%]Australia[%/if%][%if [@stloc_country@] like 'NZ'%]New Zealand[%/if%]" data-phone="[%if [@stloc_phone@]%][@stloc_phone@][%/if%]" data-lat="[@stloc_lat@]" data-lng="[@stloc_lng@]" data-km="0"></li>
                             [%/param%]
                         [%/thumb_list%]
                     </ul>
