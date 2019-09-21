@@ -19,7 +19,9 @@ jQuery(document).ready(function() {
         jQuery('.overlay').removeClass('show');
         jQuery('body').removeClass('show-menu');
     });
-
+    // jQuery('.main-menu-mobile .wrapper-nav-menu .navbar-menu .navbar-nav .dropdown a').click(function(){
+    //     jQuery(this).parents().find('.bg-menu').toggleClass('show');
+    // });
     // setTimeout(function(){
     //     $('#collapseFabric.collapse:not(.show)').css('display', 'none');
     // },500); 

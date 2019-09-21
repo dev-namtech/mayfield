@@ -250,6 +250,8 @@ h5, .h5 {
 	background-color: #ffffff /*{dropdown-menu-bg}*/;
 	border-color: #cccccc /*{dropdown-menu-border-colour}*/;
 }
+
+
 .dropdown-item{
 	color: #212529 /*{dropdown-menu-link-colour}*/;
 }
