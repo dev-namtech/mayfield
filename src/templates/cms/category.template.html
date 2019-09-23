@@ -1,5 +1,4 @@
 [%SET [@page_type@]='category'/%]
-[%load_template file:'cms/includes/sidebar.template.html'/%]
 <div class="main-content-collection">
     <!-- Content header -->
     <section class="section-header-content">
@@ -43,8 +42,13 @@
     <section class="section-banner wow zoomIn">
         <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
     </section>
+
+    [%if [@form:limit@] %]
+    [% else %]
+        [%set [@form:limit@] %][@config:thumb_limit@][%/set%]
+    [%/if%]
     
-    [%thumb_list type:'products' limit:'[@config:THUMB_LIMIT@]'%]
+    [%thumb_list type:'products' limit:'[@form:limit@]'%]
         [%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
         [%param *header%]
         <!-- Filters -->
@@ -54,15 +58,41 @@
                 <div class="col-left-filter">
                     <div class="wrapper-filter">
                         <div class="filter-group">
-                            <select class="js" name="Price" id="price">
+                            <select class="js" name="Price" id="price" onchange="window.location.href=this.value">
                                 <option value="">Price</option>
+                                [%product_filter type:'price' limit:'6'%]
+                                    [%param *body%]
+                                        [%if [@selected@]%]
+                                            <option value="[@remove_url@]">[@name@]</option>
+                                        [%else%]
+                                            [%if [@min@] == 0 AND [@max@] > 0%]
+                                                <option value="[@url@]">[%format type:'currency' dp:'0'%][@max@][%/format%] or below</option>
+                                            [%elseif [@min@] > 0 AND [@max@] > 0%]
+                                                <option value="[@url@]">[%format type:'currency' dp:'0'%][@min@][%/format%] to [%format type:'currency' dp:'0'%][@max@][%/format%]</option>
+                                            [%elseif [@max@] == 0%]
+                                                <option value="[@url@]">[%format type:'currency' dp:'0'%][@min@][%/format%] or above</option>
+                                            [%/if%]
+                                        [%/if%]
+                                    [%/param%]
+                                [%/product_filter%]
                             </select>
-                            <select class="js" name="Colour" id="colour">
+                            <select class="js" name="Colour" id="colour" onchange="window.location.href=this.value">
                                 <option value="">Colour</option>
+                                [%product_filter type:'variations' autohide:'0' sortoption:'sortorder'%]
+                                    [%param *body%]
+                                        [%if [@filter_name@] eq 'Colour' %]
+                                            [%if [@selected@]%]
+                                                <option value="[@remove_url@]" selected>[@name@]</option>
+                                            [%else%]
+                                                <option value="[@url@]" aria-label="Filter [@filter_name@] to [@name@]">[@name@]</option>
+                                            [%/if%]
+                                        [%/if%]
+                                    [%/param%]
+                                [%/product_filter%]
                             </select>
                         </div>
                         <div class="filter-group">
-                                [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'114' start_category:'114'%]
+                            [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'114' start_category:'114'%]
                                 [%param *header%]
                                     <select class="js" name="filter" onchange="window.location.href=this.value">
                                     <option value="">Style</option>
@@ -82,20 +112,31 @@
                                     </select>
                                 [%/param%]
                             [%/content_menu%]
-                            <select class="js" name="Size " id="size">
+                            
+                            <select class="js" name="Size " id="size" onchange="window.location.href=this.value">
                                 <option value="">Size</option>
+                                [%product_filter type:'variations' autohide:'0' sortoption:'sortorder'%]
+                                    [%param *body%]
+                                        [%if [@filter_name@] ne 'Colour' %]
+                                            [%if [@selected@]%]
+                                                <option value="[@remove_url@]" selected>[@name@]</option>
+                                            [%else%]
+                                                <option value="[@url@]" aria-label="Filter [@filter_name@] to [@name@]">[@name@]</option>
+                                            [%/if%]
+                                        [%/if%]
+                                    [%/param%]
+                                [%/product_filter%]
                             </select>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="col-right-filter">
                     <div class="wrapper-filter">
                         <p>View: </p>
-                        <select class="js" name="Show" id="show">
-                            <option value="4">Show 20</option>
-                            <option value="8">Show 50</option>
-                            <option value="100">Show all</option>
+                        <select class="js" name="Show" id="show" onchange="window.location.href=this.value">
+                            <option value="?rf=&limit=20">Show 20</option>
+                            <option value="?rf=&limit=50">Show 50</option>
+                            <option value="?rf=&limit=100">Show All</option>
                         </select>
                     </div>
                     <div class="wrapper-filter">
@@ -120,9 +161,8 @@
                 [%/param%]
                 [%param *footer%]
             </div>
-            <div id="contentProAjax" class="row products-row"></div>
         </div>
-        [%IF [@total_results@] > [@config:thumb_limit@]%]
+        [%IF [@total_results@] > [@form:limit@]%]
             <div>
                 <div class="col-12">
                     <nav aria-label="Page navigation">

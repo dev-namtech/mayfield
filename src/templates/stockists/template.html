@@ -1,29 +1,32 @@
-[%load_template file:'cms/includes/sidebar.template.html'/%]
-	[%breadcrumb%]
-		[%param *header%]
-			<nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-					<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
-				</li>
-				<li class="breadcrumb-item"><a href="[%url id:'95'/%]">Stockists</a></li>
-		[%/param%]
-		[%param *body%]
-				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-					<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
-				</li>
-		[%/param%]
-		[%param *body_current%]
-				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">[@name@]</li>
-		[%/param%]
-		[%param *footer%]
-			</ol>
-			</nav>
-		[%/param%]
-	[%/breadcrumb%]
-	<h1>[@stloc_name@]</h1>
-	<hr>
-	<section class="row" aria-label="Stockists">
+<section class="section-header-content">
+	<div class="container">
+		[%breadcrumb%]
+			[%param *header%]
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+						<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+							<meta itemprop="position" content="0" />
+						</li>
+			[%/param%]
+			[%param *body%]
+						<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+							<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+						</li>
+			[%/param%]
+			[%param *footer%]
+					</ol>
+				</nav>
+			[%/param%]
+		[%/breadcrumb%]
+		<h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
+	</div>
+</section>
+
+<section aria-label="Stockists" style="margin-bottom: 50px">
+	<div class="container">
+		<div class="row">
 		<div class="col-12 col-sm-8">
 			<address>
 				<p>
@@ -49,5 +52,6 @@
 				</a>
 			</div>
 		[%/if%]
-	</section>
-</div>
+		</div>
+	</div>
+</section>
