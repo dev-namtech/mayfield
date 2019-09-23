@@ -178,6 +178,8 @@
             .dropdown-menu{
                 position: absolute!important;
                 top: calc(100% + 33px);
+                min-width:0;
+                width:100%;
             }
         }
     }
@@ -221,6 +223,7 @@
             li.mega {
                 >.dropdown-menu{
                     width: max-content;
+                    
                     >li{
                         display: inline-block;
                         >a{
