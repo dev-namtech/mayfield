@@ -1,0 +1,20 @@
+<!--[SUBJECT:[@subject@]]-->
+<!--[FROM:[@data_email@]]-->
+<!--[TO:[@recipient@]]-->
+
+<p>The following enquiry has been received:</p>
+
+<ul>
+	<li><strong>Name:</strong> [@data_first_name@] [@data_last_name@]</li>
+	[%if [@data_phone@]%]<li><strong>Phone:</strong> [@data_phone@]</li>[%/if%]
+	<li><strong>Email:</strong> [@data_email@]</li>
+	[%if [@data_company@]%]<li><strong>Company:</strong> [@data_company@]</li>[%/if%]
+	[%if [@data_contact_method@]%]<li><strong>Contact Method:</strong> [@data_contact_method@]</li>[%/if%]
+	[%if [@data_sku@]%]<li><strong>Product SKU:</strong> [@data_sku@]</li>[%/if%]
+	[%if [@data_product_name@]%]<li><strong>Product Name:</strong> [@data_product_name@]</li>[%/if%]
+</ul>
+
+<h2>Message</h2>
+
+<p>[@data_msg@]</p>
+<hr size="1">

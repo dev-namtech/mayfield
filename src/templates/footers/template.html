@@ -5,16 +5,17 @@
 			<h4 class="wow fadeIn" data-wow-delay="0.2s">Newsletter Signup</h4>
 			[%if [@config:show_newsletter_subscribe@]%]
 				<p class="wow fadeIn" data-wow-delay="0.4s">Enter your email and we'll keep you posted with news and updates!</p>
-				<form class="wow fadeIn" data-wow-delay="0.6s" method="post" action="[%URL type:'page' id:'subscribe' nohost:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
+				<form class="wow fadeIn" data-wow-delay="0.6s" method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
 					<div class="input-group">
 						<input name="inp-misc1" class="form-control" type="text" value="[%nohtml%][@inp-misc1@][%/nohtml%]" placeholder="Name" required aria-label="Name"/>
 						<input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email" required aria-label="Email"/>
 						<input name="inp-misc15" class="form-control" type="text" value="[%nohtml%][@inp-misc15@][%end nohtml%]" placeholder="Interests In" required aria-label="Interests In"/>
-						<div class="d-none>
+						<div class="input-group-append">
 							<input type="hidden" name="list_id" value="1">
 							<input type="hidden" name="opt_in" value="y">
 							<input type="hidden" name="inp-submit" value="y" />
 							<input type="hidden" name="inp-opt_in" value="y" />
+							<input class="btn btn-outline-secondary" type="submit" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/>
 						</div>
 					</div>
 				</form>

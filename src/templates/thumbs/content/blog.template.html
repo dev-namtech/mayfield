@@ -1,15 +1,13 @@
-<<<<<<< HEAD
-<article class="col-12 col-md-6 col-sm-4" itemtype="http://schema.org/Article" role="article" aria-label="[@content_name@]">
-=======
-<article class="col-12 col-md-6 col-lg-4" itemtype="http://schema.org/Article" role="article" aria-label="[@content_name@]">
->>>>>>> 3775029cb2b62cbb953ac769bbd235ce0a1775a3
+<article class="col-12 col-md-4 col-sm-6" itemtype="http://schema.org/Article" role="article" aria-label="[@content_name@]">
 	<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
 		<meta itemprop="url" content="[@config:home_url@]"/>
 		<meta itemprop="name" content="[@config:company_name@]"/>
 		<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="[@config:home_url@][@config:imageurl@]/website_logo.png"></span>
 	</span>
 	<div class="content-article">
-        <div class="thumb-post" style="background-image: url([%ASSET_URL type:'content' thumb:'full' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/ASSET_URL%])"></div>
+        <div class="thumb-post">
+            <img src="[%ASSET_URL type:'content' thumb:'full' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/ASSET_URL%]" alt="">
+        </div>
         <h4><a href="[@URL@]" itemprop="url">[@content_name@]</a></h4>
         [%if [@content_short_description1@]%]
             <p>[%format type:'text' rmhtml:'1' truemaxlength:'210'%][@content_short_description1@][%/format%]</p>
