@@ -170,14 +170,25 @@
 .lampshades-main-content .product-range .slider .img-slider1 {
     min-width: auto !important;
 }
-
+.section-instagram .container-fluid a{
+    text-decoration: none;
+    cursor: pointer;
+}
 @media screen and (max-width: 1199px) {
     .section-top-seller {
         padding: 0 15px 60px;
     }
     .section-editer .content-text {
-        text-align: left
+        text-align: left;
     }
+    .filter-group .select .select-options{
+        position: relative!important;
+        width: 100%;
+    }
+    .col-right-filter .select .select-options{
+        position: relative!important;
+        width: 50%;
+    } 
 }
 
 @media screen and (max-width: 991px) {
@@ -346,6 +357,9 @@
         flex:0 0 100%;
         max-width:100%!important
     }
+    .col-right-filter .select .select-options{
+        width: 100%;
+    } 
 }
 
 @media screen and (max-width: 575px) {
@@ -668,9 +682,9 @@
     position: absolute;
     margin-top: -25px;
 }
-#collapseFabric.collapse:not(.show){
+/* #collapseFabric.collapse:not(.show){
     display:block
-}
+} */
 .main-content-pro  .collapse.show{
     display:block!important
 }

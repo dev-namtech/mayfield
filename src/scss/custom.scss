@@ -41,63 +41,67 @@
 .main-content-faqs{
     padding-top: 40px;
     padding-bottom: 60px;
-    .card{
-        border-radius: 0;
-        border: 0;
-        border-top: 1px solid #000000;
-        &:last-child{
-            border-bottom: 1px solid #000000;
-        }
-        .card-header{
-            padding: 17px 0;
-            background-color: #ffffff;
+    .section-faq{
+        margin-top:40px;
+        .card{
             border-radius: 0;
-            border-bottom: 1px solid #000000;
-            h2{
-                color: #000000;
-                font-family: "Helvetica-Neue",sans-serif;
-                font-size: 22px;
-                font-weight: 700;
-                text-transform: uppercase;
-                button{
-                    color: #000;
-                    padding: 0;
-                    margin: 0;
-                    width: 100%;
-                    text-align: left;
+            border: 0;
+            border-top: 1px solid #000000;
+            &:last-child{
+                border-bottom: 1px solid #000000;
+            }
+            .card-header{
+                padding: 17px 0;
+                background-color: #ffffff;
+                border-radius: 0;
+                border-bottom: 1px solid #000000;
+                h2{
+                    color: #000000;
                     font-family: "Helvetica-Neue",sans-serif;
                     font-size: 22px;
                     font-weight: 700;
-                    position: relative;
-                    &:focus{
-                        box-shadow: none;
-                    }
-                    &.collapsed:before{
-                        content: '-';
-                        position: absolute;
-                        top: 0;
-                        right: 10px;
+                    text-transform: uppercase;
+                    button{
+                        color: #000;
+                        padding: 0;
+                        margin: 0;
+                        width: 100%;
+                        text-align: left;
                         font-family: "Helvetica-Neue",sans-serif;
                         font-size: 22px;
-                    }
-                    &:not(.collapsed):before{
-                        content: '+';
-                        position: absolute;
-                        top: 0;
-                        right: 10px;
-                        font-family: "Helvetica-Neue",sans-serif;
-                        font-size: 22px;
+                        font-weight: 700;
+                        position: relative;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                        &.collapsed:before{
+                            content: '+';
+                            position: absolute;
+                            top: 0;
+                            right: 10px;
+                            font-family: "Helvetica-Neue",sans-serif;
+                            font-size: 22px;
+                        }
+                        &:not(.collapsed):before{
+                            content: '-';
+                            position: absolute;
+                            top: 0;
+                            right: 10px;
+                            font-family: "Helvetica-Neue",sans-serif;
+                            font-size: 22px;
+                        }
                     }
                 }
             }
-        }
-        .card-body{
-            p{
-                font-size: 16px;
-                font-family: "Helvetica-Neue",sans-serif;
+            .card-body{
+                p{
+                    font-size: 16px;
+                    font-family: "Helvetica-Neue",sans-serif;
+                }
             }
         }
     }
+    
 }
 /* ====================Contact Page============================ */
 .main-content-contact{
@@ -341,3 +345,61 @@
 .search-main-content.main-content-collection{
     padding: 0 15px 50px;
 }
+.styled-checkbox {
+    position: absolute; // take it out of document flow
+    opacity: 0; // hide it
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+    }
+    // Box.
+    & + label:before {
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 15px;
+      height: 15px;
+      background: white;
+      border: 1px solid #000;
+    }
+    // Box hover
+    // &:hover + label:before {
+    //   background: #f35429;
+    // }
+    // Box focus
+    &:focus + label:before {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+    // Box checked
+    // &:checked + label:before {
+    //   background: #f35429;
+    // }
+    // Disabled state label.
+    &:disabled + label {
+      color: #b8b8b8;
+      cursor: auto;
+    }
+    // Disabled box.
+    // &:disabled + label:before {
+    //   box-shadow: none;
+    //   background: #ddd;
+    // }
+    // Checkmark. Could be replaced with an image
+    &:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      background: #000;
+      width: 2px;
+      height: 2px;
+      box-shadow:
+        2px 0 0 #000,
+        2px -2px 0 #000,
+        2px -4px 0 #000,
+        2px -6px 0 #000;
+      transform: rotate(45deg);
+    }
+ }

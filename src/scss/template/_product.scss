@@ -319,13 +319,12 @@
     .products-row{
         margin-left: -8px;
         margin-right: -8px;
+        .col-12{
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
     }
-    article{
-        flex: 0 0 25%;
-        max-width: 25%;
-        padding-right: 8px;
-        padding-left: 8px;
-    }
+   
 }
 @media screen and (min-width: 1200px){
     .main-container.main-content-pro{
@@ -348,6 +347,14 @@
             flex: 0 0 100%;
             max-width: 100%;
             margin-left: 0!important
+        }
+    }
+}
+@media (max-width:767px){
+    .also-like-product-page{
+        .col-12{
+            flex: 0 0 50%!important;
+            max-width: 50%!important;
         }
     }
 }

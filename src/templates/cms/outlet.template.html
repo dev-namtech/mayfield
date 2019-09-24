@@ -22,16 +22,7 @@
                 [%/param%]
             [%/breadcrumb%]
             <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
-            [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
-            <div class="description-content-coper">
-                [%parse%]
-                    [@content_description1@]
-                    [@content_description2@]
-                    [@content_description3@]
-                    [@content_wufoo_form@]
-                [%/parse%]
-            </div>
-            [%/if%]
+           
         </div>
     </section>
     <section class="section-banner wow zoomIn">
@@ -41,20 +32,7 @@
     <section class="about-outlet wow fadeInUp" data-wow-delay="0.3s">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-sm-12 d-flex flex-column justify-content-center">
-                    <p class="small-text">To stay informed about future sales, please subscribe to our outlet mailing list. </p>
-                    <p class="text-bold-italic">Subscribe now for updates.</p>
-                </div>
-                <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-center">
-                    <div class="outlet-details d-flex">
-                        <div class="img-location"><img src="/assets/themes/skeletal/images/Location.svg" alt=""></div>    
-                        <p>Factory Outlet<br>22 Viewtech Place<br>Rowville Victoria</p>
-                    </div>
-                    <div class="outlet-details d-flex">
-                        <div class="img-clock"><img src="/assets/themes/skeletal/images/Clock.svg" alt=""></div>  
-                        <p>Factory Outlet<br>22 Viewtech Place<br>Rowville Victoria</p>
-                    </div>                  
-                </div>             
+                    [@content_description1@]
             </div>
         </div>
     </section>

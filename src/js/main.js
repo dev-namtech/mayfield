@@ -19,6 +19,11 @@ jQuery(document).ready(function() {
         jQuery('.overlay').removeClass('show');
         jQuery('body').removeClass('show-menu');
     });
+    // jQuery('.enquiry').click(function(){
+    //     $('html,body').animate({
+    //         scrollTop:$("div.")
+    //     })
+    // })
     // jQuery('.main-menu-mobile .wrapper-nav-menu .navbar-menu .navbar-nav .dropdown a').click(function(){
     //     jQuery(this).parents().find('.bg-menu').toggleClass('show');
     // });
