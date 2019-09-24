@@ -24,173 +24,39 @@
     <div class="description-content-coper">
         [%parse%]
             [@content_description1@]
-            [@content_description2@]
-            [@content_description3@]
-            [@content_wufoo_form@]
         [%/parse%]
     </div>
     [%/if%]
 </div>
+
 <div class="section-banner wow zoomIn">
     <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
 </div>
+
 <div class="main-content-signup wow fadeInUp" data-wow-delay="0.3s">
     <div class="container">
-        <div class="main-form-signup">
-            <h2>Company Information</h2>
-            <div class="wrapper-form">
-                <form method="post" id="wholesaleSignUp">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-lg-6 form-left">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label for="">First Name*</label>
-                                    <input name="reg_first_name" type="text" required>
-                                </div>
-
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label for="">Last Name*</label>
-                                    <input name="reg_last_name" type="text" required>
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="">Email Address*</label>
-                                    <input name="reg_email" type="text" required>
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label for="">Phone Number*</label>
-                                    <input name="reg_phone_number" type="text" required>
-                                </div>
-
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label for="">Mobile Number</label>
-                                    <input name="reg_mobile_phone" type="text">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="">Company Name*</label>
-                                    <input name="reg_company" type="text" required>
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="">Address*</label>
-                                    <input name="reg_address1" type="text" required>
-                                    <input name="reg_address2" type="text">
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-6">
-                                    <label for="">Suburb*</label>
-                                    <input name="reg_suburb" type="text" required>
-                                </div>
-                                <div class="col-sm-12 col-md-12 col-lg-6">
-                                    <div class="row row3">
-                                        <div class="col-sm-12 col-md-12 col-lg-6">
-                                            <label for="">Post Code*</label>
-                                            <input name="reg_postcode" type="text" required>
-                                        </div>
-                                        <div class="col-sm-12 col-md-12 col-lg-6">
-                                            <label for="">State*</label>
-                                            <input name="reg_state" type="text" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="">Country*</label>
-                                    <div class="country-select">
-                                        <select name="reg_bill_country" class="form-control" required>
-                                            [%countries sortby:'sortorder,name' %]
-                                                [%PARAM *body%]
-                                                    <option value="[@country_code@]">[@country_name@]</option>
-                                                [%END PARAM%]
-                                            [%END countries%]
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-6 form-right">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="">ABN/ACN</label>
-                                    <input name="reg_abn" type="text">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="">Website URL</label>
-                                    <input name="reg_website_url" type="text">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-12 checkbox-group">
-                                    <p>Business</p>
-                                    <div class="checkbox-combo">
-                                        <div class="checkbox-items">
-                                            <label class="container-checkbox">Retailer
-                                                <input name="business1" value="Retailer" type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-items">
-                                            <label class="container-checkbox">Online Retailer
-                                                <input name="business2" value="Online Retailer" type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-items">
-                                            <label class="container-checkbox">Lighting Distributor
-                                                <input name="business3" value="Lighting Distributor" type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="checkbox-combo">
-                                        <div class="checkbox-items">
-                                            <label class="container-checkbox">Architect
-                                                <input name="business4" value="Architect" type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-items">
-                                            <label class="container-checkbox">Interior Designer
-                                                <input name="business5" value="Interior Designer" type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-items">
-                                            <label class="container-checkbox">Property Staging
-                                                <input name="business6" value="Property Staging" type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-status"></div>
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12 col-sm-12 text-center">
-                                    <input class="btn btn-outline-secondary" type="submit" value="Register" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="modal-reg-wholesale">
-        <div class="content-modal"></div>
+        [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+            [%parse%]
+                [@content_description2@]
+            [%/parse%]
+        [%/if%]
     </div>
 </div>
+
+<input class="styled-checkbox" id="business0" type="checkbox" value="Retailer">
+<label for="business0">Retailer</label>
+
+<input class="styled-checkbox" id="business1" type="checkbox" value="Online Retailer">
+<label for="business0">Online Retailer</label>
+
+<input class="styled-checkbox" id="business2" type="checkbox" value="Lighting Distributor">
+<label for="business0">Lighting Distributor</label>
+
+<input class="styled-checkbox" id="business2" type="checkbox" value="Architect">
+<label for="business0">Architect</label>
+
+<input class="styled-checkbox" id="business2" type="checkbox" value="Interior Designer">
+<label for="business0">Interior Designer</label>
+
+<input class="styled-checkbox" id="business2" type="checkbox" value="Property Staging">
+<label for="business0">Property Staging</label>
