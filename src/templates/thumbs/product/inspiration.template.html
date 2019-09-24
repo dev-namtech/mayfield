@@ -1,6 +1,14 @@
 [%if [@count@] <= 2 %]
 <div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.2s">
-    <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="square-img">
+    [%if [@count@] == 0 %]
+    <img src="/assets/themes/skeletal/images/inspiration1.JPG" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 1 %]
+    <img src="/assets/themes/skeletal/images/inspiration2.jpg" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 2 %]
+    <img src="/assets/themes/skeletal/images/inspiration3.JPG" alt="square-img">
+    [%/if%]
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
@@ -14,7 +22,12 @@
 [%/if%]
 [%if [@count@] > 2 and [@count@] <= 4 %]
 <div class="inspiration-products wow fadeInUp" data-wow-delay="0.2s">
-    <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="small-rectangle-img">
+    [%if [@count@] == 3 %]
+    <img src="/assets/themes/skeletal/images/inspiration4.jpg" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 4 %]
+    <img src="/assets/themes/skeletal/images/inspiration5.jpg" alt="square-img">
+    [%/if%]
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
@@ -28,7 +41,7 @@
 [%/if%]
 [%if [@count@] == 5 %]
 <div class="col-md-8 inspiration-products wow fadeInUp" data-wow-delay="0.3s">
-    <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="small-rectangle-img">
+    <img src="/assets/themes/skeletal/images/inspiration6.jpg" alt="square-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
@@ -39,7 +52,7 @@
 [%/if%]
 [%if [@count@] == 6 %]
 <div class="col-md-9 inspiration-products wow fadeInUp" data-wow-delay="0.2s">
-    <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="big-square-img">
+    <img src="/assets/themes/skeletal/images/inspiration7.jpg" alt="square-img">
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
@@ -51,9 +64,17 @@
 [%if [@count@] == 7 %]
 <div class="col-md-3 d-flex align-content-between flex-wrap">
 [%/if%]
-[%if [@count@] > 7 and [@count@] <= 10 %]
+[%if [@count@] >= 7 and [@count@] <= 9 %]
 <div class="inspiration-products wow fadeInUp" data-wow-delay="0.2s">
-    <img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="big-square-img">
+    [%if [@count@] == 7 %]
+    <img src="/assets/themes/skeletal/images/inspiration8.jpg" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 8 %]
+    <img src="/assets/themes/skeletal/images/inspiration9.jpg" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 9 %]
+    <img src="/assets/themes/skeletal/images/inspiration10.jpg" alt="square-img">
+    [%/if%]
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
@@ -62,11 +83,20 @@
     </div>
 </div>
 [%/if%]
-[%if [@count@] == 10 %]
+[%if [@count@] == 9 %]
 </div>
 [%/if%]
-[%if [@count@] > 10 %]
-<div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.2s"><img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" alt="square-img">
+[%if [@count@] > 9 %]
+<div class="col-md-4 inspiration-products wow fadeInUp" data-wow-delay="0.2s">
+    [%if [@count@] == 10 %]
+    <img src="/assets/themes/skeletal/images/inspiration11.jpg" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 11 %]
+    <img src="/assets/themes/skeletal/images/inspiration12.jpg" alt="square-img">
+    [%/if%]
+    [%if [@count@] == 12 %]
+    <img src="/assets/themes/skeletal/images/inspiration13.jpg" alt="square-img">
+    [%/if%]
     <div class="layer">             
         <span><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></span>
         <br>
