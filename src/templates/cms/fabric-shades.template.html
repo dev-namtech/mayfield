@@ -38,7 +38,8 @@
     <input type="hidden" id="contentID" value="[@content_id@]"/>
 
     <!-- Thumbnail -->
-    <section style="background-image: url([%asset_url type:'content' id:'[@content_id@]' default:''/%])" class="wow zoomIn bg-thumb-collection-page [%asset_url type:'content' id:'[@content_id@]' default:'d-none'/%]" data-wow-delay="0.3s">
+    <section class="section-banner wow zoomIn">
+        <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
     </section>
     
     [%thumb_list type:'products' template:'fabric' limit:'[@config:THUMB_LIMIT@]'%]

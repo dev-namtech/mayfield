@@ -25,16 +25,16 @@
             [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
             <div class="description-content-coper wow fadeInLeft">
               [@content_description1@]
-              [@content_description2@]
-              [@content_description3@]
             </div>
             [%/if%]
         </div>
     </section>
-    <section class="wow zoomIn bg-thumb-pendant-shades-page [%asset_url type:'content' id:'[@content_id@]' default:'d-none'/%]" style="margin-bottom: 80px; background-image: url([%asset_url type:'content' id:'[@content_id@]' default:''/%])"></section>
-    [%thumb_list type:'products' limit:'40'%]
+    <section class="section-banner wow zoomIn">
+        <img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
+    </section>
+    [%thumb_list type:'products' filter_category:'112' limit:'40'%]
         [%param *header%]
-        <section class="project-gallery">
+        <section class="project-gallery" style="margin-top: 50px;">
           <div class="big-text text-center wow fadeIn" data-wow-delay="0.3s">Product Range</div>
           <div class="row wow fadeInUp" data-wow-delay="0.6s">
         [%/param%]
@@ -92,48 +92,13 @@
         [%/param%]
     [%/thumb_list%]
     <!-- End Section Project Gallery -->
-    <section class="contact-us">
-      <div class="container">
-        <div class="row wow fadeInUp">
-            <div class="question col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                <p class="big-text">Custom Made Enquiry</p>
-                <p>In need of custom-made light fittings? Contact us today!</p>
-            </div>
-            <div class="form col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                <div class="form-name">Project Detail</div>
-                <div class="field-devide">
-                    <label>First Name*</label>
-                    <input type="text">
-                </div>
-                <div class="field-devide-short">
-                    <label>Last Name*</label>
-                    <input type="text">
-                </div>
-                <div class="field-devide">
-                    <label>Contact Number*</label>
-                    <input type="text">
-                </div>
-                <div class="field-devide-short">
-                    <label>Email*</label>
-                    <input type="text">
-                </div>
-                <div class="field-long">
-                    <label>Company Name*</label>
-                    <input type="text">
-                </div>
-                <div class="field-long">
-                    <label>Website*</label>
-                    <input type="text">
-                </div>
-                <div class="field-long">
-                    <label>Project Details*</label>
-                    <textarea cols="65" rows="4" placeholder="Tell us about your project"></textarea>
-                </div>
-                <div>
-                    <a href="#" class="button">Submit</a>
-                </div>
-            </div>
-        </div>
-      </div>
+    <section class="contact-us wow fadeInUp" data-wow-delay="0.3s">
+        [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+            [%parse%]
+                [@content_description2@]
+                [@content_description3@]
+                [@content_wufoo_form@]
+            [%/parse%]
+        [%/if%]
     </section>
 </div>

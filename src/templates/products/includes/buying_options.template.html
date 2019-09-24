@@ -97,14 +97,25 @@
 					<div class="row">
 						<div class="col-md-6">
 							<ul class="list-description">
+								[%if [@misc12@] eq 'y' %]
+								<li><strong>Description:</strong> Hand made here in Melbourne by Mayfield, this shade is available in any of our stock fabrics or in your own supplied fabric or wallpaper. Each shade is meticulously finished with a colour matched machine tape and a White Powdercoated frame.</li>
+								[%else%]
 								<li><strong>Description:</strong> [@description@]</li>
-								[%if [@misc11@] %]<li><strong>Style:</strong> [@misc11@]</li>[%/if%]
+								[%/if%]
+								[%content_path id:'[@inventory_id@]' type:'category' limit:'1' %]
+									[%param *body%]
+										<li><strong>Style:</strong> [@content_name@]</li>
+									[%/param%]
+								[%/content_path%]
 								<li><strong>SKU:</strong> [@SKU@]</li>
 								[%if [@misc1@] %]<li><strong>Bulb Type:</strong> [@misc1@]</li>[%/if%]
 								[%if [@misc2@] %]<li><strong>Voltage:</strong> [@misc2@]</li>[%/if%]
 								[%if [@misc3@] %]<li><strong>Dimmeable:</strong> [%if [@misc3@] eq 'y' %]Yes[%else%]No[%/if%]</li>[%/if%]
 								[%if [@misc4@] %]<li><strong>Assembly:</strong> [@misc4@]</li>[%/if%]
 								[%if [@misc5@] %]<li><strong>Commercial Use:</strong> [%if [@misc5@] eq 'y' %]Yes[%else%]No[%/if%]</li>[%/if%]
+								[%if [@misc12@] eq 'y' %]
+								<li><strong>Dimensions: </strong>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@subtitle@][%/format%]</li>
+								[%/if%]
 							</ul>
 						</div>
 						<div class="col-md-6">
@@ -120,6 +131,14 @@
 								[%if [@misc9@] %]<li><strong>Certifications:</strong> [@misc9@]</li>[%/if%]
 								[%if [@misc10@] %]<li><strong>Care Instructions:</strong> [@misc10@]</li>[%/if%]
 								[%if [@warranty@] %]<li><strong>Warranty:</strong> [@warranty@]</li>[%/if%]
+								[%if [@misc12@] eq 'y' %]
+								<li><strong>Fitting Size: </strong>[%if [@misc7@] eq '0' %]E27 / B22[%else%][@misc7@][%/if%]</li>
+								<li><strong>Frame Colour: </strong>White Powdercoat</li>
+								<li><strong>Standard Fabric Finish: </strong>Colour Matched Trim</li>
+								<li><strong>Optional Fabric Finish: </strong>Rolled Edge Finish</li>
+								<li><strong>Standard Lining: </strong>Transluscent White PVC</li>
+								<li><strong>Option Lining: </strong>Fabric Lining</li>
+								[%/if%]
 							</ul>
 						</div>
 					</div>
@@ -139,10 +158,10 @@
 			<div id="collapseFabric" class="collapse" aria-labelledby="headingFabric" data-parent="#accordion">
 				<div class="card-body">
 					<div class="list-fabric-main">
-					[%upsell_products id:'[@SKU@]' template:'upsell_lampshades' limit:'50' show_all:'1'/%]
+						[%thumb_list type:'products' template:'upsell_lampshades' filter_category:'113' limit:'25'/%]
 					</div>
 					<div class="list-img-fabric">
-						[%upsell_products id:'[@SKU@]' template:'upsell_lampshades' limit:'50' show_all:'1'/%]
+						[%thumb_list type:'products' template:'upsell_lampshades' filter_category:'113' limit:'25'/%]
 					</div>
 				</div>
 			</div>
