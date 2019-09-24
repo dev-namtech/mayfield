@@ -1,6 +1,13 @@
 .main-content-cart{
     padding-top: 50px;
     padding-bottom: 50px;
+    .btn-success,.btn-primary{
+        background: black;
+        border: black;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
 }
 .empty-cart-page{
     padding-top: 80px;
