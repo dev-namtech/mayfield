@@ -334,7 +334,6 @@ jQuery(document).ready(function() {
     $(window).resize(function() {
         changePositionElement();
     });
-        
     
     function changePositionElement() {
         let productRange = $('.lampshades-main-content .product-range')
@@ -420,6 +419,16 @@ jQuery(document).ready(function() {
                 } else {
                     $('.p-status').html('<p>'+response.Messages.Error.Message+'</p>');
                 }
+            }
+        });
+    });
+
+    $('#wholesaleSignUpMail').find('input[type="checkbox"]').each(function(index){
+        $(this).on('click',function () {
+            if ($(this).is(':checked')) {
+                $('input[name="inp-business'+index+'"]').val($(this).val());
+            } else {
+                $('input[name="inp-business'+index+'"]').val('');
             }
         });
     });
