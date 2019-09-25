@@ -7,6 +7,10 @@
         &:hover{
             opacity: 0.8;
         }
+        &.active{
+            background: black;
+            border: black;
+        }
     }
 }
 .empty-cart-page{
