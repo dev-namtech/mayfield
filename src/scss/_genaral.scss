@@ -582,6 +582,7 @@ button.slick-prev{
 }
 .pagination{
     margin-top: 60px;
+    flex-wrap: wrap;
     li{
         a.page-pag-link{
             padding: 12px 25px;
