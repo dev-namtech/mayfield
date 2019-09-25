@@ -27,7 +27,6 @@
                 color: #ffffff;
                 font-size: 18px;
                 font-family: "Helvetica-Neue",sans-serif;
-                max-width: 330px;
                 &::-webkit-input-placeholder {
                     color: #ffffff;
                 }
@@ -46,8 +45,9 @@
                 }
             }
             .select{
-                max-width: 330px;
+                max-width: 290px;
                 padding-right: 15px;
+                width: 100%;
                 .select-styled{
                     width: 100%;
                     padding: 6px 50px 6px 15px;
@@ -58,7 +58,7 @@
                     font-size: 18px;
                     font-family: Helvetica-Neue,sans-serif;
                     border: 1px solid #ffffff;
-                    padding: 6px 15px;
+                    padding: 6px 11px;
                     &::before{
                         width: 10px;
                         height: 10px;
@@ -128,11 +128,12 @@
                         position: absolute;
                         width: 10px;
                         height: 10px;
-                        top: 1px;
+                        top: 50%;
                         right: 0;
-                        background-image: url('../images/arrow-next.png');
+                        background-image: url(../images/arrow-next.png);
                         background-repeat: no-repeat;
-                        background-position: center;
+                        background-position: 50%;
+                        transform: translateY(-50%);
                     }
                 }
             }
