@@ -233,9 +233,11 @@
     }
 }
 @media screen and (min-width: 992px){
+    body{
+        overflow-x: hidden;
+    }
     .wrapper-header{
         position: relative;
-        overflow-x: hidden;
         &.show:after{
             content: '';
             position: absolute;
@@ -331,6 +333,8 @@
                         left: 0;
                         min-width: 170px;
                         width: fit-content;
+                        border: 1px solid #000000;
+                        border-top: none;
                         &::after{
                             content: '';
                             position: absolute;
