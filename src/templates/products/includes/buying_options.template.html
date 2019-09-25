@@ -66,7 +66,12 @@
 			</div>
 		[%/if%]
 	[%/ IF%]
+	[%if [@misc12@] eq 'y' %]
+	<p style="font-size:16px;line-height: 24px">Hand made here in Melbourne by Mayfield, this shade is available in any of our stock fabrics or in your own supplied fabric or wallpaper. Each shade is meticulously finished with a colour matched machine tape and a White Powdercoated frame.</p>
+	[%/if%]
+	[%if [@misc12@] ne 'y' %]
 	<p style="color:#9b9b9b">Free metro shipping on all orders over $200</p>
+	[%/IF%]
 	[%IF [@short_description@]%]
 		<p class="short-description" itemprop="description" aria-label="Product Short Description">
 		[@short_description@]
@@ -75,8 +80,8 @@
 
 	[%if [@misc12@] eq 'y' %]
 		<div class="act-lampshades">
-			<a href="" class="button">Find a stockist</a>
-			<a href="" class="button">How to measure</a>
+			<a href="[@config:home_url@]/stockists" class="button">Find a stockist</a>
+			<a href="[@config:home_url@]/how-to-measure" class="button">How to measure</a>
 		</div>
 	[%/if%]
 
@@ -96,12 +101,8 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<ul class="list-description">
-								[%if [@misc12@] eq 'y' %]
-								<li><strong>Description:</strong> Hand made here in Melbourne by Mayfield, this shade is available in any of our stock fabrics or in your own supplied fabric or wallpaper. Each shade is meticulously finished with a colour matched machine tape and a White Powdercoated frame.</li>
-								[%else%]
-								<li><strong>Description:</strong> [@description@]</li>
-								[%/if%]
+							<ul class="list-description">	
+								<li><strong>Description:</strong> [@description@]</li>								
 								[%content_path id:'[@inventory_id@]' type:'category' limit:'1' %]
 									[%param *body%]
 										<li><strong>Style:</strong> [@content_name@]</li>
