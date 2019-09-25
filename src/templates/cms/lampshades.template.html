@@ -24,8 +24,7 @@
             <h1 class="title-page">[%url_info name:'page_heading' default:'[@content_name@]'/%]</h1>
             [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
             <div class="description-content-coper">
-                <p>With the list of 70+ standard lampshade shapes and sizes, available in a range of 45+ stock fabrics, lampshades can be made to your specific size and in almost any supplied fabric.</p>
-                <a href="#">Customer enquiry</a>
+                [@content_description1@]
             </div>
             [%/if%]
         </div>
@@ -79,7 +78,7 @@
         [%/param%]
     [%/content_menu%]
 
-    <section class="contact-us wow fadeInUp" data-wow-delay="0.3s">
+    <section class="contact-us wow fadeIn" data-wow-delay="0.5s">
         [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
             [%parse%]
                 [@content_description2@]

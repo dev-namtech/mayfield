@@ -482,7 +482,7 @@ button.slick-prev{
         font-family: "CopernicusTrial-BookItalic",sans-serif!important;
         margin-bottom: 24px;
     }
-    a{
+    .enquiry{
         font-size: 24px;
         font-weight: normal;
         font-style: italic;
@@ -492,6 +492,7 @@ button.slick-prev{
         text-decoration: underline;
         margin-bottom: 24px;
         display: block;
+        cursor: pointer
     }
 }
 .row2{
