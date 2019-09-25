@@ -27,6 +27,7 @@
                 color: #ffffff;
                 font-size: 18px;
                 font-family: "Helvetica-Neue",sans-serif;
+                max-width: 330px;
                 &::-webkit-input-placeholder {
                     color: #ffffff;
                 }
@@ -42,6 +43,41 @@
                 &:focus{
                     outline: 0;
                     box-shadow: none;
+                }
+            }
+            .select{
+                max-width: 330px;
+                padding-right: 15px;
+                .select-styled{
+                    width: 100%;
+                    padding: 6px 50px 6px 15px;
+                    background-color: transparent;
+                    border-radius: 0;
+                    margin-right: 15px;
+                    color: #fff;
+                    font-size: 18px;
+                    font-family: Helvetica-Neue,sans-serif;
+                    border: 1px solid #ffffff;
+                    padding: 6px 15px;
+                    &::before{
+                        width: 10px;
+                        height: 10px;
+                        top: 30%;
+                        border-style: solid;
+                        border-color: white;
+                        border-width: 0 3px 3px 0;
+                        display: inline-block;
+                        background: 0 0;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                    }
+                    &.active::before{
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                    }
+                }
+                .select-options{
+                    width: calc(100% - 15px);
                 }
             }
         }
@@ -182,6 +218,15 @@
         .wrapper-footer-menu{
             .social-menu{
                 padding-inline-start: 90px;
+            }
+        }
+    }
+    .wrapper-footer{
+        .newsletter-signup{
+            .input-group{
+                .select{
+                    width: 100%;
+                }
             }
         }
     }
