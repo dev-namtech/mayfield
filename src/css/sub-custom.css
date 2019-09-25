@@ -356,10 +356,6 @@
     .inspiration-gallery >.row{
         padding: 0!important;
     }
-    .also-like .img-box{
-        flex:0 0 100%;
-        max-width:100%!important
-    }
     .col-right-filter .select .select-options{
         width: 100%;
     } 
