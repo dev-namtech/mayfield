@@ -9,12 +9,17 @@
 					<div class="input-group">
 						<input name="inp-misc1" class="form-control" type="text" value="[%nohtml%][@inp-misc1@][%/nohtml%]" placeholder="Name" required aria-label="Name"/>
 						<input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email" required aria-label="Email"/>
-						<input name="inp-misc15" class="form-control" type="text" value="[%nohtml%][@inp-misc15@][%end nohtml%]" placeholder="Interests In" required aria-label="Interests In"/>
+						<select class="js" name="inp-misc15" required value="[%nohtml%][@inp-misc15@][%end nohtml%]">
+							<option value="">Interested In</option>
+							<option value="Retail">Retail</option>
+							<option value="Commercial">Commercial</option>
+							<option value="Wholesale">Wholesale</option>
+						</select>
 						<div class="input-group-append">
 							<input type="hidden" name="list_id" value="1">
 							<input type="hidden" name="opt_in" value="y">
-							<input type="hidden" name="inp-submit" value="y" />
-							<input type="hidden" name="inp-opt_in" value="y" />
+							<input type="hidden" name="inp-submit" value="y"/>
+							<input type="hidden" name="inp-opt_in" value="y"/>
 							<input class="btn btn-outline-secondary" type="submit" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/>
 						</div>
 					</div>
