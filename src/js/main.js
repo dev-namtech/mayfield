@@ -10,12 +10,12 @@ jQuery(document).ready(function() {
     )
     wow.init();
     jQuery('.wrapper-logo button.navbar-toggler').click(function() {
-        jQuery('.main-menu-mobile').addClass('show');
+        jQuery('.main-menu-desktop').addClass('show');
         jQuery('.overlay').addClass('show');
         jQuery('body').addClass('show-menu');
     });
     jQuery('.main-header .overlay').click(function() {
-        jQuery('.main-menu-mobile').removeClass('show');
+        jQuery('.main-menu-desktop').removeClass('show');
         jQuery('.overlay').removeClass('show');
         jQuery('body').removeClass('show-menu');
     });
@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
             scrollTop:$(".contact-us").offset().top
         },1000)
     });
-    // jQuery('.main-menu-mobile .wrapper-nav-menu .navbar-menu .navbar-nav .dropdown a').click(function(){
+    // jQuery('.main-menu-desktop .wrapper-nav-menu .navbar-menu .navbar-nav .dropdown a').click(function(){
     //     if($(this).parent().hasClass('show')){
     //         $(this).parents().find('.bg-menu').removeClass('show');
     //     }else{
@@ -68,7 +68,7 @@ jQuery(document).ready(function() {
                 $('.header-search-mb').addClass('d-none');
             }
         });
-        $('.main-menu-mobile .nav-link.search-link').click(function(e){
+        $('.main-menu-desktop .nav-link.search-link').click(function(e){
             e.preventDefault();
         });
     }
