@@ -196,50 +196,6 @@ jQuery(document).ready(function() {
         fade: true,
         asNavFor: '.list-img-fabric'
     })
-    function selectSlick(){
-        var countElements = $(".list-img-fabric .fabric-item").length;
-        if (countElements > 10)
-        {
-            $('.list-img-fabric').slick({
-            slidesToShow: countElements-1,
-            slidesToScroll: 1, 
-            asNavFor: '.list-fabric-main',
-            centerMode:false,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: countElements-3,
-                    slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: countElements-5,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: countElements-8,
-                        slidesToScroll: 1,
-                    }
-                }
-            ]
-        });
-        } else {
-            $('.list-img-fabric').slick({
-                slidesToShow: countElements,
-                slidesToScroll: 1, 
-                asNavFor: '.list-fabric-main',
-                centerMode:false,
-                focusOnSelect: true,
-                });
-        }
-    };
-    selectSlick();
     $('.slider .img-slider').slick({
         infinite: true,
         slidesToShow: 4,
@@ -360,69 +316,69 @@ jQuery(document).ready(function() {
     });
 
     // Submit
-    $('#wholesaleSignUp').submit(function(e){
-        e.preventDefault();
-        $('.nactivity').addClass('open');
-        var form = $('#wholesaleSignUp');
-        var business = form.find('input[type="checkbox"]');
-        var dataBusiness = '';
-        business.each(function(index){
-            if($(this).is(':checked') == true){
-                dataBusiness += $(this).val() + ';';
-            }
-        });
-        var customer= {
-            "Customer": [
-                {
-                    "EmailAddress":form.find('input[name="reg_email"]').val(),
-                    "Password":"123456",
-                    "UserGroup":"Wholesale",
-                    "ABN":form.find('input[name="reg_email"]').val(),
-                    "WebsiteURL":form.find('input[name="reg_email"]').val(),
-                    "UserCustom1":dataBusiness,
-                    "UserCustom2":form.find('input[name="reg_mobile_phone"]').val(),
-                    "BillingAddress": {
-                        "BillFirstName":form.find('input[name="reg_first_name"]').val(),
-                        "BillLastName":form.find('input[name="reg_last_name"]').val(),
-                        "BillCompany":form.find('input[name="reg_company"]').val(),
-                        "BillStreetLine1":form.find('input[name="reg_address1"]').val(),
-                        "BillStreetLine2":form.find('input[name="reg_address2"]').val(),
-                        "BillCity":form.find('input[name="reg_suburb"]').val(),
-                        "BillState":form.find('input[name="reg_state"]').val(),
-                        "BillPostCode":form.find('input[name="reg_postcode"]').val(),
-                        "BillCountry":form.find('select[name="reg_bill_country"]').val(),
-                        "BillPhone":form.find('input[name="reg_phone_number"]').val()
-                    }
-                }
-            ]
-        };
-        $.ajax({
-            async: true,
-            crossDomain: true,
-            url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
-            headers: {
-                'accept': 'application/json',
-                'netoapi_action':'AddCustomer',
-                'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
-                'content-type': 'application/json',
-                'cache-control': 'no-cache'
-            },
-            method: 'POST',
-            dataType: 'json',
-            processData: false,
-            data: JSON.stringify(customer),
-            success: function(response){
-                $('.nactivity').removeClass('open');        
-                if(response.Ack != 'Error'){
-                    $('.p-status').html('');
-                    $('.modal-reg-wholesale .content-modal').append('<h3>Thank you.</h3><p>We&#39;ll be in touch shortly to confirm your registration.</p><button class="btn btn-close">Done</button>');
-                    $('.modal-reg-wholesale').addClass('show');
-                } else {
-                    $('.p-status').html('<p>'+response.Messages.Error.Message+'</p>');
-                }
-            }
-        });
-    });
+    // $('#wholesaleSignUp').submit(function(e){
+    //     e.preventDefault();
+    //     $('.nactivity').addClass('open');
+    //     var form = $('#wholesaleSignUp');
+    //     var business = form.find('input[type="checkbox"]');
+    //     var dataBusiness = '';
+    //     business.each(function(index){
+    //         if($(this).is(':checked') == true){
+    //             dataBusiness += $(this).val() + ';';
+    //         }
+    //     });
+    //     var customer= {
+    //         "Customer": [
+    //             {
+    //                 "EmailAddress":form.find('input[name="reg_email"]').val(),
+    //                 "Password":"123456",
+    //                 "UserGroup":"Wholesale",
+    //                 "ABN":form.find('input[name="reg_email"]').val(),
+    //                 "WebsiteURL":form.find('input[name="reg_email"]').val(),
+    //                 "UserCustom1":dataBusiness,
+    //                 "UserCustom2":form.find('input[name="reg_mobile_phone"]').val(),
+    //                 "BillingAddress": {
+    //                     "BillFirstName":form.find('input[name="reg_first_name"]').val(),
+    //                     "BillLastName":form.find('input[name="reg_last_name"]').val(),
+    //                     "BillCompany":form.find('input[name="reg_company"]').val(),
+    //                     "BillStreetLine1":form.find('input[name="reg_address1"]').val(),
+    //                     "BillStreetLine2":form.find('input[name="reg_address2"]').val(),
+    //                     "BillCity":form.find('input[name="reg_suburb"]').val(),
+    //                     "BillState":form.find('input[name="reg_state"]').val(),
+    //                     "BillPostCode":form.find('input[name="reg_postcode"]').val(),
+    //                     "BillCountry":form.find('select[name="reg_bill_country"]').val(),
+    //                     "BillPhone":form.find('input[name="reg_phone_number"]').val()
+    //                 }
+    //             }
+    //         ]
+    //     };
+    //     $.ajax({
+    //         async: true,
+    //         crossDomain: true,
+    //         url: 'https://mayfield.neto.com.au/do/WS/NetoAPI',
+    //         headers: {
+    //             'accept': 'application/json',
+    //             'netoapi_action':'AddCustomer',
+    //             'netoapi_key':'1gtxBpHMY89nGu0PnEfDuWnOa65qJFyd',
+    //             'content-type': 'application/json',
+    //             'cache-control': 'no-cache'
+    //         },
+    //         method: 'POST',
+    //         dataType: 'json',
+    //         processData: false,
+    //         data: JSON.stringify(customer),
+    //         success: function(response){
+    //             $('.nactivity').removeClass('open');        
+    //             if(response.Ack != 'Error'){
+    //                 $('.p-status').html('');
+    //                 $('.modal-reg-wholesale .content-modal').append('<h3>Thank you.</h3><p>We&#39;ll be in touch shortly to confirm your registration.</p><button class="btn btn-close">Done</button>');
+    //                 $('.modal-reg-wholesale').addClass('show');
+    //             } else {
+    //                 $('.p-status').html('<p>'+response.Messages.Error.Message+'</p>');
+    //             }
+    //         }
+    //     });
+    // });
 
     $('#wholesaleSignUpMail').find('input[type="checkbox"]').each(function(index){
         $(this).on('click',function () {
@@ -488,8 +444,8 @@ jQuery(document).ready(function() {
         $('.list-fabric-main .fabric-item').each(function(index) {
             callApiLampShades($(this).data('sku'));
         });
-        selectSlick();
     }
+    selectSlick();
 
     $('.project-gallery-item img').click(function() {
         getPjGallery($(this).parent('div').data('sku'));
@@ -744,34 +700,34 @@ function selectSlick(){
     if (countElements > 10)
     {
         $('.list-img-fabric').slick({
-        slidesToShow: countElements-1,
-        slidesToScroll: 1, 
-        asNavFor: '.list-fabric-main',
-        centerMode:false,
-        focusOnSelect: true,
-        responsive: [{
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: countElements-3,
-                slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 992,
+            slidesToShow: 11,
+            slidesToScroll: 1, 
+            asNavFor: '.list-fabric-main',
+            centerMode:false,
+            focusOnSelect: true,
+            responsive: [{
+                breakpoint: 1200,
                 settings: {
-                    slidesToShow: countElements-5,
+                    slidesToShow: 8,
                     slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 6,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                    }
                 }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: countElements-8,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
+            ]
+        });
     } else {
         $('.list-img-fabric').slick({
             slidesToShow: countElements,
@@ -779,7 +735,7 @@ function selectSlick(){
             asNavFor: '.list-fabric-main',
             centerMode:false,
             focusOnSelect: true
-            });
+        });
     }
 };
 
