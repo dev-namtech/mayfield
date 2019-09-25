@@ -722,3 +722,17 @@
 .empty-cart-page .btn-success:hover{
     opacity: 0.8
 }
+@media screen and (max-width: 991px){
+    .wrapper-product-title h1{
+        font-size: 35px!important;
+        margin-bottom: 5px!important;
+    }
+    .wrapper-product-title .h1{
+        font-size: 22px!important;
+        margin-bottom: 10px!important;
+    }
+    .main-content-pro .wrapper-product-title,
+    .main-content-pro .extra-options{
+        text-align: left;
+    }
+}
