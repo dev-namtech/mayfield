@@ -727,8 +727,7 @@
         font-size: 22px!important;
         margin-bottom: 10px!important;
     }
-    .main-content-pro .wrapper-product-title,
-    .main-content-pro .extra-options{
-        text-align: left;
+    .act-lampshades .button{
+        width: 160px
     }
 }
