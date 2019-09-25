@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
     if($('.contact-us').length)
     jQuery('.enquiry').click(function(){
         $('html, body').animate({
-            scrollTop:$(".contact-us").offset().top-35
+            scrollTop:$(".contact-us").offset().top-40
         },1000)
     });
     // jQuery('.main-menu-desktop .wrapper-nav-menu .navbar-menu .navbar-nav .dropdown a').click(function(){
