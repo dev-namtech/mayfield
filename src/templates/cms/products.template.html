@@ -36,27 +36,153 @@
 		</div>
 	</section>
 
+	<section class="section-banner wow zoomIn">
+		<img src="[%asset_url type:'content' id:'[@content_id@]' default:'/assets/themes/skeletal/images/bg-post-default.png'/%]" alt="">
+	</section>
+
+	[%if [@form:limit@] %]
+    [% else %]
+        [%set [@form:limit@] %][@config:thumb_limit@][%/set%]
+    [%/if%]
+
 	<!-- Main content -->
-	[%content_menu content_type:'category' sortby:'sortorder,name' show_empty:'1' limit:''%]
-		[%param header%]
-			<section aria-label="Categories">
-			<div class="container">
-			<div class="row">
-		[%/ param%]
-		[%param *level_1%]
-			[%if [@content_id@] != 110 and [@content_id@] != 165 %]
-			<div class="col-6 col-sm-4 category-thumbnail" role="article" aria-label="[@name@] category">
-				<p class="h2"><a href="[@url@]">[@name@]</a></p>
-				<a href="[@url@]">
-					<img src="[%asset_url type:'category' id:'[@id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]" class="img-fluid" alt="[@name@]" />
-				</a>
-			</div>
-			[%/if%]
-		[%/ param%]
-		[%param footer%]
-			</div>
-			</div>
-			</section>
-		[%/ param%]
-	[%/ content_menu%]
+	[%thumb_list type:'products' filter_category:'114' limit:'[@form:limit@]'%]
+        [%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
+        [%param *header%]
+        <!-- Filters -->
+        <section class="section-filter main-container wow fadeInUp">
+            <p>Filters</p>
+            <div class="row-filter">
+                <div class="col-left-filter">
+                    <div class="wrapper-filter">
+                        <div class="filter-group">
+                            <select class="js" name="Price" id="price" onchange="window.location.href=this.value">
+                                <option value="">Price</option>
+                                [%product_filter type:'price' limit:'6'%]
+                                    [%param *body%]
+                                        [%if [@selected@]%]
+                                            <option value="[@remove_url@]">[@name@]</option>
+                                        [%else%]
+                                            [%if [@min@] == 0 AND [@max@] > 0%]
+                                                <option value="[@url@]">[%format type:'currency' dp:'0'%][@max@][%/format%] or below</option>
+                                            [%elseif [@min@] > 0 AND [@max@] > 0%]
+                                                <option value="[@url@]">[%format type:'currency' dp:'0'%][@min@][%/format%] to [%format type:'currency' dp:'0'%][@max@][%/format%]</option>
+                                            [%elseif [@max@] == 0%]
+                                                <option value="[@url@]">[%format type:'currency' dp:'0'%][@min@][%/format%] or above</option>
+                                            [%/if%]
+                                        [%/if%]
+                                    [%/param%]
+                                [%/product_filter%]
+                            </select>
+                            <select class="js" name="Colour" id="colour" onchange="window.location.href=this.value">
+                                <option value="">Colour</option>
+                                [%product_filter type:'variations' autohide:'0' sortoption:'sortorder'%]
+                                    [%param *body%]
+                                        [%if [@filter_name@] eq 'Colour' %]
+                                            [%if [@selected@]%]
+                                                <option value="[@remove_url@]" selected>[@name@]</option>
+                                            [%else%]
+                                                <option value="[@url@]" aria-label="Filter [@filter_name@] to [@name@]">[@name@]</option>
+                                            [%/if%]
+                                        [%/if%]
+                                    [%/param%]
+                                [%/product_filter%]
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            [%content_menu content_type:'category' sortby:'sortorder' show_empty:'1' category:'114' start_category:'114'%]
+                                [%param *header%]
+                                    <select class="js" name="filter" onchange="window.location.href=this.value">
+                                    <option value="">Style</option>
+                                [%/param%]
+                                [%param *level_1%]
+                                    <option value="[@url@]">[@name@]</option>
+                                    [%if [@next_level@]%][@next_level@][%/if%]
+                                [%/param%]
+                                [%param *level_2%]
+                                    <option value="[@url@]">[@name@]</option>
+                                    [%if [@next_level@]%][@next_level@][%/if%]
+                                [%/param%]
+                                [%param *level_3%]
+                                    <option value="[@url@]">[@name@]</option>
+                                [%/param%]
+                                [%param *footer%]
+                                    </select>
+                                [%/param%]
+                            [%/content_menu%]
+                            
+                            <select class="js" name="Size " id="size" onchange="window.location.href=this.value">
+                                <option value="">Size</option>
+                                [%product_filter type:'variations' autohide:'0' sortoption:'sortorder'%]
+                                    [%param *body%]
+                                        [%if [@filter_name@] ne 'Colour' %]
+                                            [%if [@selected@]%]
+                                                <option value="[@remove_url@]" selected>[@name@]</option>
+                                            [%else%]
+                                                <option value="[@url@]" aria-label="Filter [@filter_name@] to [@name@]">[@name@]</option>
+                                            [%/if%]
+                                        [%/if%]
+                                    [%/param%]
+                                [%/product_filter%]
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-right-filter">
+                    <div class="wrapper-filter">
+                        <p>View: </p>
+                        <select class="js" name="Show" id="show" onchange="window.location.href=this.value">
+                            <option value="?rf=&limit=20">Show 20</option>
+                            <option value="?rf=&limit=50">Show 50</option>
+                            <option value="?rf=&limit=100">Show All</option>
+                        </select>
+                    </div>
+                    <div class="wrapper-filter">
+                        <p>Sort by: </p>
+                        <form method="get" action="[@config:CURRENT_URL@]">
+                            <input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
+                            <select class="js" name="sortby" id="show" onChange="return this.form.submit();">
+                                <option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>Most Popular</option>
+                                <option value="sortorder" [%SORTBY type:'products' if:'eq' value:'sortorder'%]selected[%/SORTBY%]>Newest to Oldest</option>
+                                <option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>A to Z</option>
+                                <option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>Price Low to High</option>
+                                <option value="highest_price" [%SORTBY type:'products' if:'eq' value:'highest_price'%]selected[%/SORTBY%]>Price High to Low</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-collection-product main-container wow fadeInUp">
+        <div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
+            <div id="contentPro" class="row products-row">                   
+                [%/param%]
+                [%param *footer%]
+            </div>
+        </div>
+        [%IF [@total_results@] > [@form:limit@]%]
+            <div>
+                <div class="col-12">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            [%paging limit:'3'%]
+                                [%param *previous_page%]<li class="page-pag-item page-prev-item"><a class="page-pag-link" href="[@url@]" aria-label="Go back one page">Prev</a></li>[%/param%]
+                                [%param *goback_pages%]<li class="page-pag-item"><a class="page-pag-link" href="[@url@]" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+                                [%param *current_page%]<li class="page-pag-item active"><a class="page-pag-link" href="[@url@]" aria-label="Current page">[@page@]</a></li>[%/param%]
+                                [%param *gonext_pages%]<li><a href="[@url@]" class="page-pag-link" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+                                [%param *next_page%]<li class="page-pag-item page-next-item"><a class="page-pag-link" href="[@url@]" aria-label="Go forward one page">Next</a></li>[%/param%]
+                            [%/paging%]
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        [%/IF%]
+        [%/param%]
+        [%param *ifempty%]
+            <div class="container">
+                <p class="not-found-product">This category is empty! Please try another category or use our search function to find what you are looking for. If you require further assistance please contact us.</p>
+            </div>
+        [%/param%]
+        </section>
+    [%/thumb_list%]
 </div>
