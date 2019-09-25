@@ -105,10 +105,11 @@
     }
     .contact-us .form{
         text-align: left;
-        margin: 0 15px;
+        margin: 0;
         .field-devide, .field-long, .field-devide-short {
             width: 100%;
             margin:8px 0;
+            padding-top:6px;
             input{
                 width: 100%;
                 padding:12px 0 0 15px;
@@ -145,4 +146,8 @@
         }
     }
 }
-@media (max-width:575px){}
+@media (max-width:575px){
+    .contact-us .form{
+        margin: 15px!important
+    }
+}
