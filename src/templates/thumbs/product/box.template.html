@@ -17,9 +17,9 @@
 			<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 				[%if [@has_child@]%]From [%/ if%]
 				[%if [@inpromo@]%]
-					[%format type:'currency'%][@promo_price@][%/ format%]
+					[%format type:'currency'%][@promo_price@][%/ format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]
 				[%else%]
-					<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/ format%]</span>
+					<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/ format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]</span>
 				[%/ if%]
 				[%if [@save@] > 0 AND ![@has_child@]%]
 					<span class="small text-danger d-block">[%format type:'percent'%][@save@][%/ format%] OFF</span>

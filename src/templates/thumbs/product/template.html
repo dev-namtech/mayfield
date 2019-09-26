@@ -7,14 +7,14 @@
 			<img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" itemprop="image" class="product-image img-fluid" alt="[@model@]" rel="itmimg[@SKU@]">
 		</a>
 		<p class="card-title" itemprop="name"><a href="[@URL@]">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</a></p>
-		<p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" aria-label="[@model@] price">
+		<p class="price" itemprop="offers" data-gp="[@user:group_id@]" itemscope itemtype="http://schema.org/Offer" aria-label="[@model@] price">
 			[%if [@inpromo@]%]
 				Now&nbsp;[%if [@has_child@]%]from&nbsp;[%/if%]
 				<meta itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]"/>
-				<span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
+				<span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]</span>
 			[%else%]
 				[%if [@has_child@]%]From&nbsp;[%/if%]
-				<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%]</span>
+				<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]</span>
 			[%/if%]
 			<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 		</p>

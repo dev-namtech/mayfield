@@ -28,10 +28,10 @@
                 [%if [@inpromo@]%]
                     Now&nbsp;[%if [@has_child@]%]from&nbsp;[%/if%]
                     <meta itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]"/>
-                    <span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
+                    <span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]</span>
                 [%else%]
                     [%if [@has_child@]%]From&nbsp;[%/if%]
-                    <span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%]</span>
+                    <span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]</span>
                 [%/if%]
                 <meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
             </p>

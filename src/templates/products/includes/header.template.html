@@ -8,7 +8,7 @@
 			<div class="wrapper-price">
 			[%if ![@inpromo@]%]
 				<div class="h1" itemprop="price" content="[@store_price@]" aria-label="Store Price">
-					[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
+					[%FORMAT type:'currency'%][@store_price@][%/FORMAT%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]
 				</div>
 				[%if [@save@] > 0%]
 					<div class="productrrp text-muted small" aria-label="RRP Price">

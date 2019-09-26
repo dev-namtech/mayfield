@@ -23,7 +23,7 @@
 								<span class="text-success" itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
 							[%else%]
 								[%if [@has_child@]%]From&nbsp;[%/if%]
-								<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%]</span>
+								<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%][%if [@user:group_id@] eq '2' %]<strong> + GST</strong>[%/if%]</span>
 							[%/if%]
 							[%if [@inpromo@]%]
 								<p class="mb-1"><span class="badge badge-danger">On Sale</span></p>
