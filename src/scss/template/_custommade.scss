@@ -51,11 +51,6 @@
     }
 }
 @media (max-width: 1199px){
-    .section-header-content{
-        .description-content-coper{
-            width: 100%;
-        }
-    }
     .content .item-box:nth-child(2){
         background: white
     }
@@ -92,11 +87,6 @@
 @media (max-width: 991px){
     body{
         text-align: center;  
-    }
-    .section-header-content{
-        .description-content-coper{
-            width: 100%;
-        }
     }
     .description,.col-img{
         background:white;
@@ -149,5 +139,10 @@
 @media (max-width:575px){
     .contact-us .form{
         margin: 15px!important
+    }
+    .content{
+        .item-box{
+            padding: 15px
+        }
     }
 }

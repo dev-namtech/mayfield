@@ -195,6 +195,9 @@
 }
 
 @media screen and (max-width: 991px) {
+    .description-content-coper{
+        max-width: 100%!important;
+    }
     .section-editer .col-lg-6 {
         flex: 0 0 50%;
         max-width: 50%;
@@ -356,10 +359,6 @@
     .inspiration-gallery >.row{
         padding: 0!important;
     }
-    .also-like .img-box{
-        flex:0 0 100%;
-        max-width:100%!important
-    }
     .col-right-filter .select .select-options{
         width: 100%;
     } 
@@ -474,7 +473,8 @@
     .main-content-page .title-page, 
     section .title-section,
     .lampshades-main-content .product-range .title,
-    .lampshades-main-content .product-range h3 {
+    .lampshades-main-content .product-range h3,
+    .custommade-main-content h2 {
         font-size: 32px !important;
     }
     .description-content-coper .enquiry, 
@@ -731,8 +731,7 @@
         font-size: 22px!important;
         margin-bottom: 10px!important;
     }
-    .main-content-pro .wrapper-product-title,
-    .main-content-pro .extra-options{
-        text-align: left;
+    .act-lampshades .button{
+        width: 160px
     }
 }

@@ -93,7 +93,7 @@ section{
         padding: 13px 15px;
         border: 1px solid #000000;
         border-top: none;
-        z-index: 2;
+        z-index: 3;
         max-height: 300px;
         overflow-y: auto;
         margin: 0;
@@ -473,7 +473,7 @@ button.slick-prev{
 }
 
 .description-content-coper{
-    width: 50%;
+    max-width: 55%;
     p{
         font-size: 18px;
         font-weight: normal;
