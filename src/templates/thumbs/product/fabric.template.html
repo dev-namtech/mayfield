@@ -5,7 +5,6 @@
 			<img src="[%asset_url type:'product' thumb:'full' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" itemprop="image" class="product-image img-fluid" alt="[@model@]" rel="itmimg[@SKU@]">
         </div>
 		<p class="card-title" itemprop="name" onclick="openModalFabric('#cardProduct[@SKU@]');"><b>[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/format%]</b></p>
-		[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'Thumbnails' /%][%/if%]
 	</div>
 </article>
 [%/cache%]
