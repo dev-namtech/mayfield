@@ -144,8 +144,8 @@
                         <form method="get" action="[@config:CURRENT_URL@]">
                             <input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
                             <select class="js" name="sortby" id="show" onChange="return this.form.submit();">
-                                <option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>Most Popular</option>
                                 <option value="sortorder" [%SORTBY type:'products' if:'eq' value:'sortorder'%]selected[%/SORTBY%]>Newest to Oldest</option>
+                                <option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>Most Popular</option>
                                 <option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>A to Z</option>
                                 <option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>Price Low to High</option>
                                 <option value="highest_price" [%SORTBY type:'products' if:'eq' value:'highest_price'%]selected[%/SORTBY%]>Price High to Low</option>

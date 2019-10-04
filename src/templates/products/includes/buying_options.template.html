@@ -123,7 +123,9 @@
 							<ul class="list-description">
 								[%item_specifics id:'[@sku@]'%]
 									[%param *body%]
+										[%if [@itmspec_name@] ne 'Colour' %]
 										<li><strong>[@itmspec_name@]:</strong> [@itmspecval_value@]</li>
+										[%/if%]
 									[%/param%]
 								[%/item_specifics%]
 								[%if [@misc6@] %]<li><strong>Globe Included:</strong> [%if [@misc6@] eq 'y' %]Yes[%else%]No[%/if%]</li>[%/if%]

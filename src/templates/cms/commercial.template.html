@@ -33,7 +33,6 @@
     [%thumb_list type:'products' filter_category:'165' limit:'99'%]
         [%param *header%]
         <section class="project-gallery">
-            <div class="big-text text-center wow fadeInUp" data-wow-delay="0.5s">Project Gallery</div>
                 <div class="row wow fadeInUp" data-wow-delay="0.8s">
         [%/param%]
         [%param *body%]
@@ -47,11 +46,13 @@
             </div>
             <div id="modalMF" class="modal-mf">
                 <div class="modal-mf-dialog">
-                    <div class="modal-mf-content">
-                        <div class="modal-mf-header">
-                            <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                    <div class="content-mf">
+                        <div class="modal-mf-content">
+                            <div class="modal-mf-header">
+                                <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-mf-body"></div>
                         </div>
-                        <div class="modal-mf-body"></div>
                     </div>
                 </div>
             </div>

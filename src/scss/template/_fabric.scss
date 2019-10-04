@@ -1,84 +1,89 @@
-  .modal-fabric{
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.4);
-        display: none;
-        z-index: 3;
-        &.open{
-          display: block;
-        }
-        .modal-fabric-dialog{
+.modal-fabric{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 3;
+    &.open{
+        display: block;
+    }
+    .modal-fabric-dialog{
+        position: absolute;
+        width: 90vw;
+        height: auto;
+        max-width: 820px;
+        background-color: white;
+        padding: 60px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .modal-fabric-header .close{
             position: absolute;
-            width: 90vw;
-            height: auto;
-            max-width: 820px;
-            background-color: white;
-            padding: 60px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            .modal-fabric-header .close{
-                position: absolute;
-                right: 20px;
-                top: 10px;
+            right: 20px;
+            top: 10px;
+        }
+        .modal-fabric-body{
+            .col-md-6 {
+                
+            &:last-child{
+                padding-left: 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
-            .modal-fabric-body{
-                .col-md-6 {
-                   
-                &:last-child{
-                    padding-left: 60px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+            }
+            .slick-slider{
+                .slick-list, .slick-track{
+                    transform: inherit;
                 }
+            }
+            .content-description p{
+            margin-bottom: 3px;
+            }
+            .col-description{
+                position: relative;
+                text-align: left;
+                a{
+                    font-size: 24px;
+                    color: #000;
+                    text-decoration: underline;
+                    display: block;
+                    margin-top: 50px;
+                    font-family: "CopernicusTrial-BookItalic",sans-serif;
+                    position: absolute;
+                    bottom: 0;
+                    left: 60px;
                 }
-                .slick-slider{
-                    .slick-list, .slick-track{
-                        transform: inherit;
-                    }
+            }
+            button{
+                &.slick-prev, &.slick-next{
+                    top: 50%;
                 }
-                .content-description p{
-                margin-bottom: 3px;
+                &.slick-prev{
+                    left: -50px;
+                    &::before{                     
+                    background-image: url('../images/prev.png');
+                    
                 }
-                .col-description{
-                    position: relative;
-                    text-align: left;
-                    a{
-                        font-size: 24px;
-                        color: #000;
-                        text-decoration: underline;
-                        display: block;
-                        margin-top: 50px;
-                        font-family: "CopernicusTrial-BookItalic",sans-serif;
-                        position: absolute;
-                        bottom: 0;
-                        left: 60px;
-                    }
+                }     
+                &.slick-next{
+                    right: -50px;
+                    &::before{
+                    background-image: url('../images/next.png');
                 }
-                button{
-                    &.slick-prev, &.slick-next{
-                        top: 50%;
-                    }
-                    &.slick-prev{
-                        left: -50px;
-                        &::before{                     
-                        background-image: url('../images/prev.png');
-                        
-                    }
-                    }     
-                    &.slick-next{
-                        right: -50px;
-                        &::before{
-                        background-image: url('../images/next.png');
-                    }
-                    }
                 }
             }
         }
     }
+}
+.main-content-fabric{
+    .section-collection-product{
+        padding-top: 50px;
+    }
+}
 @media (max-width:767px){
     .modal-fabric-body{
         .col-md-6:last-child{
